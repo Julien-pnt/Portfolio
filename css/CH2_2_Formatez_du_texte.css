@@ -1,26 +1,35 @@
-html,
-
-Premiere_ligne {
-    color: red;
-    text-align: center;
+html {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    background-color: #fbf05e;
 }
 
-Deuxieme {
+.Premiere_ligne {
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    background-color: #fbf05e;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.Deuxieme {
     margin-top: 20px;
     color: #bc6cff;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin-bottom: 20px;
 }
 
-Troisieme {
+.Troisieme {
     margin-top: 20px;
     color: #bc6cff;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.Paragraphe1, .Paragraphe2 {
+    font-size: 11px;
+    text-indent: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
