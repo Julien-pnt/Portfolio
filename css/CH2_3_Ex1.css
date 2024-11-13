@@ -1,13 +1,17 @@
 h1 {
-    color: #bc6cff;
+    color: #a837ec;
 }
 
 h2 {
     color: white;
 }
 
-html {
-    background-image: url("../Images/feuilles.png");
+body {
+    background-image: url("../Images/pingouin.png"),
+    url("../Images/feuilles.png");
+    background-repeat: no-repeat, repeat;
+    background-position-x: 50%;
+    background-attachment: fixed;
 }
 
 img {
