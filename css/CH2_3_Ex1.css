@@ -14,7 +14,14 @@ body {
     background-attachment: fixed;
 }
 
-.Paragraphe1, .Paragraphe2, .Paragraphe3, .Paragraphe4, 
+.Paragraphe1{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.Paragraphe2, .Paragraphe3, .Paragraphe4, 
 .Paragraphe5, .Paragraphe6, .Paragraphe7{
     color: white;
     margin-bottom: 20px;
