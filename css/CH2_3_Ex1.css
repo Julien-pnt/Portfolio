@@ -1,0 +1,16 @@
+h1 {
+    color: #bc6cff;
+}
+
+h2 {
+    color: white;
+}
+
+html {
+    background-image: url("../Images/feuilles.png");
+}
+
+img {
+    display: block;
+    margin: auto;
+}
