@@ -14,7 +14,15 @@ body {
     background-attachment: fixed;
 }
 
-img {
-    display: block;
-    margin: auto;
+.Paragraphe1, .Paragraphe2, .Paragraphe3, .Paragraphe4, 
+.Paragraphe5, .Paragraphe6, .Paragraphe7{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.Lien{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 25px;
 }
