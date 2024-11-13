@@ -51,6 +51,27 @@
     margin-bottom: 20px;
 }
 
+.premiereLigneParagraphre1 {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.Paragraphe2 {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Paragraphe3,
+.Paragraphe4 {
+    color: #74a6ff;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .sous-titre {
     font-size: 13px;
     text-decoration: underline;
