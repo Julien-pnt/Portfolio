@@ -1,0 +1,58 @@
+.Premiere_ligne {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    background-color: #fbf05e;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.Premiere_ligne:hover {
+    color: green;
+}
+
+.Premiere_ligne:active {
+    text-decoration: underline;
+}
+
+.Deuxieme, .Troisieme {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    color: #bc6cff;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.Deuxieme:hover, .Troisieme:hover {
+    color: green;
+}
+
+.Deuxieme:active, .Troisieme:active {
+    text-decoration: underline;
+}
+
+.Paragraphe1, .Paragraphe, .Paragraphe2, .Paragraphe3, .Paragraphe4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    text-indent: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.Paragraphe:hover, .Paragraphe1:hover, .Paragraphe2:hover, .Paragraphe3:hover, .Paragraphe4:hover {
+    font-style: italic;
+}
+
+.numerotation {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #5c63e6;
+    font-weight: bolder;
+}
+
+.sous-titre, .sous-titre-special {
+    font-size: 13px;
+    text-decoration: underline;
+}
