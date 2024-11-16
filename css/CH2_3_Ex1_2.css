@@ -10,10 +10,6 @@ h1{
     color : #750699;
 }
 
-h2{
-    color : white;
-}
-
 section{
     background-color: rgba(149, 65, 65, 0.5);
 }
@@ -31,7 +27,7 @@ article{
 
 }
 
-cite, main{
+h2, cite, main{
     color : white;
 }
 
