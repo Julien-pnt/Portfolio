@@ -406,3 +406,51 @@ body {
 .navbar__item:first-child:nth-last-child(11)~li:last-child:hover:before {
     left: 90.9090909091%;
 }
+
+.welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 200%;
+}
+
+
+.loading-dots {
+    font-size: 2rem;
+    animation: dot-flashing 1s infinite linear;
+}
+
+.loading-dots span {
+    animation: blink 1s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+@keyframes blink {
+    0%, 20%, 100% { opacity: 0; }
+    10% { opacity: 1; }
+}
+
+@keyframes dot-flashing {
+    0%, 100% { opacity: 1; }
+}
+
+.footer {
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    text-align: center; 
+    color: #fff; 
+    padding: 1rem; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    font-size: 1rem; 
+}
