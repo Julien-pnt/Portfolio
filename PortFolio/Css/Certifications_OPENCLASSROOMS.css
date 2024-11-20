@@ -4,6 +4,17 @@ body {
     background-size: 100%;
 }
 
+h2 {
+    font-size: 5vw;
+    display: inline-block;
+    transition: transform 0.2s;
+    color: #fff;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.25);
+}
+
 .header {
     position: sticky;
     top: 0;
@@ -437,7 +448,6 @@ body {
     border-radius: 28px;
     text-align: center;
 
-    margin-top: 20%;
 }
 
 .ag-courses-item_link {
