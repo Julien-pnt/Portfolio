@@ -406,3 +406,15 @@ body {
 .navbar__item:first-child:nth-last-child(11)~li:last-child:hover:before {
     left: 90.9090909091%;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+}
