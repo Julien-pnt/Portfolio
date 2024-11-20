@@ -2,6 +2,7 @@ body {
     background: url("../Images/Background.jpg");
     font-family: "Open Sans", sans-serif;
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -407,52 +408,159 @@ body {
     left: 90.9090909091%;
 }
 
-.welcome-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.keyboard {
+    margin-top: 12%;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.key {
+    font-size: 10vw;
+    display: inline-block;
+    letter-spacing: -1vw;
+    transition: transform 0.2s;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 8px;
-    font-size: 200%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
 }
 
+@keyframes pressDown1 {
 
-.loading-dots {
-    font-size: 2rem;
-    animation: dot-flashing 1s infinite linear;
+    30%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+
+    35% {
+        transform: translateY(10px);
+    }
 }
 
-.loading-dots span {
-    animation: blink 1s infinite;
+@keyframes pressDown2 {
+
+    70%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(10px);
+    }
 }
 
-.loading-dots span:nth-child(2) {
-    animation-delay: 0.2s;
+@keyframes pressDown3 {
+
+    30%,
+    40%,
+    100% {
+        transform: translateY(0);
+    }
+
+    35% {
+        transform: translateY(10px);
+    }
 }
 
-@keyframes blink {
+@keyframes pressDown4 {
 
-    0%,
+    40%,
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    45% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes pressDown5 {
+
+    20%,
+    30%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes pressDown6 {
+
+    60%,
+    70%,
+    100% {
+        transform: translateY(0);
+    }
+
+    65% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes pressDown7 {
+
+    10%,
     20%,
     100% {
-        opacity: 0;
+        transform: translateY(0);
     }
 
-    10% {
-        opacity: 1;
+    15% {
+        transform: translateY(10px);
     }
 }
 
-@keyframes dot-flashing {
+@keyframes pressDown8 {
 
-    0%,
+    35%,
+    45%,
     100% {
-        opacity: 1;
+        transform: translateY(0);
     }
+
+    40% {
+        transform: translateY(10px);
+    }
+}
+
+
+
+.key:nth-child(1) {
+    animation: pressDown1 2s infinite;
+}
+
+.key:nth-child(2) {
+    animation: pressDown2 3s infinite;
+}
+
+.key:nth-child(3) {
+    animation: pressDown3 4s infinite;
+}
+
+.key:nth-child(4) {
+    animation: pressDown4 2.5s infinite;
+}
+
+.key:nth-child(5) {
+    animation: pressDown5 2.5s infinite;
+}
+
+.key:nth-child(6) {
+    animation: pressDown6 3.5s infinite;
+}
+
+.key:nth-child(7) {
+    animation: pressDown7 2.2s infinite;
+}
+
+.key:nth-child(8) {
+    animation: pressDown8 3.2s infinite;
 }
 
 .footer {
