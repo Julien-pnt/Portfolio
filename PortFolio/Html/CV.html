@@ -4,64 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/Certifications.css">
     <title>Mon CV</title>
+    <link rel="stylesheet" href="../Css/CV.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="../Images/user.svg" type="image/x-icon">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__logo">
+            <h1><strong>Julien PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Index.html" class="navbar__link"><i data-feather="home" aria-hidden="true"></i><span>Page d'accueil</span></a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i><span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
+        <section class="profile">
+            <img src="Images/Moi.jpg" alt="Photo de Julien Pinot" class="profile__image">
+            <div class="profile__info">
+                <h2>Julien Pinot</h2>
+                <p>Développeur Web</p>
+                <p>Email: julien.pinot@example.com</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+                <p>Adresse: 123 Rue de la Paix, 75000 Paris, France</p>
             </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                                aria-hidden="true"></i><span>Page
-                                d'accueil</span></a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i><span>CV</span>
-                        </a>
-                    </li>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
-                        </a>
-                    </li>
+        <section class="summary">
+            <h2>Résumé</h2>
+            <p>Développeur web passionné avec plus de 5 ans d'expérience dans la création de sites web responsives et performants. Compétent en HTML, CSS, JavaScript, et divers frameworks modernes.</p>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
-                        </a>
-                    </li>
+        <section class="experience">
+            <h2>Expérience Professionnelle</h2>
+            <div class="experience__item">
+                <h3>Développeur Web Senior</h3>
+                <p>Entreprise XYZ - Janvier 2020 - Présent</p>
+                <ul>
+                    <li>Développement de sites web responsives.</li>
+                    <li>Collaboration avec les designers pour créer des interfaces utilisateur intuitives.</li>
+                    <li>Optimisation des performances des sites web.</li>
                 </ul>
-            </nav>
-        </header>
+            </div>
+            <div class="experience__item">
+                <h3>Développeur Web</h3>
+                <p>Entreprise ABC - Juin 2015 - Décembre 2019</p>
+                <ul>
+                    <li>Développement de sites web e-commerce.</li>
+                    <li>Maintenance et mise à jour des sites web.</li>
+                    <li>Collaboration avec les équipes de marketing pour améliorer l'expérience utilisateur.</li>
+                </ul>
+            </div>
+        </section>
 
-        <img src="../Images/Moi.jpg" alt="">
+        <section class="skills">
+            <h2>Compétences</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git</li>
+            </ul>
+        </section>
 
+        <section class="education">
+            <h2>Formation</h2>
+            <div class="education__item">
+                <h3>Master en Informatique</h3>
+                <p>Université de Paris - 2013 - 2015</p>
+            </div>
+            <div class="education__item">
+                <h3>Licence en Informatique</h3>
+                <p>Université de Paris - 2010 - 2013</p>
+            </div>
+        </section>
+
+        <section class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certification AWS Certified Developer</li>
+                <li>Certification Responsive Web Design</li>
+            </ul>
+        </section>
+
+        <section class="projects">
+            <h2>Projets</h2>
+            <div class="projects__item">
+                <h3>Projet E-commerce</h3>
+                <p>Développement d'un site e-commerce complet avec fonctionnalités de paiement en ligne.</p>
+            </div>
+            <div class="projects__item">
+                <h3>Projet Blog</h3>
+                <p>Création d'un blog personnel avec intégration de commentaires et partage sur les réseaux sociaux.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
