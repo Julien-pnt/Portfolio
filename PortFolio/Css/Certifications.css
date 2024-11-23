@@ -1,7 +1,11 @@
 body {
     background: url("../Images/Background.jpg");
     font-family: "Open Sans", sans-serif;
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: #FFF;
 }
 
 .header {
@@ -31,6 +35,8 @@ body {
     position: relative;
     display: flex;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar__link {
@@ -45,9 +51,7 @@ body {
     color: #fff;
     transition: 250ms ease all;
     text-decoration: none;
-    width: 10rem;
     text-transform: uppercase;
-    transition: 500ms ease all;
 }
 
 .navbar__link svg {
@@ -406,7 +410,6 @@ body {
 .navbar__item:first-child:nth-last-child(11)~li:last-child:hover:before {
     left: 90.9090909091%;
 }
-
 
 .ag-format-container {
     width: 1142px;
