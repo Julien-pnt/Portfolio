@@ -4,63 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/Experiences_scolaire.css">
     <title>Expériences Scolaire</title>
+    <link rel="stylesheet" href="../Css/Experiences_scolaire.css">
+    <link rel="shortcut icon" href="../Images/user.svg" type="image/x-icon">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="../Images/folder.svg" type="image/x-icon">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__logo">
+            <h1><strong>Julien PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
+                            aria-hidden="true"></i><span>Page d'accueil</span></a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i><span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/Compétences.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/Certifications.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/Experiences.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/Veilles-techno.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../Html/Passions.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i><span>passion</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
+        <section class="profile">
+            <div class="profile__info">
+                <h2>Les projets que j'ai réalisé :</h2>
             </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                                aria-hidden="true"></i><span>Page
-                                d'accueil</span></a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i><span>CV</span>
-                        </a>
-                    </li>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Compétences.html" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
-                        </a>
-                    </li>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Certifications.html" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
-                        </a>
-                    </li>
+        <section class="profile">
+            <img src="../Images/logo-haberges.jpg" alt="photo_logo_haberges" class="logo_haberges">
+            <div class="profile__info">
+                <h2>Lycée Les Haberges</h2>
+                <p>Téléphone: <a href="tel:+33384971720">+33 3 84 97 17 20</a></p>
+                <p>Adresse: 1 Rue du Dr Jean-Georges Girard, 70000 Vesoul</p>
+            </div>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Experiences.html" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Veilles-techno.html" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Passions.html" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
-                        </a>
-                    </li>
+        <section class="summary">
+            <h2>Liste des projets réalisés</h2>
+            <ul>
+                <li class="classe"> Année Terminal</li>
+                <ul>
+                    <li> test </li>
                 </ul>
-            </nav>
-        </header>
-    </main>
+            </ul>
+        </section>
 
+        <section class="skills">
+            <h2>Fonctions et responsabilités</h2>
+            <ul>
+                <li><span class="skill-badge">Nom cat</span>Le montage, l’installation, la mise en service et le suivi
+                    des nouveaux appareils et systèmes informatiques.</li>
+                <li><span class="skill-badge">Nom cat</span>L’intervention, en physique ou à distance, sur l’équipement
+                    d’un employé connaissant des difficultés et la résolution de problèmes.</li>
+                <li><span class="skill-badge">Nom cat</span>La mise en place de solutions informatiques pour doter les
+                    clients des ressources nécessaires pour accomplir leurs tâches dans un esprit d’amélioration
+                    continue.</li>
+            </ul>
+        </section>
+
+        <div class="center-con">
+            <div class="round">
+                <div id="cta">
+                    <a href="../Html/Experiences.html" class="arrow-link">
+                        <span class="arrow primera next"></span>
+                        <span class="arrow segunda next"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <footer class="footer">
         &copy; 2024 Julien Pinot. Tous droits réservés.
