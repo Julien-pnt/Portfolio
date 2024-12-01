@@ -422,11 +422,13 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.logo_haberges {
-    border-radius: 40%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+.logo {
+    border-radius: 50%;
+    width: 25vw;         
+    height: auto;        
+    max-width: 150px;    
+    max-height: 150px;   
+    object-fit: cover;   
 }
 
 .profile__info {
