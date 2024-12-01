@@ -448,7 +448,7 @@ body {
 .education,
 .certifications,
 .passion,
-.languages { /* Ajout de la section langues */
+.languages {
     margin: 2rem 0;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.7);
@@ -462,7 +462,7 @@ body {
 .education h2,
 .certifications h2,
 .passion h2,
-.languages h2 { /* Ajout du titre de la section langues */
+.languages h2 { 
     margin-top: 0;
     font-size: 1.5rem;
     border-bottom: 2px solid #C4151C;
@@ -472,14 +472,14 @@ body {
 .experience__item,
 .education__item,
 .passion__item,
-.languages__item { /* Ajout de la classe pour les éléments des langues */
+.languages__item { 
     margin: 1rem 0;
 }
 
 .experience__item h3,
 .education__item h3,
 .passion__item h3,
-.languages__item h3 { /* Ajout du style des titres des éléments de langues */
+.languages__item h3 { 
     margin: 0;
     font-size: 1.2rem;
 }
@@ -487,21 +487,21 @@ body {
 .experience__item p,
 .education__item p,
 .passion__item p,
-.languages__item p { /* Ajout du style des paragraphes des éléments de langues */
+.languages__item p { 
     margin: 0.5rem 0;
     color: #555;
 }
 
 .skills ul,
 .certifications ul,
-.languages ul { /* Ajout du style pour les listes dans la section des langues */
+.languages ul { 
     list-style-type: none;
     padding: 0;
 }
 
 .skills li,
 .certifications li,
-.languages li { /* Ajout du style des éléments de liste dans les langues */
+.languages li {
     margin: 0.5rem 0;
 }
 
