@@ -424,11 +424,11 @@ body {
 
 .logo {
     border-radius: 50%;
-    width: 25vw;         
-    height: auto;        
-    max-width: 150px;    
-    max-height: 150px;   
-    object-fit: cover;   
+    width: 25vw;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
 }
 
 .profile__info {
@@ -692,4 +692,12 @@ body {
     animation-delay: 0.2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+.num_telephone {
+    color: #9fc1ff;
+}
+
+.num_telephone:hover {
+    color: #bb6c3e;
 }

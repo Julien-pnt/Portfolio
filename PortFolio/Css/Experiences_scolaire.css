@@ -424,11 +424,11 @@ body {
 
 .logo {
     border-radius: 50%;
-    width: 25vw;         
-    height: auto;        
-    max-width: 150px;    
-    max-height: 150px;   
-    object-fit: cover;   
+    width: 25vw;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
 }
 
 .profile__info {
@@ -694,7 +694,19 @@ body {
     animation-timing-function: linear;
 }
 
-.classe {
-    list-style-type: none;
+.titre {
     font-weight: bold;
+}
+
+.lien_site {
+    color: white;
+    text-decoration: none;
+}
+
+.num_telephone {
+    color: #9fc1ff;
+}
+
+.num_telephone:hover {
+    color: #bb6c3e;
 }

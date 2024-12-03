@@ -422,6 +422,10 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.lien_CV {
+    color: blue;
+}
+
 .profile__image {
     border-radius: 50%;
     width: 150px;
@@ -462,7 +466,7 @@ body {
 .education h2,
 .certifications h2,
 .passion h2,
-.languages h2 { 
+.languages h2 {
     margin-top: 0;
     font-size: 1.5rem;
     border-bottom: 2px solid #C4151C;
@@ -472,14 +476,14 @@ body {
 .experience__item,
 .education__item,
 .passion__item,
-.languages__item { 
+.languages__item {
     margin: 1rem 0;
 }
 
 .experience__item h3,
 .education__item h3,
 .passion__item h3,
-.languages__item h3 { 
+.languages__item h3 {
     margin: 0;
     font-size: 1.2rem;
 }
@@ -487,14 +491,14 @@ body {
 .experience__item p,
 .education__item p,
 .passion__item p,
-.languages__item p { 
+.languages__item p {
     margin: 0.5rem 0;
     color: #555;
 }
 
 .skills ul,
 .certifications ul,
-.languages ul { 
+.languages ul {
     list-style-type: none;
     padding: 0;
 }
