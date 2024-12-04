@@ -707,3 +707,8 @@ body {
     color: white;
     text-decoration: none;
 }
+
+.lien_site:hover {
+    color: #bb6c3e;
+    text-decoration: none;
+}

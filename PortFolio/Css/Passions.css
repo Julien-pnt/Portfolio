@@ -1,10 +1,15 @@
 body {
+    min-height: 100vh;
     background: url("../Images/Background.jpg");
     font-family: "Open Sans", sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+}
+
+.content {
+    flex: 1;
 }
 
 .header {
@@ -411,14 +416,15 @@ body {
 }
 
 .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
     color: #fff;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.7);
     font-size: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 figure {
@@ -426,6 +432,17 @@ figure {
     border-radius: 1rem;
     overflow: hidden;
     cursor: pointer;
+    text-align: end;
+    margin-right: 1cm;
+}
+
+.figure1 {
+    margin-top: 5%;
+}
+
+.passions {
+    color: white;
+    text-decoration: none;
 }
 
 .img-newyork {
