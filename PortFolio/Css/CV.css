@@ -641,8 +641,8 @@ body {
 }
 
 .drapeau-spanish {
-    border-radius: 100%;
-    width: 25vw;
+    border-radius: 70%;
+    width: auto;
     height: auto;
     max-width: 80px;
     max-height: 80px;
