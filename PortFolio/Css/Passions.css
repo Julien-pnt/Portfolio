@@ -8,6 +8,17 @@ body {
     padding: 0;
 }
 
+h2 {
+    font-size: 3vw;
+    display: inline-block;
+    transition: transform 0.2s;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.25);
+    margin-left: 40%;
+}
+
 .content {
     flex: 1;
 }
