@@ -502,7 +502,7 @@ body {
 .passion__item p,
 .languages__item p {
     margin: 0.5rem 0;
-    color: #555;
+    color: #717874;
 }
 
 .skills ul,
@@ -558,26 +558,6 @@ body {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.language-level {
-    display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
-}
-
-.language-level span {
-    margin-left: 1rem;
-    font-size: 1rem;
-}
-
-.language-badge {
-    background-color: #2A9D8F;
-    color: #fff;
-    padding: 0.3rem 1rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -625,32 +605,28 @@ body {
     }
 }
 
-.drapeau-english {
-    border-radius: 70%;
-    width: 25vw;
-    height: auto;
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: cover;
+.competences {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
 }
 
-.english-title .texte-english {
-    position: relative;
-    top: -2vw;
-    left: 1%;
+.competences:hover {
+    text-decoration: none;
+    color: #bb6c3e;
+    font-weight: bold;
 }
 
-.drapeau-spanish {
-    border-radius: 70%;
-    width: auto;
-    height: auto;
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: cover;
+.experiences {
+    list-style-type: none;
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
 }
 
-.spanish-title .texte-spanish {
-    position: relative;
-    top: -2vw;
-    left: 1%;
+.experiences:hover {
+    list-style-type: none;
+    text-decoration: none;
+    color: #bb6c3e;
+    font-weight: bold;
 }
