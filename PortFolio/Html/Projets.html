@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Projets | Julien PINOT - Portfolio Professionnel</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__logo">
+            <h1><strong>JULIEN PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION PROJETS -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mes Projets</h1>
+                <h2 class="hero-subtitle">Innovation & Excellence Technique</h2>
+                <p class="hero-description">
+                    Découvrez mes réalisations en cybersécurité, développement et administration système.
+                    Chaque projet reflète mon engagement vers l'excellence et l'innovation technique.
+                </p>
+            </div>
+        </section>
+
+        <!-- FILTRES DE PROJETS -->
+        <section class="section section--bg-secondary">
+            <div class="text-center">
+                <div class="d-flex justify-center gap-md">
+                    <button class="btn btn-primary filter-btn active" data-filter="all">
+                        <i data-feather="grid"></i>
+                        Tous les projets
+                    </button>
+                    <button class="btn btn-outline filter-btn" data-filter="cybersecurity">
+                        <i data-feather="shield"></i>
+                        Cybersécurité
+                    </button>
+                    <button class="btn btn-outline filter-btn" data-filter="web">
+                        <i data-feather="code"></i>
+                        Développement
+                    </button>
+                    <button class="btn btn-outline filter-btn" data-filter="system">
+                        <i data-feather="server"></i>
+                        Systèmes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE DE PROJETS -->
+        <section class="section">
+            <div class="grid grid-3">
+                <!-- PROJET 1: SCANNER DE VULNÉRABILITÉS -->
+                <div class="project-card hover-lift" data-category="cybersecurity">
+                    <div class="project-header">
+                        <h3 class="card-title">🛡️ Scanner de Vulnérabilités Web</h3>
+                        <p class="card-subtitle">Outil de pentesting automatisé</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Développement d'un scanner automatisé en Python pour détecter les vulnérabilités 
+                            OWASP Top 10. Interface graphique moderne avec génération de rapports détaillés 
+                            et classification des risques.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">Requests</span>
+                            <span class="tech-tag">SQLi</span>
+                            <span class="tech-tag">XSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 2: ANALYSE FORENSIQUE -->
+                <div class="project-card hover-lift" data-category="cybersecurity">
+                    <div class="project-header">
+                        <h3 class="card-title">🔍 Suite d'Analyse Forensique</h3>
+                        <p class="card-subtitle">Outils d'investigation numérique</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Suite complète d'outils pour l'analyse forensique : récupération de données, 
+                            analyse de métadonnées, timeline reconstruction et recherche d'artefacts. 
+                            Interface intuitive pour les enquêteurs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Volatility</span>
+                            <span class="tech-tag">Autopsy</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Regex</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 3: PORTFOLIO PROFESSIONNEL -->
+                <div class="project-card hover-lift" data-category="web">
+                    <div class="project-header">
+                        <h3 class="card-title">💼 Portfolio Professionnel</h3>
+                        <p class="card-subtitle">Site web responsive moderne</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Portfolio personnel avec design professionnel, animations subtiles et 
+                            optimisations de performance. Architecture moderne, responsive design 
+                            et respect des standards d'accessibilité.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                            <span class="tech-tag">SEO</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Site en ligne
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 4: HOMELAB SÉCURISÉ -->
+                <div class="project-card hover-lift" data-category="system">
+                    <div class="project-header">
+                        <h3 class="card-title">🏠 Infrastructure Homelab</h3>
+                        <p class="card-subtitle">Lab de cybersécurité personnel</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Infrastructure complète avec virtualisation, monitoring, sauvegarde automatisée 
+                            et environnements d'apprentissage sécurisés. Gestion via Infrastructure as Code 
+                            et conteneurisation.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Proxmox</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">pfSense</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Documentation
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Configuration
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 5: PLATEFORME E-LEARNING -->
+                <div class="project-card hover-lift" data-category="web">
+                    <div class="project-header">
+                        <h3 class="card-title">📚 Plateforme de Formation</h3>
+                        <p class="card-subtitle">E-learning cybersécurité</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Plateforme complète de formation en cybersécurité avec système de quiz interactifs, 
+                            laboratoires virtuels intégrés et suivi personnalisé des progrès. Architecture 
+                            scalable et moderne.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 6: API SÉCURISÉE -->
+                <div class="project-card hover-lift" data-category="web">
+                    <div class="project-header">
+                        <h3 class="card-title">🔐 API REST Sécurisée</h3>
+                        <p class="card-subtitle">Architecture backend robuste</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            API RESTful haute sécurité avec authentification JWT, rate limiting avancé, 
+                            chiffrement bout en bout et logging d'audit complet. Documentation interactive 
+                            et tests automatisés.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">OAuth2</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Documentation API
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 7: MONITORING SÉCURISÉ -->
+                <div class="project-card hover-lift" data-category="cybersecurity">
+                    <div class="project-header">
+                        <h3 class="card-title">📊 Système de Monitoring</h3>
+                        <p class="card-subtitle">SIEM léger pour PME</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Solution SIEM adaptée aux PME avec collecte de logs centralisée, corrélation 
+                            d'événements intelligente, alertes en temps réel et tableaux de bord 
+                            personnalisables pour le SOC.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Elasticsearch</span>
+                            <span class="tech-tag">Logstash</span>
+                            <span class="tech-tag">Kibana</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 8: GESTIONNAIRE DE MOTS DE PASSE -->
+                <div class="project-card hover-lift" data-category="cybersecurity">
+                    <div class="project-header">
+                        <h3 class="card-title">🔑 Gestionnaire de Mots de Passe</h3>
+                        <p class="card-subtitle">Sécurité personnelle renforcée</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Application sécurisée de gestion de mots de passe avec chiffrement AES-256, 
+                            authentification multi-facteurs, audit de sécurité des mots de passe et 
+                            synchronisation chiffrée multi-appareils.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AES-256</span>
+                            <span class="tech-tag">SQLCipher</span>
+                            <span class="tech-tag">TOTP</span>
+                            <span class="tech-tag">Cryptography</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Code source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 9: SERVEUR WEB DURCI -->
+                <div class="project-card hover-lift" data-category="system">
+                    <div class="project-header">
+                        <h3 class="card-title">🛡️ Serveur Web Durci</h3>
+                        <p class="card-subtitle">Infrastructure sécurisée</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Configuration complète d'un serveur web haute sécurité avec durcissement système, 
+                            WAF intégré, monitoring en temps réel, sauvegarde automatique et déploiement 
+                            automatisé via CI/CD.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Nginx</span>
+                            <span class="tech-tag">ModSecurity</span>
+                            <span class="tech-tag">Let's Encrypt</span>
+                            <span class="tech-tag">Fail2ban</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Documentation
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i data-feather="github"></i>
+                                Scripts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION STATISTIQUES PROJETS -->
+        <section class="section section--bg-tertiary">
+            <div class="intro-section text-center">
+                <h2>Mes Projets en Chiffres</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">25000+</span>
+                        <span class="stat-label">Lignes de Code</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Projets Actifs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Passion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="section">
+            <div class="intro-section text-center">
+                <h2>Intéressé par mes projets ?</h2>
+                <p class="mb-xl">
+                    N'hésitez pas à explorer le code source, tester les démonstrations ou me contacter 
+                    pour discuter de collaborations techniques.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Contact.html" class="btn btn-primary">
+                        <i data-feather="mail"></i>
+                        Collaborer
+                    </a>
+                    <a href="CV.html" class="btn btn-secondary">
+                        <i data-feather="download"></i>
+                        Télécharger CV
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Compétences.html" class="footer-link">Compétences</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-outline');
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('btn-primary');
+                button.classList.remove('btn-outline');
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Animate stats when in view
+        const observerOptions = {
+            threshold: 0.7
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (!statNumber.dataset.animated) {
+                        const text = statNumber.textContent;
+                        const number = parseInt(text.replace(/[^\d]/g, ''));
+                        let currentNumber = 0;
+                        const increment = number / 30;
+
+                        const timer = setInterval(() => {
+                            currentNumber += increment;
+                            if (currentNumber >= number) {
+                                statNumber.textContent = text;
+                                clearInterval(timer);
+                            } else {
+                                if (text.includes('+')) {
+                                    statNumber.textContent = Math.floor(currentNumber) + '+';
+                                } else if (text.includes('%')) {
+                                    statNumber.textContent = Math.floor(currentNumber) + '%';
+                                } else {
+                                    statNumber.textContent = Math.floor(currentNumber);
+                                }
+                            }
+                        }, 50);
+                        
+                        statNumber.dataset.animated = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+</body>
+
+</html>

@@ -4,51 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV</title>
-    <link rel="stylesheet" href="../Css/CV.css">
-    <link rel="shortcut icon" href="../Images/user.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>CV | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__logo">
-            <h1><strong>Julien PINOT</strong></h1>
+            <h1><strong>JULIEN PINOT</strong></h1>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                            aria-hidden="true"></i><span>Page d'accueil</span></a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../Html/CV.html" class="navbar__link">
-                        <i data-feather="user" aria-hidden="true"></i><span>CV</span>
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Compétences.html" class="navbar__link">
-                        <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Certifications.html" class="navbar__link">
-                        <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Experiences.html" class="navbar__link">
-                        <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Veilles-techno.html" class="navbar__link">
-                        <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Passions.html" class="navbar__link">
-                        <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
                     </a>
                 </li>
             </ul>
@@ -56,99 +77,491 @@
     </header>
 
     <main>
-        <section class="profile">
-            <img src="../Images/Moi.jpg" alt="Photo de Julien Pinot" class="profile__image">
-            <div class="profile__info">
-                <h2>Julien Pinot, 19 ans</h2>
-                <p>Étudiant</p>
-                <p>Email: <a href="mailto:Julien.pinot70@gmail.com" class="mon-email">Julien.pinot70@gmail.com</a></p>
-                <p>Téléphone: <a href="tel:+33665319255" class="numero">+33 6 65 31 92 55</a></p>
-                <p>Ville: Andelarrot, France</p>
-                <p>Mon CV en PDF : <a href="../CV/CV Julien Pinot.pdf " target="_blank" class="lien_CV">CV Julien
-                        Pinot</a></p>
+        <!-- HERO SECTION CV -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mon Curriculum Vitae</h1>
+                <h2 class="hero-subtitle">Étudiant BTS SIO & Futur Pentester</h2>
+                <p class="hero-description">
+                    Découvrez mon parcours professionnel, mes compétences techniques et mon expérience 
+                    dans le domaine de la cybersécurité et du développement.
+                </p>
+                <div class="d-flex justify-center gap-lg mt-xl">
+                    <a href="../CV/CV Julien Pinot.pdf" class="btn btn-primary" target="_blank">
+                        <i data-feather="download"></i>
+                        Télécharger PDF
+                    </a>
+                    <a href="Contact.html" class="btn btn-secondary">
+                        <i data-feather="mail"></i>
+                        Me contacter
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="summary">
-            <h2>Résumé</h2>
-            <p>Actuellement en première année de Brevet de Technicien Supérieur en Service Informatique aux
-                Organisations au Lycée Louis Pergaud à Besançon. J'aimerais devenir Pentester.</p>
-        </section>
+        <!-- SECTION INFORMATIONS PERSONNELLES -->
+        <section class="section">
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">👤 Informations Personnelles</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <img src="../Images/Moi.jpg" alt="Julien PINOT" style="width: 100px; height: 100px; border-radius: 50%; margin-right: 1rem; object-fit: cover;">
+                            <div>
+                                <h4 style="margin: 0; color: var(--primary-blue);">Julien PINOT</h4>
+                                <p style="margin: 0; color: var(--text-secondary);">Étudiant BTS SIO - Cybersécurité</p>
+                            </div>
+                        </div>
+                        <div class="mt-lg">
+                            <p><strong>📧 Email:</strong> julien.pinot.pro@gmail.com</p>
+                            <p><strong>📱 Téléphone:</strong> +33 6 XX XX XX XX</p>
+                            <p><strong>📍 Localisation:</strong> Besançon, France</p>
+                            <p><strong>🎂 Âge:</strong> 20 ans</p>
+                            <p><strong>🚗 Permis:</strong> Permis B - Véhiculé</p>
+                        </div>
+                    </div>
+                </div>
 
-        <section class="skills">
-            <h2>Compétences</h2>
-            <ul>
-                <li><span class="skill-badge"><a href="../Html/Compétences.html" class="competences">Pour consulter mes
-                            Compétences</a></span>
-        </section>
-
-        <section class="experience">
-            <h2>Expérience Professionnelle</h2>
-            <div class="experience__item">
-                <h3>Préparateur de commandes</h3>
-                <p>Filiac - Été 2024</p>
-                <ul>
-                    <li>Préparer les commandes.</li>
-                    <li>Emballer les commandes.</li>
-                    <li>Envoi par camion à destination.</li>
-                    <li>Gérer les stocks.</li>
-                </ul>
-            </div>
-            <div class="experience__item">
-                <h3>Réapprovisionnement</h3>
-                <p>Cora - Été 2024</p>
-                <ul>
-                    <li>Gérer les stocks.</li>
-                    <li>Passer des commandes de réapprovisionnement.</li>
-                    <li>Entretenir l'espace de vente.</li>
-                    <li>Vérifier l'état de conservation des produits périssables.</li>
-                    <li>Retirer de la vente les marchandises impropres à la consommation.</li>
-                </ul>
-            </div>
-
-            <br>
-
-            <span class="skill-badge"><a href="../Html/Experiences.html" class="experiences">Pour en savoir
-                    plus</a></span>
-
-        </section>
-
-        <section class="education">
-            <h2>Formation</h2>
-            <div class="education__item">
-                <h3>Brevet de technicien supérieur en Service Informatique aux Organisations</h3>
-                <p>Lycée Louis Pergaud - 2024 - Aujourd'hui</p>
-            </div>
-            <div class="education__item">
-                <h3>Baccalauréat Général : Mathématiques et Informatique et sciences du numérique</h3>
-                <p>Lycée Les Haberges - 2020 - 2024</p>
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🎯 Objectif Professionnel</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            <strong>Devenir Expert en Tests d'Intrusion</strong>
+                        </p>
+                        <p>
+                            Passionné par la cybersécurité, je souhaite évoluer vers un poste de 
+                            <strong>Pentester</strong> pour contribuer à la protection des infrastructures 
+                            d'entreprise contre les cybermenaces.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Pentesting</span>
+                            <span class="tech-tag">Red Team</span>
+                            <span class="tech-tag">Analyse de Vulnérabilités</span>
+                            <span class="tech-tag">Sécurité Offensive</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="passion">
-            <h2>Passion</h2>
-            <div class="passion__item">
-                <h3>Voyager</h3>
-                <p>J'ai déjà eu l'opportunité de me rendre aux États-Unis et à Minorque afin d'explorer de nouveaux
-                    horizons.</p>
+        <!-- SECTION FORMATION -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">🎓 Formation & Éducation</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Première année BTS SIO</div>
+                        <h3>BTS SIO - Services Informatiques aux Organisations</h3>
+                        <h4 style="color: var(--accent-emerald); margin-bottom: 0.5rem;">Option SISR - Solutions d'Infrastructure, Systèmes et Réseaux</h4>
+                        <p><strong>Lycée Louis Pergaud - Besançon</strong></p>
+                        <p><strong>📞 Contact :</strong> +33 3 81 54 77 77</p>
+                        <p><strong>📍 Adresse :</strong> 91-93 Bd Léon Blum, 25000 Besançon</p>
+                        <p>
+                            Formation spécialisée en Services Informatiques avec option SISR (Solutions d'Infrastructure, Systèmes et Réseaux), orientée cybersécurité.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SISR</span>
+                            <span class="tech-tag">Réseaux</span>
+                            <span class="tech-tag">Administration</span>
+                            <span class="tech-tag">Devis technique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Année de Terminale</div>
+                        <h3>Baccalauréat Général</h3>
+                        <h4 style="color: var(--accent-emerald); margin-bottom: 0.5rem;">Lycée Les Haberges</h4>
+                        <p><strong>Lycée Les Haberges - Vesoul</strong></p>
+                        <p><strong>📞 Contact :</strong> +33 3 84 97 17 20</p>
+                        <p><strong>📍 Adresse :</strong> 1 Rue du Dr Jean-Georges Girard, 70000 Vesoul</p>
+                        <p>
+                            Formation générale au lycée Les Haberges à Vesoul, développant les compétences analytiques et de résolution de problèmes nécessaires pour poursuivre en BTS SIO.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">POO</span>
+                            <span class="tech-tag">Tkinter</span>
+                            <span class="tech-tag">Interface graphique</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="passion__item">
-                <h3>Voitures de sport</h3>
-                <p>Je suis passionné par l'automobile, en particulier les voitures de sport.</p>
+        </section>
+
+        <!-- SECTION EXPÉRIENCE PROFESSIONNELLE -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">💼 Expérience Professionnelle</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="card hover-lift">
+                            <div class="card-header">
+                                <h3 class="card-title">Employé Libre-Service - CORA Vesoul</h3>
+                                <p class="card-subtitle">Été 2024 • Mission d'Intérim</p>
+                            </div>
+                            <div class="card-content">
+                                <p><strong>📍 Localisation :</strong> Bd Kennedy, 70000 Vesoul</p>
+                                <p><strong>📞 Contact :</strong> +33 3 84 97 19 50</p>
+                                <p><strong>🎯 Missions :</strong></p>
+                                <ul>
+                                    <li>Gestion de l'approvisionnement et réception des produits</li>
+                                    <li>Mise en rayon et agencement des produits</li>
+                                    <li>Contrôle qualité et dates de péremption</li>
+                                    <li>Étiquetage et affichage des prix</li>
+                                    <li>Service client et information</li>
+                                </ul>
+                                <p><strong>💡 Compétences développées :</strong> Grande distribution, service client, gestion stocks, contrôle qualité</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="card hover-lift">
+                            <div class="card-header">
+                                <h3 class="card-title">Préparateur de Commande - FILIAC</h3>
+                                <p class="card-subtitle">Été 2024 • Mission d'Intérim</p>
+                            </div>
+                            <div class="card-content">
+                                <p><strong>📍 Localisation :</strong> Rue de la Corne Jacquot Bournot, 70000 Noidans-lès-Vesoul</p>
+                                <p><strong>📞 Contact :</strong> +33 3 84 91 68 44</p>
+                                <p><strong>🎯 Missions :</strong></p>
+                                <ul>
+                                    <li>Gestion des stocks et localisation des références</li>
+                                    <li>Transport et sécurité de la marchandise</li>
+                                    <li>Emballage et conditionnement des produits</li>
+                                    <li>Étiquetage et expédition des commandes</li>
+                                    <li>Contrôle qualité et approvisionnements</li>
+                                </ul>
+                                <p><strong>💡 Compétences développées :</strong> Logistique, préparation commandes, gestion de stock, contrôle qualité</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMPÉTENCES TECHNIQUES -->
+        <section class="section">
+            <h2 class="text-center mb-xl">💻 Compétences Techniques</h2>
+            
+            <!-- Compétences BTS SIO -->
+            <div class="card hover-lift mb-lg">
+                <div class="card-header">
+                    <h3 class="card-title">🎓 Compétences BTS SIO</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid grid-2">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">BDD / Modèle relationnel SQL</span>
+                                <span class="skill-level">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%;"></div>
+                            </div>
+                            <p class="skill-description">Conception et gestion des bases de données relationnelles</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">RGPD / EBIOS</span>
+                                <span class="skill-level">50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%;"></div>
+                            </div>
+                            <p class="skill-description">Normes protection des données et analyses de risques</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Cybersécurité Initiation</span>
+                                <span class="skill-level">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 45%;"></div>
+                            </div>
+                            <p class="skill-description">Notions de sécurité des systèmes d'information</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Réseaux Paramétrage de base</span>
+                                <span class="skill-level">55%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 55%;"></div>
+                            </div>
+                            <p class="skill-description">Configuration de réseaux informatiques simples</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <br>
+            <!-- Compétences SISR -->
+            <div class="card hover-lift mb-lg">
+                <div class="card-header">
+                    <h3 class="card-title">🌐 Compétences SISR (Solutions d'Infrastructure)</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid grid-2">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Plan adressage IP</span>
+                                <span class="skill-level">65%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%;"></div>
+                            </div>
+                            <p class="skill-description">Conception d'adressage IP pour réseaux informatiques</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Infrastructure réseau</span>
+                                <span class="skill-level">50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%;"></div>
+                            </div>
+                            <p class="skill-description">Mise en place et gestion de l'infrastructure réseau</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Configuration switchs/routeurs</span>
+                                <span class="skill-level">45%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 45%;"></div>
+                            </div>
+                            <p class="skill-description">Paramétrage switchs (VLAN) et routeurs</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Gestion parc informatique</span>
+                                <span class="skill-level">55%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 55%;"></div>
+                            </div>
+                            <p class="skill-description">Gestion et configuration postes professionnels</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">GLPI (Helpdesk-Ticketing)</span>
+                                <span class="skill-level">40%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 40%;"></div>
+                            </div>
+                            <p class="skill-description">Gestion incidents et demandes informatiques</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Active Directory</span>
+                                <span class="skill-level">35%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 35%;"></div>
+                            </div>
+                            <p class="skill-description">Gestion utilisateurs et droits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <span class="skill-badge"><a href="../Html/Passions.html" class="experiences">Pour en savoir
-                    plus</a></span>
+            <!-- Autres Compétences -->
+            <div class="card hover-lift">
+                <div class="card-header">
+                    <h3 class="card-title">� Autres Compétences</h3>
+                </div>
+                <div class="card-content">
+                    <div class="grid grid-2">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML et CSS</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                            <p class="skill-description">Création de pages web statiques et interactives</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%;"></div>
+                            </div>
+                            <p class="skill-description">Développement de scripts Python</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-level">40%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 40%;"></div>
+                            </div>
+                            <p class="skill-description">Développement web côté serveur</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git / GitHub</span>
+                                <span class="skill-level">50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%;"></div>
+                            </div>
+                            <p class="skill-description">Contrôle de version et travail collaboratif</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LANGUES -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">🌍 Langues</h2>
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3 class="card-title">🇫🇷 Français</h3>
+                        <p class="card-subtitle">Langue maternelle</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat-number">100%</div>
+                        <p>Natif - Parfaite maîtrise orale et écrite</p>
+                    </div>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3 class="card-title">🇬🇧 Anglais</h3>
+                        <p class="card-subtitle">Niveau intermédiaire</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat-number">70%</div>
+                        <p>B2 - Documentation technique, communication professionnelle</p>
+                    </div>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h3 class="card-title">🇪🇸 Espagnol</h3>
+                        <p class="card-subtitle">Niveau débutant</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat-number">40%</div>
+                        <p>A2 - Notions de base, en apprentissage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SOFT SKILLS -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🧠 Compétences Transversales</h2>
+            <div class="grid grid-4">
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="search" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Analyse</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Capacité d'analyse approfondie des systèmes et identification des vulnérabilités</p>
+                    </div>
+                </div>
+                
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="users" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Collaboration</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Travail en équipe efficace, communication claire et partage de connaissances</p>
+                    </div>
+                </div>
+                
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="target" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Rigueur</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Approche méthodique et précise, respect des procédures de sécurité</p>
+                    </div>
+                </div>
+                
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="trending-up" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Apprentissage</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Curiosité permanente et adaptation rapide aux nouvelles technologies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section section--bg-secondary">
+            <div class="intro-section text-center">
+                <h2>📄 Télécharger mon CV complet</h2>
+                <p class="mb-xl">
+                    Retrouvez toutes les informations détaillées dans mon CV au format PDF, 
+                    prêt pour vos candidatures et entretiens professionnels.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="../CV/CV Julien Pinot.pdf" class="btn btn-primary" target="_blank">
+                        <i data-feather="download"></i>
+                        Télécharger CV PDF
+                    </a>
+                    <a href="Contact.html" class="btn btn-secondary">
+                        <i data-feather="mail"></i>
+                        Me contacter
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="Compétences.html" class="footer-link">Compétences</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Feather icons
         feather.replace();
     </script>
 </body>

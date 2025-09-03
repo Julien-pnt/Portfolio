@@ -4,129 +4,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences</title>
-    <link rel="stylesheet" href="../Css/Compétences.css">
-    <link rel="shortcut icon" href="../Images/book.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Compétences | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__logo">
-            <h1><strong>Julien PINOT</strong></h1>
+            <h1><strong>JULIEN PINOT</strong></h1>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                            aria-hidden="true"></i><span>Page d'accueil</span></a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../Html/CV.html" class="navbar__link">
-                        <i data-feather="user" aria-hidden="true"></i><span>CV</span>
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Compétences.html" class="navbar__link">
-                        <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Certifications.html" class="navbar__link">
-                        <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Experiences.html" class="navbar__link">
-                        <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Veilles-techno.html" class="navbar__link">
-                        <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Passions.html" class="navbar__link">
-                        <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
                     </a>
                 </li>
-
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
-
-        <h2 class="competences">Voici un récapitulatif des compétences que j'ai obtenues en suivant les formations
-            associées.</h2>
-
-        <section class="skills">
-            <h2>Compétences</h2>
-            <h3>Compétences BTS SIO</h3>
-            <ul>
-                <li><span class="skill-badge">BDD / Modèle relationnel</span> SQL - Conception et gestion des bases de
-                    données relationnelles.</li>
-                <li><span class="skill-badge">RGPD / EBIOS</span> Connaissance des normes sur la protection des données
-                    et des analyses de risques.</li>
-                <li><span class="skill-badge">Cybersécurité</span> Initiation - Notions de sécurité des systèmes
-                    d'information.</li>
-                <li><span class="skill-badge">Réseaux</span> Paramétrage de base - Configuration de réseaux
-                    informatiques simples.</li>
-            </ul>
-
-            <br>
-
-            <h3>Compétences BTS SIO spécialité Solutions d'infrastructure, systèmes et réseaux</h3>
-            <ul>
-                <li><span class="skill-badge">Plan adressage IP</span> Conception d'adressage IP pour des réseaux
-                    informatiques.</li>
-                <li><span class="skill-badge">Infrastructure réseau</span> Mise en place et gestion de l'infrastructure
-                    réseau.</li>
-                <li><span class="skill-badge">Configuration d'éléments actifs de réseau: switchs (VLAN) et de
-                        routeurs</span> Paramétrage des équipements réseau actifs comme les switchs et les routeurs.
-                </li>
-                <li><span class="skill-badge">Gestion du parc informatique / configuration de poste</span> Gestion et
-                    configuration des équipements informatiques dans un environnement professionnel.</li>
-                <li><span class="skill-badge">Logiciel Helpdesk-Ticketing : GLPI</span> Utilisation de GLPI pour la
-                    gestion des incidents et demandes informatiques.</li>
-                <li><span class="skill-badge">Active Directory (gestion des utilisateurs)</span> Gestion des
-                    utilisateurs et de leurs droits via Active Directory.</li>
-            </ul>
-
-            <br>
-
-            <h3>Autres Compétences</h3>
-            <ul>
-                <li><span class="skill-badge">Développement web</span> HTML et CSS - Création de pages web statiques et
-                    interactives.</li>
-                <li><span class="skill-badge">Programmation</span> Python, PHP - Développement de scripts Python et PHP.
-                </li>
-                <li><span class="skill-badge">Outils de développement</span> Git, GitHub - Utilisation des outils pour
-                    le contrôle de version et le travail collaboratif.</li>
-            </ul>
+        <!-- HERO SECTION COMPÉTENCES -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title">Mes Compétences</h1>
+                    <p class="hero-subtitle">Technologies et savoir-faire acquis</p>
+                </div>
+            </div>
         </section>
 
-        <section class="languages">
-            <h2>Langues</h2>
-            <div class="language-item">
-                <h3 class="english-title">
-                    <img src="../Images/english.jpg" alt="image-drapeau-english" class="drapeau-english">
-                    <span class="texte-english">Anglais : Intermédiaire (B2)</span>
-                </h3>
-                <h3 class="spanish-title">
-                    <img src="../Images/Flag_of_Spain.png" alt="image-drapeau-spanish" class="drapeau-spanish">
-                    <span class="texte-spanish">Espagnol : Intermédiaire (B2)</span>
-                </h3>
+        <!-- SECTION COMPÉTENCES BTS SIO -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Compétences BTS SIO</h2>
+                <p class="section-subtitle">Maîtrise des technologies étudiées en BTS SIO option SISR</p>
+                
+                <div class="skills-grid">
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🗄️ Bases de Données</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">SQL</span>
+                                    <span class="skill-level">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-level">55%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Modélisation BDD</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🛡️ Sécurité & RGPD</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">RGPD</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Méthode EBIOS</span>
+                                    <span class="skill-level">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Sécurité informatique</span>
+                                    <span class="skill-level">40%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">💻 Développement</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <span class="skill-level">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">PHP</span>
+                                    <span class="skill-level">20%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 20%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">35%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 35%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SPÉCIALISATION SISR -->
+        <section class="section section--bg-secondary">
+            <div class="container">
+                <h2 class="section-title">Spécialisation SISR</h2>
+                <p class="section-subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                
+                <div class="skills-grid">
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🖥️ Systèmes d'exploitation</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Windows Server</span>
+                                    <span class="skill-level">55%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Linux (Ubuntu/Debian)</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Administration système</span>
+                                    <span class="skill-level">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🌐 Réseaux</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">TCP/IP</span>
+                                    <span class="skill-level">55%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">VLAN</span>
+                                    <span class="skill-level">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Configuration réseau</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🔧 Services & Infrastructure</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Active Directory</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">DNS/DHCP</span>
+                                    <span class="skill-level">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Virtualisation</span>
+                                    <span class="skill-level">40%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION AUTRES COMPÉTENCES -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Autres Compétences Techniques</h2>
+                <p class="section-subtitle">Compétences complémentaires et outils maîtrisés</p>
+                
+                <div class="skills-grid">
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🛠️ Outils de développement</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Git/GitHub</span>
+                                    <span class="skill-level">45%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Visual Studio Code</span>
+                                    <span class="skill-level">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Command Line</span>
+                                    <span class="skill-level">50%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">📊 Suite Office</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Excel</span>
+                                    <span class="skill-level">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Word</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">PowerPoint</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🗣️ Langues</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Français</span>
+                                    <span class="skill-level">100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Anglais</span>
+                                    <span class="skill-level">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Espagnol</span>
+                                    <span class="skill-level">40%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <p>📧 julien.pinot@example.com</p>
+                    <p>📱 +33 X XX XX XX XX</p>
+                    <p>📍 Vesoul, France</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Formation</h3>
+                    <p>🎓 BTS SIO Option SISR</p>
+                    <p>🏫 Lycée Belin</p>
+                    <p>📅 2024-2026</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Spécialisation</h3>
+                    <p>🖥️ Solutions d'Infrastructure</p>
+                    <p>🌐 Systèmes et Réseaux</p>
+                    <p>🛡️ Sécurité informatique</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Julien PINOT - Étudiant BTS SIO. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
 
     <script>
+        // Initialize Feather icons
         feather.replace();
     </script>
 </body>

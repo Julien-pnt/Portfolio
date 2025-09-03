@@ -4,123 +4,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/Experiences.css">
-    <title>Expériences</title>
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Expériences | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="../Images/folder.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
-    <main>
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
-            </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="../Html/Index.html" class="navbar__link">
-                            <i data-feather="home" aria-hidden="true"></i>
-                            <span>Page d'accueil</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i>
-                            <span>CV</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Compétences.html" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i>
-                            <span>Compétences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Certifications.html" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i>
-                            <span>Certifications</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Experiences.html" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i>
-                            <span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Veilles-techno.html" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i>
-                            <span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Passions.html" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i>
-                            <span>Passions</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-        </header>
-
-        <h2>Expérience et leurs catégories</h2>
-
-        <div class="container">
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                        <img src="../Images/Illustration-interim.png" alt="Intérim">
-                        <h3>Intérim</h3>
-                    </div>
-                </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>Voici les diverses missions d'intérim que j'ai effectuées.</p>
-                        <a href="../Html/Experiences_interim.html">Pour en savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                        <img src="../Images/illustrations-ecole.png" alt="Scolaire">
-                        <h3>Scolaire</h3>
-                    </div>
-                </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>Voici les compétences que j'ai développées durant ma scolarité grâce à divers projets menés
-                            en classe.</p>
-                        <a href="../Html/Experiences_scolaire.html">Pour en savoir plus</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                        <img src="../Images/illustration-stage.png" alt="Entreprise">
-                        <h3>Entreprise</h3>
-                    </div>
-                </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>Voici les différents stages que j'ai eu l'opportunité de réaliser.</p>
-                        <a href="../Html/Experiences_entreprises.html">Pour en savoir plus</a>
-                    </div>
-                </div>
-            </div>
+    <header class="header" id="header">
+        <div class="header__logo">
+            <h1><strong>JULIEN PINOT</strong></h1>
         </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION EXPÉRIENCES -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mes Expériences</h1>
+                <h2 class="hero-subtitle">Parcours Professionnel & Formation</h2>
+                <p class="hero-description">
+                    Découvrez mon parcours diversifié, alliant expériences professionnelles, stages et formation académique 
+                    qui ont forgé mes compétences en cybersécurité et informatique.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION ALTERNANCES -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">🔄 Alternances</h2>
+            <div class="timeline">
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/logo-giga-media.png" alt="Logo GigaMedia" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Technico Commercial</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">GigaMedia - Vesoul</span>
+                                        <span class="timeline-period">Formation BTS SIO</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Le technico-commercial informatique est chargé de proposer des solutions informatiques sur mesure 
+                                    aux administrations et entreprises qui le sollicitent.
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Fonctions et responsabilités :</h4>
+                                    <ul>
+                                        <li>✓ Gestion de l'Infrastructure - Le montage, l'installation, la mise en service et le suivi des nouveaux appareils</li>
+                                        <li>✓ Support Technique - L'intervention, en physique ou à distance, sur l'équipement d'un employé</li>
+                                        <li>✓ Consultation en Solutions Informatiques - La mise en place de solutions pour doter les clients des ressources nécessaires</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Solutions IT</span>
+                                    <span class="tech-tag">Support technique</span>
+                                    <span class="tech-tag">Relation client B2B</span>
+                                    <span class="tech-tag">Infrastructure</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION EXPÉRIENCES PROFESSIONNELLES -->
+        <section class="section">
+            <h2 class="text-center mb-xl">💼 Expériences Professionnelles</h2>
+            <div class="timeline">
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="shopping-cart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/cora-logo.png" alt="Logo CORA" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Employé Libre-Service (Mission d'Intérim)</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">Cora Vesoul</span>
+                                        <span class="timeline-period">Été 2024</span>
+                                        <span class="timeline-contact">📞 +33 3 84 97 19 50</span>
+                                        <span class="timeline-address">📍 Bd Kennedy, 70000 Vesoul</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    L'employé en charge des tâches de libre-service ou de rayon est chargé de placer les produits sur les étagères d'un magasin, d'un supermarché ou d'un hypermarché. Travaillant sous la direction du responsable, du chef de rayon ou du directeur, cette personne peut travailler de manière indépendante ou en équipe, selon la taille de l'organisation.
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Fonctions et responsabilités :</h4>
+                                    <ul>
+                                        <li>✓ Gestion de l'approvisionnement et de la réception des produits - Réceptionner les livraisons des fournisseurs, vérifier la conformité des arrivages, informer le responsable de rayon d'un éventuel manque</li>
+                                        <li>✓ Gestion des rayons et de l'agencement des produits - Mettre en rayon les différents produits en transportant les articles de la réserve au magasin</li>
+                                        <li>✓ Veiller à ce que le rayonnage reste propre et bien agencé</li>
+                                        <li>✓ Contrôler le balisage ainsi que l'affichage et l'étiquetage des prix et des promotions</li>
+                                        <li>✓ Contrôle de la qualité des produits - Inspecter les produits en vente (date de péremption, qualité de l'emballage, etc.)</li>
+                                        <li>✓ Service client et information - Renseigner les clients</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Grande distribution</span>
+                                    <span class="tech-tag">Service client</span>
+                                    <span class="tech-tag">Mise en rayon</span>
+                                    <span class="tech-tag">Gestion stocks</span>
+                                    <span class="tech-tag">Contrôle qualité</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="package"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/filiac-logo.png" alt="Logo FILIAC" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Préparateur de Commande (Mission d'Intérim)</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">FILIAC - Noidans-lès-Vesoul</span>
+                                        <span class="timeline-period">Été 2024</span>
+                                        <span class="timeline-contact">📞 +33 3 84 91 68 44</span>
+                                        <span class="timeline-address">📍 Rue de la Corne Jacquot Bournot, 70000 Noidans-lès-Vesoul</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Un agent de transport ou préparateur de commandes joue un rôle crucial dans la coordination de l'expédition des articles demandés par les clients de son entreprise. Il récupère les produits de l'entrepôt, les assemble pour les emballer conformément aux directives du bon de commande et après avoir vérifié que la préparation répond aux normes requises, il remet le colis au service de livraison.
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Fonctions et responsabilités :</h4>
+                                    <ul>
+                                        <li>✓ Gestion des Stocks - Localiser les références commandées dans l'entrepôt et optimiser le trajet de prélèvement</li>
+                                        <li>✓ Transport et Sécurité - Garantir le transport sécurisé de la marchandise</li>
+                                        <li>✓ Emballage et Conditionnement - Emballer et conditionner les produits</li>
+                                        <li>✓ Étiquetage - Étiqueter les articles et les colis pour faciliter l'identification</li>
+                                        <li>✓ Expédition - Finaliser la commande en transférant le colis dans la zone d'expédition ou en le chargeant</li>
+                                        <li>✓ Contrôle Qualité - Contrôler et rapporter les anomalies de marchandise dans le stock</li>
+                                        <li>✓ Gestion des Approvisionnements - Gérer les stocks et s'assurer de la disponibilité des produits</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Logistique</span>
+                                    <span class="tech-tag">Gestion de stock</span>
+                                    <span class="tech-tag">Préparation commandes</span>
+                                    <span class="tech-tag">Contrôle qualité</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION STAGES COMPLÉMENTAIRES -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">📋 Stages Complémentaires</h2>
+            <div class="timeline">
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="monitor"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/logo-giga-media.png" alt="Logo GigaMedia" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Stage de première année SIO de 5 semaines</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">GigaMedia - Vesoul</span>
+                                        <span class="timeline-period">Formation BTS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Effectue le dépannage, l'entretien et l'installation d'équipements ou de parcs d'équipements
+                                    informatiques ou bureautiques (matériels, logiciels, réseaux, ...), selon les règles de sécurité et la
+                                    réglementation. Peut conseiller et assister les utilisateurs (sur site, par télémaintenance, téléassistance, ...).
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Fonctions et responsabilités :</h4>
+                                    <ul>
+                                        <li>✓ Gestion de l'Infrastructure - Le montage, l'installation, la mise en service et le suivi des nouveaux appareils</li>
+                                        <li>✓ Support Technique - L'intervention, en physique ou à distance, sur l'équipement d'un employé</li>
+                                        <li>✓ Consultation en Solutions Informatiques - La mise en place de solutions informatiques pour doter les clients des ressources nécessaires</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Dépannage</span>
+                                    <span class="tech-tag">Installation</span>
+                                    <span class="tech-tag">Maintenance</span>
+                                    <span class="tech-tag">Support utilisateur</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="tool"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/logo-eurydice.jpg" alt="Logo Eurydice" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Stage de troisième de 3 jours</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">Eurydice - Échenoz-la-Méline</span>
+                                        <span class="timeline-period">Découverte professionnelle</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Effectue le dépannage, l'entretien et l'installation d'équipements ou de parcs d'équipements
+                                    informatiques ou bureautiques (matériels, logiciels, réseaux, ...), selon les règles de sécurité et la
+                                    réglementation. Peut conseiller et assister les utilisateurs (sur site, par télémaintenance, téléassistance, ...).
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Fonctions et responsabilités :</h4>
+                                    <ul>
+                                        <li>✓ Installation et Support - Le montage, l'installation, la mise en service et le suivi des nouveaux appareils</li>
+                                        <li>✓ Maintenance et Dépannage - L'intervention, en physique ou à distance, sur l'équipement d'un employé</li>
+                                        <li>✓ Solutions Informatiques - La mise en place de solutions informatiques pour doter les clients des ressources nécessaires</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Découverte IT</span>
+                                    <span class="tech-tag">Maintenance</span>
+                                    <span class="tech-tag">Dépannage</span>
+                                    <span class="tech-tag">Solutions techniques</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION FORMATION ACADÉMIQUE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🎓 Formation Académique</h2>
+            <div class="timeline">
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="book"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/logo-pergaud.jpg" alt="Logo Lycée Pergaud" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">BTS Services Informatiques aux Organisations</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">Lycée Louis Pergaud</span>
+                                        <span class="timeline-period">Première année BTS SIO</span>
+                                        <span class="timeline-contact">📞 +33 3 81 54 77 77</span>
+                                        <span class="timeline-address">📍 91-93 Bd Léon Blum, 25000 Besançon</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Formation spécialisée en Services Informatiques avec option SISR 
+                                    (Solutions d'Infrastructure, Systèmes et Réseaux), orientée cybersécurité.
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Projet SISR :</h4>
+                                    <p>L'objectif était de réaliser un devis pour l'installation d'un laboratoire de formation à l'administration des réseaux informatiques en salle 109. Ce laboratoire fictif est conçu pour offrir un environnement optimal aux étudiants et aux professionnels souhaitant acquérir ou approfondir leurs compétences en gestion et en administration des réseaux informatiques.</p>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">SISR</span>
+                                    <span class="tech-tag">Réseaux</span>
+                                    <span class="tech-tag">Administration</span>
+                                    <span class="tech-tag">Devis technique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div class="company-logo">
+                                    <img src="../Images/logo-haberges.jpg" alt="Logo Lycée Haberges" class="timeline-logo">
+                                </div>
+                                <div class="timeline-info">
+                                    <h3 class="timeline-title">Baccalauréat Général</h3>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-company">Lycée Les Haberges</span>
+                                        <span class="timeline-period">Année de Terminale</span>
+                                        <span class="timeline-contact">📞 +33 3 84 97 17 20</span>
+                                        <span class="timeline-address">📍 1 Rue du Dr Jean-Georges Girard, 70000 Vesoul</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    Formation générale au lycée Les Haberges à Vesoul, développant les compétences 
+                                    analytiques et de résolution de problèmes nécessaires pour poursuivre en BTS SIO.
+                                </p>
+                                <div class="timeline-achievements">
+                                    <h4>Projet Python :</h4>
+                                    <p>Les objectifs de ce projet étaient de modéliser des cartes de jeu, gérer un paquet de cartes, simuler une partie de jeu entre deux joueurs et créer une interface utilisateur graphique en utilisant la programmation orientée objet (POO) en Python. Le projet comprenait la création de classes pour représenter les cartes (`Carte`), le paquet de cartes (`Paquet`) et les mains des joueurs (`Main`), ainsi que la simulation d'une partie de jeu avec des règles spécifiques. Une interface utilisateur graphique a été développée avec Tkinter pour permettre aux joueurs de saisir leurs noms, de démarrer la partie, d'afficher les cartes jouées, les scores en temps réel et le résultat final dans une boîte de dialogue pop-up.</p>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">POO</span>
+                                    <span class="tech-tag">Tkinter</span>
+                                    <span class="tech-tag">Interface graphique</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMPÉTENCES TRANSVERSALES -->
+        <section class="section">
+            <h2 class="text-center mb-xl">💡 Compétences Transversales Acquises</h2>
+            <div class="grid grid-4">
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="users" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Leadership</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Capacité à prendre des initiatives et guider des équipes vers l'atteinte d'objectifs communs.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="zap" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Adaptabilité</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Facilité d'adaptation à de nouveaux environnements, technologies et méthodes de travail.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="search" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Analyse</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Compétences analytiques développées pour identifier et résoudre des problèmes complexes.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="message-circle" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Communication</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Aptitude à communiquer efficacement avec différents interlocuteurs et publics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section section--bg-secondary">
+            <div class="intro-section text-center">
+                <h2>🎯 Prêt pour de Nouveaux Défis</h2>
+                <p class="mb-xl">
+                    Mon parcours diversifié et ma formation spécialisée en cybersécurité me préparent 
+                    à relever les défis de la sécurité informatique moderne.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Projets.html" class="btn btn-primary">
+                        <i data-feather="folder"></i>
+                        Voir mes réalisations
+                    </a>
+                    <a href="Contact.html" class="btn btn-secondary">
+                        <i data-feather="mail"></i>
+                        Discutons ensemble
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Feather icons
         feather.replace();
     </script>
 </body>

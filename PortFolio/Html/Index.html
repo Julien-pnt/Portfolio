@@ -4,80 +4,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/Index.css">
-    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Julien PINOT - Étudiant BTS SIO & Développeur | Portfolio Professionnel</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="../Images/home.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header__logo">
+            <h1><strong>JULIEN PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
+        <!-- HERO SECTION PROFESSIONNELLE -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Julien PINOT</h1>
+                <h2 class="hero-subtitle">Étudiant BTS SIO & Futur Pentester</h2>
+                <p class="hero-description">
+                    Étudiant BTS SIO spécialisé en cybersécurité, passionné par la protection des systèmes informatiques 
+                    et l'analyse de vulnérabilités. Mon objectif : devenir un expert en tests d'intrusion pour sécuriser 
+                    les infrastructures d'entreprise.
+                </p>
+
+                <!-- BOUTONS D'ACTION PROFESSIONNELS -->
+                <div class="d-flex justify-center gap-lg mt-xl">
+                    <a href="CV.html" class="btn btn-primary">
+                        <i data-feather="download"></i>
+                        Télécharger CV
+                    </a>
+                    <a href="Projets.html" class="btn btn-secondary">
+                        <i data-feather="eye"></i>
+                        Voir mes projets
+                    </a>
+                    <a href="Contact.html" class="btn btn-outline">
+                        <i data-feather="mail"></i>
+                        Me contacter
+                    </a>
+                </div>
             </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="#" class="navbar__link"><i data-feather="home" aria-hidden="true"></i><span>Page
-                                d'accueil</span></a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i><span>CV</span>
-                        </a>
-                    </li>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Compétences.html" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
-                        </a>
-                    </li>
+        <!-- SECTION STATISTIQUES -->
+        <section class="section section--bg-secondary">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Années d'études</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Projets réalisés</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Motivation</span>
+                </div>
+            </div>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Certifications.html" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
-                        </a>
-                    </li>
+        <!-- SECTION PRÉSENTATION -->
+        <section class="section">
+            <div class="intro-section slide-in-left">
+                <h2>🛡️ Mon Profil en Cybersécurité</h2>
+                <p>
+                    Actuellement en BTS SIO option SISR, je me spécialise dans la <strong>cybersécurité</strong> 
+                    avec un objectif clair : devenir <strong>pentester professionnel</strong>. Mon approche combine 
+                    expertise technique, rigueur méthodologique et passion pour la protection des systèmes d'information.
+                </p>
+                
+                <div class="grid grid-2 mt-xl">
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🔴 Sécurité Offensive</h3>
+                            <p class="card-subtitle">Red Team & Pentesting</p>
+                        </div>
+                        <div class="card-content">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 0.5rem;">✓ Tests d'intrusion (Web & Réseau)</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Analyse de vulnérabilités</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Social Engineering</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Exploitation de failles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card hover-lift">
+                        <div class="card-header">
+                            <h3 class="card-title">🔵 Sécurité Défensive</h3>
+                            <p class="card-subtitle">Blue Team & SOC</p>
+                        </div>
+                        <div class="card-content">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 0.5rem;">✓ Monitoring et détection</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Analyse forensique</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Durcissement systèmes</li>
+                                <li style="margin-bottom: 0.5rem;">✓ Gestion des incidents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Experiences.html" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Veilles-techno.html" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Passions.html" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <!-- SECTION TECHNOLOGIES -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">Technologies et Outils Maîtrisés</h2>
+            <div class="grid grid-4">
+                <div class="card hover-scale">
+                    <div class="card-header">
+                        <h3 class="card-title">💻 Développement</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card hover-scale">
+                    <div class="card-header">
+                        <h3 class="card-title">🔒 Cybersécurité</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Kali Linux</span>
+                            <span class="tech-tag">Metasploit</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Burp Suite</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card hover-scale">
+                    <div class="card-header">
+                        <h3 class="card-title">🖥️ Systèmes</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Windows Server</span>
+                            <span class="tech-tag">VMware</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Active Directory</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card hover-scale">
+                    <div class="card-header">
+                        <h3 class="card-title">📊 Outils & Méthodes</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-tech">
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">OWASP</span>
+                            <span class="tech-tag">OSINT</span>
+                            <span class="tech-tag">Forensic</span>
+                            <span class="tech-tag">SIEM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PARCOURS -->
+        <section class="section">
+            <h2 class="text-center mb-xl">Mon Parcours vers l'Excellence</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Aujourd'hui</div>
+                        <h3>BTS SIO - Option SISR</h3>
+                        <p>
+                            Formation spécialisée en cybersécurité et administration des systèmes. 
+                            Approfondissement des techniques de pentesting et de sécurisation des infrastructures.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <h3>Certifications Cybersécurité</h3>
+                        <p>
+                            Obtention de certifications professionnelles : ANSSI/MOOC, CNIL, PIX.
+                            Validation des compétences en sécurité informatique et protection des données.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3>Projets Personnels</h3>
+                        <p>
+                            Développement d'outils de sécurité, création de labs de test, 
+                            participation à des CTF et auto-formation continue.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section section--bg-secondary">
+            <div class="intro-section text-center">
+                <h2>🎯 Prêt pour votre prochain défi sécurité ?</h2>
+                <p class="mb-xl">
+                    Que ce soit pour un stage, une collaboration ou simplement échanger sur la cybersécurité, 
+                    je suis disponible pour contribuer à vos projets avec passion et expertise.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Contact.html" class="btn btn-primary">
+                        <i data-feather="mail"></i>
+                        Collaborons ensemble
+                    </a>
+                    <a href="Projets.html" class="btn btn-secondary">
+                        <i data-feather="folder"></i>
+                        Découvrir mes projets
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <div class="keyboard">
-        <span class="key">B</span>
-        <span class="key">I</span>
-        <span class="key">E</span>
-        <span class="key">N</span>
-        <span class="key">V</span>
-        <span class="key">E</span>
-        <span class="key">N</span>
-        <span class="key">U</span>
-        <span class="key">E</span>
-    </div>
-
+    <!-- FOOTER PROFESSIONNEL -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Compétences.html" class="footer-link">Compétences</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Certifications.html" class="footer-link">Certifications</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
     </footer>
 
-
     <script>
+        // Animation du header au scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animation des statistiques
+        const observerOptions = {
+            threshold: 0.7
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (!statNumber.dataset.animated) {
+                        const finalText = statNumber.textContent;
+                        const hasPlus = finalText.includes('+');
+                        const hasPercent = finalText.includes('%');
+                        const number = parseInt(finalText.replace(/[^\d]/g, ''));
+                        
+                        let currentNumber = 0;
+                        const increment = number / 30;
+
+                        const timer = setInterval(() => {
+                            currentNumber += increment;
+                            if (currentNumber >= number) {
+                                statNumber.textContent = finalText;
+                                clearInterval(timer);
+                            } else {
+                                let displayText = Math.floor(currentNumber).toString();
+                                if (hasPlus && currentNumber > 5) displayText += '+';
+                                if (hasPercent) displayText += '%';
+                                statNumber.textContent = displayText;
+                            }
+                        }, 50);
+                        
+                        statNumber.dataset.animated = 'true';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item').forEach(stat => {
+            observer.observe(stat);
+        });
+
+        // Initialisation des icônes Feather
         feather.replace();
     </script>
 </body>

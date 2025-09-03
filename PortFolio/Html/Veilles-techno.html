@@ -4,51 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veilles Technologiques</title>
-    <link rel="stylesheet" href="../Css/Veilles-techno.css">
-    <link rel="shortcut icon" href="../Images/archive.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Veille Technologique | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__logo">
-            <h1><strong>Julien PINOT</strong></h1>
+            <h1><strong>JULIEN PINOT</strong></h1>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                            aria-hidden="true"></i><span>Page d'accueil</span></a>
-                </li>
-                <li class="navbar__item">
-                    <a href="../Html/CV.html" class="navbar__link">
-                        <i data-feather="user" aria-hidden="true"></i><span>CV</span>
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Compétences.html" class="navbar__link">
-                        <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Certifications.html" class="navbar__link">
-                        <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Experiences.html" class="navbar__link">
-                        <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Veilles-techno.html" class="navbar__link">
-                        <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="../Html/Passions.html" class="navbar__link">
-                        <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
                     </a>
                 </li>
             </ul>
@@ -56,41 +77,615 @@
     </header>
 
     <main>
+        <!-- HERO SECTION VEILLE TECHNOLOGIQUE -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Veille Technologique</h1>
+                <h2 class="hero-subtitle">À l'Affût des Dernières Innovations</h2>
+                <p class="hero-description">
+                    Dans le domaine de la cybersécurité, rester informé des dernières menaces, 
+                    vulnérabilités et solutions est essentiel. Découvrez ma démarche de veille technologique.
+                </p>
+            </div>
+        </section>
 
-        <h2 class="une-veille-techno-cest-quoi">Qu'est ce qu'une veille technologique ?</h2>
+        <!-- SECTION MÉTHODOLOGIE DE VEILLE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🔍 Ma Méthodologie de Veille</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📊 Collecte d'Information</h3>
+                        <p class="card-subtitle">Sources diversifiées et fiables</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="veille-method">
+                            <h4>Sources principales :</h4>
+                            <ul>
+                                <li>🔴 <strong>CVE Database</strong> - Vulnérabilités officielles</li>
+                                <li>🛡️ <strong>MITRE ATT&CK</strong> - Tactiques et techniques</li>
+                                <li>📰 <strong>Security blogs</strong> - Krebs, SANS, Schneier</li>
+                                <li>🏛️ <strong>Organismes officiels</strong> - ANSSI, NIST, OWASP</li>
+                                <li>🐦 <strong>Twitter Security</strong> - Experts et chercheurs</li>
+                                <li>📺 <strong>Conférences</strong> - DEFCON, BSides, BlackHat</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">RSS Feeds</span>
+                            <span class="tech-tag">Twitter Lists</span>
+                            <span class="tech-tag">Newsletters</span>
+                            <span class="tech-tag">Podcasts</span>
+                        </div>
+                    </div>
+                </div>
 
-        <p class="intro-veille-techno">La veille technologique ou veille scientifique et technique consiste à s’informer
-            de façon systématique sur les techniques les plus récentes et surtout sur leur mise à disposition
-            commerciale (ce qui constitue la différence entre la technique et la technologique). <br>
-            <br>
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📋 Analyse & Synthèse</h3>
+                        <p class="card-subtitle">Traitement et classification de l'information</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="veille-method">
+                            <h4>Processus d'analyse :</h4>
+                            <ul>
+                                <li>🎯 <strong>Filtrage</strong> - Pertinence et criticité</li>
+                                <li>📝 <strong>Synthèse</strong> - Résumés techniques</li>
+                                <li>🏷️ <strong>Classification</strong> - Par domaine et impact</li>
+                                <li>⚡ <strong>Priorisation</strong> - Urgence et importance</li>
+                                <li>📚 <strong>Archivage</strong> - Base de connaissances</li>
+                                <li>🔄 <strong>Partage</strong> - Diffusion sélective</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Notion</span>
+                            <span class="tech-tag">Obsidian</span>
+                            <span class="tech-tag">GitHub</span>
+                            <span class="tech-tag">Markdown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            Cette activité met en œuvre des techniques d’acquisition, de stockage et d’analyse d’informations et leur
-            distribution automatique aux différentes sections concernées de l’entreprise, à la manière d’une revue de
-            presse. Ces informations peuvent concerner une matière première, un produit, un composant, un procédé,
-            l’état de l’art et l’évolution de l’environnement scientifique, technique, industriel ou commercial de
-            l’entreprise. <br>
-            <br>
+        <!-- SECTION DOMAINES DE VEILLE -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">🎯 Domaines de Veille Prioritaires</h2>
+            <div class="grid grid-3">
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="shield" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Menaces & Vulnérabilités</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="veille-topics">
+                            <span class="topic-tag">Zero-day exploits</span>
+                            <span class="topic-tag">APT campaigns</span>
+                            <span class="topic-tag">Malware analysis</span>
+                            <span class="topic-tag">Ransomware trends</span>
+                            <span class="topic-tag">Supply chain attacks</span>
+                        </div>
+                        <p class="mt-md">Suivi des nouvelles menaces et techniques d'attaque</p>
+                    </div>
+                </div>
 
-            Elle permet aux bureaux d’études d’être informés des baisses possibles de coût ou d’augmentation de qualité
-            dans le cadre de l’analyse de la valeur. L’entité de production connaît mieux grâce à elle ses limites de
-            production et sa concurrence future.
-        </p>
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="tool" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Outils & Technologies</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="veille-topics">
+                            <span class="topic-tag">Pentesting tools</span>
+                            <span class="topic-tag">SIEM solutions</span>
+                            <span class="topic-tag">AI in security</span>
+                            <span class="topic-tag">Cloud security</span>
+                            <span class="topic-tag">DevSecOps</span>
+                        </div>
+                        <p class="mt-md">Évolution des outils de sécurité et nouvelles solutions</p>
+                    </div>
+                </div>
 
-        <h2 class="maveilletechno">Ma veille technologique</h2>
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="book-open" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Réglementation & Standards</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="veille-topics">
+                            <span class="topic-tag">RGPD updates</span>
+                            <span class="topic-tag">ISO 27001</span>
+                            <span class="topic-tag">NIST frameworks</span>
+                            <span class="topic-tag">Cyber directives EU</span>
+                            <span class="topic-tag">Compliance</span>
+                        </div>
+                        <p class="mt-md">Évolutions réglementaires et standards de sécurité</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <iframe id="CyberAI" title="CyberAI" width="400" height="230" class="CyberAI"
-            src="https://www.lemondeinformatique.fr/securite-informatique-3.html">
-        </iframe>
+        <!-- SECTION SYNTHÈSES RÉCENTES -->
+        <section class="section">
+            <h2 class="text-center mb-xl">📈 Tendances & Analyses Récentes</h2>
+            <div class="timeline">
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="alert-triangle"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">IA Générative et Cybersécurité</h3>
+                                <div class="timeline-meta">
+                                    <span class="timeline-company">Analyse - Janvier 2024</span>
+                                    <span class="timeline-period">Tendance émergente</span>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    L'IA générative transforme le paysage de la cybersécurité, créant de nouvelles opportunités 
+                                    de défense mais aussi de nouvelles menaces sophistiquées.
+                                </p>
+                                <div class="veille-insights">
+                                    <h4>Points clés observés :</h4>
+                                    <ul>
+                                        <li>🤖 Automatisation des tests de pénétration avec GPT-4</li>
+                                        <li>🔍 Détection améliorée d'anomalies par IA</li>
+                                        <li>⚠️ Deepfakes et social engineering sophistiqué</li>
+                                        <li>🛡️ IA défensive vs IA offensive</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">GPT-4</span>
+                                    <span class="tech-tag">Machine Learning</span>
+                                    <span class="tech-tag">Automated Security</span>
+                                    <span class="tech-tag">Threat Intelligence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="cloud"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Sécurité Cloud Native</h3>
+                                <div class="timeline-meta">
+                                    <span class="timeline-company">Analyse - Décembre 2023</span>
+                                    <span class="timeline-period">Évolution continue</span>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    La migration massive vers le cloud nécessite une refonte complète des approches 
+                                    de sécurité traditionnelles.
+                                </p>
+                                <div class="veille-insights">
+                                    <h4>Évolutions majeures :</h4>
+                                    <ul>
+                                        <li>☁️ Zero Trust Architecture adoption</li>
+                                        <li>🔐 Identity-first security models</li>
+                                        <li>📦 Container security hardening</li>
+                                        <li>🚀 Kubernetes security best practices</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Kubernetes</span>
+                                    <span class="tech-tag">Zero Trust</span>
+                                    <span class="tech-tag">Container Security</span>
+                                    <span class="tech-tag">IAM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i data-feather="smartphone"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Sécurité des Objets Connectés</h3>
+                                <div class="timeline-meta">
+                                    <span class="timeline-company">Analyse - Novembre 2023</span>
+                                    <span class="timeline-period">Enjeu critique</span>
+                                </div>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="timeline-description">
+                                    La prolifération des objets connectés crée de nouveaux vecteurs d'attaque 
+                                    et complexifie la surface d'attaque des entreprises.
+                                </p>
+                                <div class="veille-insights">
+                                    <h4>Défis identifiés :</h4>
+                                    <ul>
+                                        <li>🏠 Sécurité des smart homes et buildings</li>
+                                        <li>🚗 Cybersécurité des véhicules connectés</li>
+                                        <li>🏭 Protection des systèmes industriels IoT</li>
+                                        <li>📡 Sécurisation des protocoles 5G/6G</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">IoT Security</span>
+                                    <span class="tech-tag">5G</span>
+                                    <span class="tech-tag">Edge Computing</span>
+                                    <span class="tech-tag">ICS/SCADA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION OUTILS DE VEILLE -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">🛠️ Outils & Ressources de Veille</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📱 Outils de Monitoring</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="tool-category">
+                            <h4>🔔 Alertes & Notifications</h4>
+                            <ul>
+                                <li><strong>Google Alerts</strong> - Mots-clés cybersécurité</li>
+                                <li><strong>IFTTT</strong> - Automatisation de veille</li>
+                                <li><strong>Telegram Bots</strong> - Alertes CVE en temps réel</li>
+                                <li><strong>RSS Aggregators</strong> - Feedly, Inoreader</li>
+                            </ul>
+                        </div>
+                        <div class="tool-category">
+                            <h4>📊 Analyse de données</h4>
+                            <ul>
+                                <li><strong>OSINT Framework</strong> - Collecte d'informations</li>
+                                <li><strong>Shodan</strong> - Veille sur infrastructures</li>
+                                <li><strong>VirusTotal</strong> - Analyse de malwares</li>
+                                <li><strong>GitHub Security Advisories</strong> - Vulnérabilités code</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📚 Sources de Référence</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="tool-category">
+                            <h4>🏛️ Organismes officiels</h4>
+                            <ul>
+                                <li><strong>ANSSI</strong> - Agence nationale cybersécurité</li>
+                                <li><strong>CERT-FR</strong> - Centre d'expertise gouvernemental</li>
+                                <li><strong>NIST</strong> - Standards américains</li>
+                                <li><strong>ENISA</strong> - Agence européenne cybersécurité</li>
+                            </ul>
+                        </div>
+                        <div class="tool-category">
+                            <h4>🌐 Communautés & Forums</h4>
+                            <ul>
+                                <li><strong>Reddit /r/netsec</strong> - Discussions techniques</li>
+                                <li><strong>Stack Overflow</strong> - Questions sécurité</li>
+                                <li><strong>Discord InfoSec</strong> - Communautés spécialisées</li>
+                                <li><strong>LinkedIn Groups</strong> - Réseaux professionnels</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS DE VEILLE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🚀 Projets de Veille Personnels</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🤖 CVE Alert Bot</h3>
+                        <p class="card-subtitle">Bot automatisé de surveillance des vulnérabilités</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Développement d'un bot Python qui surveille la base CVE et envoie des alertes personnalisées selon mes domaines d'intérêt.</p>
+                        <div class="veille-features">
+                            <h4>Fonctionnalités :</h4>
+                            <ul>
+                                <li>🔍 Scraping automatisé de CVE Database</li>
+                                <li>🎯 Filtrage par score CVSS et technologies</li>
+                                <li>📲 Notifications Telegram/Discord</li>
+                                <li>📊 Dashboard de visualisation des tendances</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Beautiful Soup</span>
+                            <span class="tech-tag">Telegram API</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📖 Security Knowledge Base</h3>
+                        <p class="card-subtitle">Base de connaissances personnelle structurée</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Organisation de ma veille dans une base de connaissances interconnectée utilisant Obsidian et des méthodes de second brain.</p>
+                        <div class="veille-features">
+                            <h4>Organisation :</h4>
+                            <ul>
+                                <li>🗂️ Taxonomy par domaines et technologies</li>
+                                <li>🔗 Liens bidirectionnels entre concepts</li>
+                                <li>📝 Templates pour différents types de contenu</li>
+                                <li>🔍 Recherche sémantique et tags</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Obsidian</span>
+                            <span class="tech-tag">Markdown</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Knowledge Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PARTAGE DE CONNAISSANCES -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">📢 Partage & Contribution</h2>
+            <div class="grid grid-3">
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="edit" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Articles Techniques</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Rédaction d'analyses et de synthèses techniques sur les dernières tendances cybersécurité.</p>
+                        <div class="contribution-stats">
+                            <div class="stat">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Articles rédigés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="github" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Contributions Open Source</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Partage de scripts et outils de veille sur GitHub pour la communauté cybersécurité.</p>
+                        <div class="contribution-stats">
+                            <div class="stat">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Repositories publics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="users" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Communauté</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Participation active aux discussions et partage d'insights dans les communautés cybersécurité.</p>
+                        <div class="contribution-stats">
+                            <div class="stat">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Contributions forums</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION IMPACT DE LA VEILLE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">📈 Impact sur ma Pratique Professionnelle</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🎯 Bénéfices Directs</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="check-circle" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--success-color);"></i>
+                                <strong>Anticipation des menaces</strong> - Détection précoce des nouvelles vulnérabilités
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="check-circle" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--success-color);"></i>
+                                <strong>Amélioration continue</strong> - Mise à jour des connaissances et techniques
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="check-circle" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--success-color);"></i>
+                                <strong>Innovation</strong> - Application de nouvelles méthodes et outils
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative;">
+                                <i data-feather="check-circle" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--success-color);"></i>
+                                <strong>Réseau professionnel</strong> - Connexions avec experts du domaine
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🚀 Applications Concrètes</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="arrow-right" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>Projets académiques</strong> - Intégration des dernières technologies
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="arrow-right" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>Tests de pénétration</strong> - Utilisation d'exploits récents
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="arrow-right" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>Recommandations sécurité</strong> - Conseils basés sur l'actualité
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative;">
+                                <i data-feather="arrow-right" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>Formation continue</strong> - Adaptation des compétences
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section section--bg-secondary">
+            <div class="intro-section text-center">
+                <h2>🌟 Une Veille au Service de l'Excellence</h2>
+                <p class="mb-xl">
+                    Ma démarche de veille technologique systématique me permet de rester à la pointe 
+                    des évolutions en cybersécurité et d'apporter une valeur ajoutée constante à mes projets.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Projets.html" class="btn btn-primary">
+                        <i data-feather="folder"></i>
+                        Voir mes applications
+                    </a>
+                    <a href="Contact.html" class="btn btn-secondary">
+                        <i data-feather="mail"></i>
+                        Échanger sur les tendances
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Feather icons
         feather.replace();
     </script>
+
+    <style>
+        .veille-method {
+            margin: 1.5rem 0;
+        }
+
+        .veille-method h4,
+        .veille-insights h4,
+        .veille-features h4,
+        .tool-category h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .veille-method ul,
+        .veille-insights ul,
+        .veille-features ul,
+        .tool-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .veille-method li,
+        .veille-insights li,
+        .veille-features li,
+        .tool-category li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .veille-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .topic-tag {
+            background: var(--bg-tertiary);
+            color: var(--primary-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .tool-category {
+            margin-bottom: 2rem;
+        }
+
+        .contribution-stats {
+            margin-top: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-lg {
+            gap: 2rem;
+        }
+    </style>
 </body>
 
 </html>

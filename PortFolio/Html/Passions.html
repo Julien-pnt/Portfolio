@@ -4,85 +4,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passions</title>
-    <link rel="stylesheet" href="../Css/Passions.css">
-    <link rel="shortcut icon" href="../Images/help-circle.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Passions | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
-    <div class="content">
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
+    <header class="header" id="header">
+        <div class="header__logo">
+            <h1><strong>JULIEN PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Certifications.html" class="navbar__link">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION PASSIONS -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mes Passions</h1>
+                <h2 class="hero-subtitle">Au-delà de la Cybersécurité</h2>
+                <p class="hero-description">
+                    Découvrez mes centres d'intérêt qui enrichissent ma personnalité et complètent 
+                    mes compétences professionnelles en cybersécurité.
+                </p>
             </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                                aria-hidden="true"></i><span>Page d'accueil</span></a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i><span>CV</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Compétences.html" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Certifications.html" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Experiences.html" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Veilles-techno.html" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Passions.html" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        </section>
 
-        <main>
+        <!-- SECTION PASSION AUTOMOBILE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🏁 Passion Automobile</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🚗 BMW & Performances</h3>
+                        <p class="card-subtitle">Technologie, innovation et ingénierie allemande</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Passionné par l'univers BMW et les technologies automobiles avancées. Cette passion me permet de comprendre les systèmes complexes et l'importance de la sécurité dans les technologies embarquées.</p>
+                        <div class="passion-details">
+                            <h4>Centres d'intérêt :</h4>
+                            <ul>
+                                <li>🔧 Technologies embarquées et systèmes de contrôle</li>
+                                <li>🛡️ Cybersécurité automotive et protection des véhicules connectés</li>
+                                <li>⚡ Innovations en motorisation et hybridation</li>
+                                <li>🎯 Précision de l'ingénierie et optimisation des performances</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">CAN Bus</span>
+                            <span class="tech-tag">OBD-II</span>
+                            <span class="tech-tag">Automotive Security</span>
+                            <span class="tech-tag">IoT</span>
+                        </div>
+                    </div>
+                </div>
 
-            <h2 class="passion">Mes Passions</h2>
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🏎️ Porsche & Excellence</h3>
+                        <p class="card-subtitle">Art de l'ingénierie et recherche de perfection</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Admiration pour l'excellence technique de Porsche et leur approche de l'innovation. Cette fascination nourrit mon goût pour la précision et l'attention aux détails, qualités essentielles en cybersécurité.</p>
+                        <div class="passion-details">
+                            <h4>Aspects appréciés :</h4>
+                            <ul>
+                                <li>🎯 Recherche constante de la perfection technique</li>
+                                <li>🔬 Innovation et développement technologique</li>
+                                <li>🏁 Performance et fiabilité sous contraintes extrêmes</li>
+                                <li>🎨 Design fonctionnel et esthétique</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Ingénierie</span>
+                            <span class="tech-tag">Innovation</span>
+                            <span class="tech-tag">Qualité</span>
+                            <span class="tech-tag">Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <a href="../Html/Voyages_NYC.html" class="passions">
-                <figure class="figure1">
-                    <img src="../Images/NewYork.jpg" alt="NewYork" class="img-newyork">
-                    <figcaption>Voyager</figcaption>
-                </figure>
-            </a>
+        <!-- SECTION VOYAGES -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">✈️ Voyages & Découvertes</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🗽 New York - Métropole Technologique</h3>
+                        <p class="card-subtitle">Immersion dans l'écosystème tech américain</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Voyage à New York qui m'a permis de découvrir l'écosystème technologique américain et de comprendre l'importance de la cybersécurité dans les grandes métropoles.</p>
+                        <div class="passion-details">
+                            <h4>Découvertes marquantes :</h4>
+                            <ul>
+                                <li>🏢 Centres technologiques et startups de Manhattan</li>
+                                <li>🔒 Importance de la sécurité urbaine et numérique</li>
+                                <li>🌐 Infrastructure réseau d'une mégalopole</li>
+                                <li>🤝 Diversité culturelle et collaboration internationale</li>
+                            </ul>
+                        </div>
+                        <div class="passion-details">
+                            <h4>Apprentissages pour ma carrière :</h4>
+                            <ul>
+                                <li>📡 Complexité des infrastructures urbaines connectées</li>
+                                <li>🛡️ Enjeux de cybersécurité à grande échelle</li>
+                                <li>🌍 Vision internationale de la sécurité informatique</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Smart Cities</span>
+                            <span class="tech-tag">Infrastructure</span>
+                            <span class="tech-tag">IoT urbain</span>
+                            <span class="tech-tag">Sécurité globale</span>
+                        </div>
+                    </div>
+                </div>
 
-            <a href="../Html/Voitures_BMW.html" class="passions">
-                <figure style="--c:#fff5">
-                    <img src="../Images/BMW.png" alt="BMW" class="BMW">
-                    <figcaption>Les voitures de sport</figcaption>
-                </figure>
-            </a>
-        </main>
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🏝️ Minorque - Déconnexion & Réflexion</h3>
+                        <p class="card-subtitle">Équilibre vie privée et sérénité numérique</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Séjour à Minorque qui m'a sensibilisé à l'importance de l'équilibre digital et de la protection de la vie privée dans nos vies hyperconnectées.</p>
+                        <div class="passion-details">
+                            <h4>Réflexions développées :</h4>
+                            <ul>
+                                <li>🔋 Importance de la déconnexion numérique</li>
+                                <li>🛡️ Protection de la vie privée en voyage</li>
+                                <li>📱 Usage raisonné des technologies</li>
+                                <li>🌿 Équilibre entre monde numérique et nature</li>
+                            </ul>
+                        </div>
+                        <div class="passion-details">
+                            <h4>Applications en cybersécurité :</h4>
+                            <ul>
+                                <li>🔒 Sécurité des données personnelles en mobilité</li>
+                                <li>📶 Bonnes pratiques Wi-Fi en voyage</li>
+                                <li>🎯 Sensibilisation à la privacy by design</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Privacy</span>
+                            <span class="tech-tag">Mobile Security</span>
+                            <span class="tech-tag">Digital Detox</span>
+                            <span class="tech-tag">BYOD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <footer class="footer">
-            &copy; 2024 Julien Pinot. Tous droits réservés.
-        </footer>
+        <!-- SECTION TECHNOLOGIES ET INNOVATION -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🚀 Technologies & Innovation</h2>
+            <div class="grid grid-3">
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="smartphone" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Nouvelles Technologies</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Veille constante sur les innovations technologiques et leur impact sur la cybersécurité.</p>
+                        <div class="passion-list">
+                            <span class="passion-tag">IA & Machine Learning</span>
+                            <span class="passion-tag">IoT Security</span>
+                            <span class="passion-tag">Blockchain</span>
+                            <span class="passion-tag">5G Security</span>
+                        </div>
+                    </div>
+                </div>
 
-        <script>
-            feather.replace();
-        </script>
-    </div>
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="gamepad-2" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Gaming & Esport</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Passion pour les jeux vidéo qui développe la réflexion stratégique et la réactivité.</p>
+                        <div class="passion-list">
+                            <span class="passion-tag">Stratégie temps réel</span>
+                            <span class="passion-tag">FPS compétitifs</span>
+                            <span class="passion-tag">Gaming Security</span>
+                            <span class="passion-tag">Anti-cheat systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="cpu" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Hardware & Builds</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Assemblage et optimisation de configurations PC, comprenant les aspects sécuritaires du hardware.</p>
+                        <div class="passion-list">
+                            <span class="passion-tag">Custom builds</span>
+                            <span class="passion-tag">Overclocking</span>
+                            <span class="passion-tag">Hardware Security</span>
+                            <span class="passion-tag">Performance tuning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION LIEN AVEC LA CYBERSÉCURITÉ -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">🔗 Liens avec la Cybersécurité</h2>
+            <div class="intro-section">
+                <p class="text-center mb-xl">
+                    Mes passions ne sont pas déconnectées de mon parcours professionnel. 
+                    Elles enrichissent ma compréhension des enjeux de cybersécurité dans différents domaines.
+                </p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🚗 Automotive Cybersecurity</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Ma passion automobile m'a sensibilisé aux enjeux de sécurité des véhicules connectés :</p>
+                        <ul style="margin-top: 1rem;">
+                            <li>🔌 Sécurité des systèmes CAN bus et protocoles automobiles</li>
+                            <li>📡 Protection contre le car hacking et les attaques OTA</li>
+                            <li>🛡️ Sécurisation des véhicules autonomes et connectés</li>
+                            <li>🔒 Chiffrement des communications V2V et V2I</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🌍 Travel & Mobile Security</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Mes voyages ont renforcé ma compréhension de la sécurité mobile :</p>
+                        <ul style="margin-top: 1rem;">
+                            <li>📱 Sécurisation des données en déplacement</li>
+                            <li>🌐 Bonnes pratiques sur les réseaux Wi-Fi publics</li>
+                            <li>🔐 VPN et chiffrement des communications</li>
+                            <li>🎯 Sensibilisation aux risques OSINT en voyage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION DÉVELOPPEMENT PERSONNEL -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🎯 Développement Personnel & Soft Skills</h2>
+            <div class="grid grid-4">
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="target" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Persévérance</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Développée à travers la résolution de défis techniques complexes et l'apprentissage continu.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="eye" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Attention aux détails</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Cultivée par ma passion pour l'excellence technique automobile et la précision en cybersécurité.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="globe" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Ouverture d'esprit</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Enrichie par les voyages et la découverte de différentes cultures et approches technologiques.</p>
+                    </div>
+                </div>
+
+                <div class="card text-center hover-scale">
+                    <div class="card-header">
+                        <i data-feather="zap" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">Adaptabilité</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Renforcée par l'exposition à des environnements variés et des technologies en constante évolution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROJETS PERSONNELS LIÉS AUX PASSIONS -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">🛠️ Projets Personnels Inspirés</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🚗 Projet OBD-II Security Scanner</h3>
+                        <p class="card-subtitle">Analyse de sécurité des systèmes automobiles</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Développement d'un outil d'analyse de sécurité pour les systèmes OBD-II, combinant passion automobile et cybersécurité.</p>
+                        <div class="timeline-achievements">
+                            <h4>Objectifs :</h4>
+                            <ul>
+                                <li>🔍 Scanner les vulnérabilités des ECU</li>
+                                <li>🛡️ Tester la sécurité des communications CAN</li>
+                                <li>📊 Créer des rapports de sécurité automatisés</li>
+                                <li>🎓 Sensibiliser aux risques automotive</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">CAN Protocol</span>
+                            <span class="tech-tag">OBD-II</span>
+                            <span class="tech-tag">Security Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📱 Travel Security Toolkit</h3>
+                        <p class="card-subtitle">Kit de sécurité pour voyageurs connectés</p>
+                    </div>
+                    <div class="card-content">
+                        <p>Collection d'outils et guides pour maintenir sa sécurité numérique en voyage, née de mes expériences de déplacement.</p>
+                        <div class="timeline-achievements">
+                            <h4>Composants :</h4>
+                            <ul>
+                                <li>🔐 Guide de configuration VPN mobile</li>
+                                <li>📶 Scanner de sécurité Wi-Fi public</li>
+                                <li>🛡️ Checklist de sécurité pré-voyage</li>
+                                <li>📋 Templates de rapports d'incident</li>
+                            </ul>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Mobile Security</span>
+                            <span class="tech-tag">VPN</span>
+                            <span class="tech-tag">WiFi Analysis</span>
+                            <span class="tech-tag">Privacy Tools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section">
+            <div class="intro-section text-center">
+                <h2>🌟 Une Vision Holistique de la Cybersécurité</h2>
+                <p class="mb-xl">
+                    Mes passions enrichissent ma compréhension des enjeux de cybersécurité et m'apportent 
+                    une perspective unique sur la protection des systèmes dans différents contextes.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Projets.html" class="btn btn-primary">
+                        <i data-feather="folder"></i>
+                        Découvrir mes projets
+                    </a>
+                    <a href="Contact.html" class="btn btn-secondary">
+                        <i data-feather="mail"></i>
+                        Échanger ensemble
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Feather icons
+        feather.replace();
+    </script>
+
+    <style>
+        .passion-details {
+            margin: 1.5rem 0;
+        }
+
+        .passion-details h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .passion-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .passion-details li {
+            margin-bottom: 0.5rem;
+            padding-left: 0;
+            color: var(--text-muted);
+        }
+
+        .passion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .passion-tag {
+            background: var(--bg-tertiary);
+            color: var(--primary-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timeline-achievements h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-achievements ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-achievements li {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .gap-lg {
+            gap: 2rem;
+        }
+    </style>
 </body>
 
 </html>

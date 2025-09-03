@@ -4,126 +4,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Css/Certifications.css">
-    <title>Certifications</title>
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Certifications | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="shortcut icon" href="../Images/check-circle.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header__logo">
+            <h1><strong>JULIEN PINOT</strong></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Index.html" class="navbar__link">
+                        <i data-feather="home" aria-hidden="true"></i>
+                        <span>Accueil</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="CV.html" class="navbar__link">
+                        <i data-feather="user" aria-hidden="true"></i>
+                        <span>CV</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Compétences.html" class="navbar__link">
+                        <i data-feather="check-circle" aria-hidden="true"></i>
+                        <span>Compétences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Projets.html" class="navbar__link">
+                        <i data-feather="folder" aria-hidden="true"></i>
+                        <span>Projets</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#" class="navbar__link active">
+                        <i data-feather="book" aria-hidden="true"></i>
+                        <span>Certifications</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Experiences.html" class="navbar__link">
+                        <i data-feather="archive" aria-hidden="true"></i>
+                        <span>Expériences</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Veilles-techno.html" class="navbar__link">
+                        <i data-feather="help-circle" aria-hidden="true"></i>
+                        <span>Veilles</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Passions.html" class="navbar__link">
+                        <i data-feather="heart" aria-hidden="true"></i>
+                        <span>Passions</span>
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact.html" class="navbar__link">
+                        <i data-feather="mail" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <header class="header">
-            <div class="header__logo">
-                <h1><strong>Julien PINOT</strong></h1>
+        <!-- HERO SECTION CERTIFICATIONS -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mes Certifications</h1>
+                <h2 class="hero-subtitle">Validation de mes Compétences</h2>
+                <p class="hero-description">
+                    Découvrez les certifications que j'ai obtenues pour valider mes compétences en cybersécurité, 
+                    protection des données et compétences numériques.
+                </p>
             </div>
-            <nav class="navbar">
-                <ul class="navbar__menu">
-                    <li class="navbar__item">
-                        <a href="../Html/Index.html" class="navbar__link"><i data-feather="home"
-                                aria-hidden="true"></i><span>Page
-                                d'accueil</span></a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/CV.html" class="navbar__link">
-                            <i data-feather="user" aria-hidden="true"></i><span>CV</span>
-                        </a>
-                    </li>
+        </section>
 
-                    <li class="navbar__item">
-                        <a href="../Html/Compétences.html" class="navbar__link">
-                            <i data-feather="book" aria-hidden="true"></i><span>Compétences</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar__item">
-                        <a href="../Html/Certifications.html" class="navbar__link">
-                            <i data-feather="check-circle" aria-hidden="true"></i><span>Certifications</span>
-                        </a>
-                    </li>
-
-                    <li class="navbar__item">
-                        <a href="../Html/Experiences.html" class="navbar__link">
-                            <i data-feather="folder" aria-hidden="true"></i><span>Expériences</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Veilles-techno.html" class="navbar__link">
-                            <i data-feather="archive" aria-hidden="true"></i><span>Veille techno</span>
-                        </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="../Html/Passions.html" class="navbar__link">
-                            <i data-feather="help-circle" aria-hidden="true"></i><span>Passions</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-        </header>
-
-        <div class="ag-format-container">
-            <div class="ag-courses_box">
-                <div class="ag-courses_item">
-                    <a href="../Certifications/attestation-pix-20240305.pdf" target="_blank"
-                        class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Certification PIX
+        <!-- SECTION CERTIFICATIONS CYBERSÉCURITÉ -->
+        <section class="section">
+            <h2 class="text-center mb-xl">🔒 Certifications Cybersécurité</h2>
+            <div class="grid grid-1">
+                <div class="card hover-lift">
+                    <div class="d-flex align-center gap-lg">
+                        <div style="flex-shrink: 0;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <i data-feather="shield" style="width: 40px; height: 40px; color: white;"></i>
+                            </div>
                         </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Obtenue :
-                            <span class="ag-courses-item_date">
-                                04.03.2024
-                            </span>
+                        <div style="flex: 1;">
+                            <h3 class="card-title" style="margin-bottom: 0.5rem;">MOOC Cybersécurité - ANSSI</h3>
+                            <p class="card-subtitle" style="margin-bottom: 1rem;">Agence Nationale de la Sécurité des Systèmes d'Information</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Sécurité des SI</span>
+                                <span class="tech-tag">Cryptographie</span>
+                                <span class="tech-tag">Authentification</span>
+                                <span class="tech-tag">Sécurité Web</span>
+                                <span class="tech-tag">Virologie</span>
+                            </div>
+                            <p style="margin-top: 1rem; color: var(--text-muted);">
+                                Formation complète sur les fondamentaux de la cybersécurité, couvrant la sécurité des systèmes d'information, 
+                                les mécanismes cryptographiques, l'authentification et la sécurité des applications web.
+                            </p>
                         </div>
-                    </a>
+                        <div style="text-align: center; flex-shrink: 0;">
+                            <div class="achievement-badge">
+                                <i data-feather="check-circle" style="color: var(--success-color);"></i>
+                                <p style="margin: 0.5rem 0; font-weight: 600; color: var(--success-color);">Certifié</p>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PROTECTION DES DONNÉES -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">🛡️ Protection des Données</h2>
+            <div class="grid grid-1">
+                <div class="card hover-lift">
+                    <div class="d-flex align-center gap-lg">
+                        <div style="flex-shrink: 0;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <i data-feather="lock" style="width: 40px; height: 40px; color: white;"></i>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 class="card-title" style="margin-bottom: 0.5rem;">Certification CNIL - L'atelier RGPD</h3>
+                            <p class="card-subtitle" style="margin-bottom: 1rem;">Commission Nationale de l'Informatique et des Libertés</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">RGPD</span>
+                                <span class="tech-tag">DPO</span>
+                                <span class="tech-tag">Privacy by Design</span>
+                                <span class="tech-tag">Analyse d'impact</span>
+                                <span class="tech-tag">Droits des personnes</span>
+                            </div>
+                            <p style="margin-top: 1rem; color: var(--text-muted);">
+                                Formation approfondie sur le Règlement Général sur la Protection des Données (RGPD), 
+                                incluant les principes fondamentaux, les droits des personnes, et les obligations des responsables de traitement.
+                            </p>
+                        </div>
+                        <div style="text-align: center; flex-shrink: 0;">
+                            <div class="achievement-badge">
+                                <i data-feather="check-circle" style="color: var(--success-color);"></i>
+                                <p style="margin: 0.5rem 0; font-weight: 600; color: var(--success-color);">Certifié</p>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION COMPÉTENCES NUMÉRIQUES -->
+        <section class="section">
+            <h2 class="text-center mb-xl">💻 Compétences Numériques</h2>
+            <div class="grid grid-1">
+                <div class="card hover-lift">
+                    <div class="d-flex align-center gap-lg">
+                        <div style="flex-shrink: 0;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                <i data-feather="cpu" style="width: 40px; height: 40px; color: white;"></i>
+                            </div>
+                        </div>
+                        <div style="flex: 1;">
+                            <h3 class="card-title" style="margin-bottom: 0.5rem;">Certification PIX</h3>
+                            <p class="card-subtitle" style="margin-bottom: 1rem;">Service Public français d'évaluation et de certification des compétences numériques</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Information</span>
+                                <span class="tech-tag">Communication</span>
+                                <span class="tech-tag">Création de contenu</span>
+                                <span class="tech-tag">Protection</span>
+                                <span class="tech-tag">Résolution de problèmes</span>
+                            </div>
+                            <p style="margin-top: 1rem; color: var(--text-muted);">
+                                Évaluation et certification des compétences numériques selon le référentiel européen DigComp. 
+                                Validation des aptitudes dans les 5 domaines de compétences numériques.
+                            </p>
+                        </div>
+                        <div style="text-align: center; flex-shrink: 0;">
+                            <div class="achievement-badge">
+                                <i data-feather="check-circle" style="color: var(--success-color);"></i>
+                                <p style="margin: 0.5rem 0; font-weight: 600; color: var(--success-color);">Certifié</p>
+                                <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CERTIFICATIONS EN COURS -->
+        <section class="section section--bg-tertiary">
+            <h2 class="text-center mb-xl">🎯 Certifications en Préparation</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🔴 Security+</h3>
+                        <p class="card-subtitle">CompTIA - Certification de sécurité vendor-neutral</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <p><strong>Objectif :</strong> Validation des compétences en sécurité informatique</p>
+                                <p><strong>Domaines :</strong> Threat management, Cryptography, Identity management</p>
+                                <p><strong>Statut :</strong> <span style="color: var(--warning-color); font-weight: 600;">En préparation</span></p>
+                                <p><strong>Prévision :</strong> Été 2024</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="ag-courses_item">
-                    <a href="../Html/Certifications_MOOC.html" target="_blank" class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Certifications MOOC
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🔍 CEH</h3>
+                        <p class="card-subtitle">EC-Council - Certified Ethical Hacker</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <p><strong>Objectif :</strong> Certification en ethical hacking et pentesting</p>
+                                <p><strong>Domaines :</strong> Penetration testing, Vulnerability assessment, Security audit</p>
+                                <p><strong>Statut :</strong> <span style="color: var(--info-color); font-weight: 600;">Planifiée</span></p>
+                                <p><strong>Prévision :</strong> Fin 2024</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="ag-courses-item_date-box">
-                            Commencé :
-                            <span class="ag-courses-item_date">
-                                2024
-                            </span>
+        <!-- SECTION FORMATION CONTINUE -->
+        <section class="section">
+            <h2 class="text-center mb-xl">📚 Formation Continue & Auto-formation</h2>
+            <div class="grid grid-3">
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="target" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">TryHackMe</h3>
+                        <p class="card-subtitle">Plateforme d'apprentissage cybersécurité</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="achievement-stats">
+                            <div class="stat">
+                                <div class="stat-number">85%</div>
+                                <div class="stat-label">Progression</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">40+</div>
+                                <div class="stat-label">Rooms complétées</div>
+                            </div>
                         </div>
-                    </a>
+                        <p class="mt-md">Apprentissage pratique via des challenges et laboratoires virtuels</p>
+                    </div>
                 </div>
 
-                <div class="ag-courses_item">
-                    <a href="../Html/Certifications_OPENCLASSROOMS.html" class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Certifications OPENCLASSROOMS
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="box" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">HackTheBox</h3>
+                        <p class="card-subtitle">Plateforme de pentesting avancé</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="achievement-stats">
+                            <div class="stat">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Machines</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Challenges</div>
+                            </div>
                         </div>
+                        <p class="mt-md">Tests d'intrusion sur machines vulnérables réelles</p>
+                    </div>
+                </div>
 
-                        <div class="ag-courses-item_date-box">
-                            Commencé :
-                            <span class="ag-courses-item_date">
-                                2022
-                            </span>
+                <div class="card hover-scale text-center">
+                    <div class="card-header">
+                        <i data-feather="flag" style="width: 48px; height: 48px; color: var(--primary-blue); margin: 0 auto 1rem;"></i>
+                        <h3 class="card-title">CTF Competitions</h3>
+                        <p class="card-subtitle">Capture The Flag</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="achievement-stats">
+                            <div class="stat">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Participations</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">Top 30%</div>
+                                <div class="stat-label">Classement moyen</div>
+                            </div>
                         </div>
+                        <p class="mt-md">Compétitions de cybersécurité et résolution de défis</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION BIBLIOTHÈQUE TECHNIQUE -->
+        <section class="section section--bg-secondary">
+            <h2 class="text-center mb-xl">📖 Bibliothèque & Ressources Techniques</h2>
+            <div class="grid grid-2">
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">📚 Ouvrages de Référence</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="book-open" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>"The Web Application Hacker's Handbook"</strong> - Dafydd Stuttard
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="book-open" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>"Metasploit: The Penetration Tester's Guide"</strong> - David Kennedy
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="book-open" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>"The Art of Deception"</strong> - Kevin Mitnick
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative;">
+                                <i data-feather="book-open" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>"Network Security Assessment"</strong> - Chris McNab
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card hover-lift">
+                    <div class="card-header">
+                        <h3 class="card-title">🔗 Ressources en Ligne</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="globe" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>OWASP</strong> - Documentation sécurité web
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="globe" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>NIST Cybersecurity Framework</strong> - Standards de sécurité
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <i data-feather="globe" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>SANS Institute</strong> - Ressources et formations
+                            </li>
+                            <li style="padding-left: 1.5rem; position: relative;">
+                                <i data-feather="globe" style="position: absolute; left: 0; top: 2px; width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                                <strong>Krebs on Security</strong> - Actualités cybersécurité
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION CALL TO ACTION -->
+        <section class="section">
+            <div class="intro-section text-center">
+                <h2>🎯 Engagement dans l'Excellence</h2>
+                <p class="mb-xl">
+                    Mon approche de formation continue et de certification témoigne de mon engagement 
+                    à maintenir un niveau d'expertise élevé en cybersécurité et à suivre les évolutions du domaine.
+                </p>
+                <div class="d-flex justify-center gap-lg">
+                    <a href="Compétences.html" class="btn btn-primary">
+                        <i data-feather="check-circle"></i>
+                        Voir mes compétences
+                    </a>
+                    <a href="Projets.html" class="btn btn-secondary">
+                        <i data-feather="folder"></i>
+                        Projets réalisés
                     </a>
                 </div>
+            </div>
+        </section>
     </main>
 
-
+    <!-- FOOTER -->
     <footer class="footer">
-        &copy; 2024 Julien Pinot. Tous droits réservés.
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="Index.html" class="footer-link">Accueil</a>
+                <a href="CV.html" class="footer-link">CV</a>
+                <a href="Projets.html" class="footer-link">Projets</a>
+                <a href="Contact.html" class="footer-link">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+            </p>
+        </div>
     </footer>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize Feather icons
         feather.replace();
     </script>
+
+    <style>
+        .achievement-badge {
+            padding: 1rem;
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--success-color);
+        }
+
+        .achievement-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .gap-lg {
+            gap: 2rem;
+        }
+    </style>
 </body>
 
 </html>
