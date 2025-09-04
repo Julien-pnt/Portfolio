@@ -436,7 +436,7 @@
     <!-- Footer -->
     <footer class="footer">
             <div class="footer-bottom">
-                <p>&copy; 2024 Julien PINOT - Étudiant BTS SIO. Tous droits réservés.</p>
+                <p>&copy; <span id="current-year">2025</span> Julien PINOT - Étudiant BTS SIO. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -444,6 +444,16 @@
     <script>
         // Initialize Feather icons
         feather.replace();
+        
+        // Update copyright year automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const yearElements = document.querySelectorAll('.current-year, #current-year');
+            yearElements.forEach(element => {
+                element.textContent = currentYear;
+            });
+            document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
+        });
     </script>
 </body>
 

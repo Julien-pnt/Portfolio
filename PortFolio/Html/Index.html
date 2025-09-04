@@ -369,6 +369,16 @@
 
         // Initialisation des icônes Feather
         feather.replace();
+
+        // Update copyright year automatically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const yearElements = document.querySelectorAll('.current-year, #current-year');
+            yearElements.forEach(element => {
+                element.textContent = currentYear;
+            });
+            document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
+        });
     </script>
 </body>
 

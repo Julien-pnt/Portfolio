@@ -9,6 +9,36 @@
     <title>Projets | Julien PINOT - Portfolio Professionnel</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="shortcut icon" href="../Images/Moi.jpg" type="image/x-icon">
+    
+    <!-- Style de débug pour assurer la visibilité -->
+    <style>
+        /* Variables CSS pour assurer la cohérence */
+        :root {
+            --primary-blue: #3b82f6;
+            --bg-secondary: #f8fafc;
+            --text-secondary: #6b7280;
+        }
+        
+        /* Assurance que le contenu s'affiche */
+        body { 
+            visibility: visible !important; 
+            opacity: 1 !important; 
+            display: block !important;
+        }
+        
+        main { 
+            display: block !important; 
+            visibility: visible !important; 
+        }
+        
+        .grid { 
+            display: grid !important; 
+        }
+        
+        .section { 
+            display: block !important; 
+        }
+    </style>
 </head>
 
 <body>
@@ -81,10 +111,10 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Mes Projets</h1>
-                <h2 class="hero-subtitle">Innovation & Excellence Technique</h2>
+                <h2 class="hero-subtitle">Apprentissage & Découverte</h2>
                 <p class="hero-description">
-                    Découvrez mes réalisations en cybersécurité, développement et administration système.
-                    Chaque projet reflète mon engagement vers l'excellence et l'innovation technique.
+                    Découvrez mes projets d'étudiant en BTS SIO. Chaque réalisation reflète 
+                    ma progression et ma passion pour l'informatique et les nouvelles technologies.
                 </p>
             </div>
         </section>
@@ -93,19 +123,19 @@
         <section class="section section--bg-secondary">
             <div class="text-center">
                 <div class="d-flex justify-center gap-md">
-                    <button class="btn btn-primary filter-btn active" data-filter="all">
+                    <button class="btn btn-primary filter-btn active" data-filter="all" onclick="filterProjects('all', this)">
                         <i data-feather="grid"></i>
                         Tous les projets
                     </button>
-                    <button class="btn btn-outline filter-btn" data-filter="cybersecurity">
+                    <button class="btn btn-outline filter-btn" data-filter="cybersecurity" onclick="filterProjects('cybersecurity', this)">
                         <i data-feather="shield"></i>
                         Cybersécurité
                     </button>
-                    <button class="btn btn-outline filter-btn" data-filter="web">
+                    <button class="btn btn-outline filter-btn" data-filter="web" onclick="filterProjects('web', this)">
                         <i data-feather="code"></i>
                         Développement
                     </button>
-                    <button class="btn btn-outline filter-btn" data-filter="system">
+                    <button class="btn btn-outline filter-btn" data-filter="system" onclick="filterProjects('system', this)">
                         <i data-feather="server"></i>
                         Systèmes
                     </button>
@@ -116,289 +146,190 @@
         <!-- GRILLE DE PROJETS -->
         <section class="section">
             <div class="grid grid-3">
-                <!-- PROJET 1: SCANNER DE VULNÉRABILITÉS -->
-                <div class="project-card hover-lift" data-category="cybersecurity">
-                    <div class="project-header">
-                        <h3 class="card-title">🛡️ Scanner de Vulnérabilités Web</h3>
-                        <p class="card-subtitle">Outil de pentesting automatisé</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Développement d'un scanner automatisé en Python pour détecter les vulnérabilités 
-                            OWASP Top 10. Interface graphique moderne avec génération de rapports détaillés 
-                            et classification des risques.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Tkinter</span>
-                            <span class="tech-tag">Requests</span>
-                            <span class="tech-tag">SQLi</span>
-                            <span class="tech-tag">XSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Démonstration
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 2: ANALYSE FORENSIQUE -->
-                <div class="project-card hover-lift" data-category="cybersecurity">
-                    <div class="project-header">
-                        <h3 class="card-title">🔍 Suite d'Analyse Forensique</h3>
-                        <p class="card-subtitle">Outils d'investigation numérique</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Suite complète d'outils pour l'analyse forensique : récupération de données, 
-                            analyse de métadonnées, timeline reconstruction et recherche d'artefacts. 
-                            Interface intuitive pour les enquêteurs.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Volatility</span>
-                            <span class="tech-tag">Autopsy</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Regex</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Démonstration
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 3: PORTFOLIO PROFESSIONNEL -->
+                <!-- PROJET 1: PORTFOLIO PERSONNEL -->
                 <div class="project-card hover-lift" data-category="web">
                     <div class="project-header">
-                        <h3 class="card-title">💼 Portfolio Professionnel</h3>
-                        <p class="card-subtitle">Site web responsive moderne</p>
+                        <h3 class="card-title"><i data-feather="briefcase"></i> Portfolio Personnel</h3>
+                        <p class="card-subtitle">Site web responsive</p>
                     </div>
                     <div class="project-content">
                         <p>
-                            Portfolio personnel avec design professionnel, animations subtiles et 
-                            optimisations de performance. Architecture moderne, responsive design 
-                            et respect des standards d'accessibilité.
+                            Création de mon portfolio professionnel avec HTML5, CSS3 et JavaScript. 
+                            Design responsive, navigation intuitive et présentation de mes compétences 
+                            et expériences. Mon premier projet web complet !
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">Responsive</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="Index.html" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Voir le site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 2: GESTION DE CONTACTS -->
+                <div class="project-card hover-lift" data-category="web">
+                    <div class="project-header">
+                        <h3 class="card-title"><i data-feather="phone"></i> Carnet de Contacts</h3>
+                        <p class="card-subtitle">Application de gestion</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Application web pour gérer une liste de contacts avec ajout, modification, 
+                            suppression et recherche. Stockage local avec localStorage et interface 
+                            utilisateur claire et intuitive.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">LocalStorage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 3: SITE VITRINE -->
+                <div class="project-card hover-lift" data-category="web">
+                    <div class="project-header">
+                        <h3 class="card-title"><i data-feather="globe"></i> Site Vitrine Entreprise</h3>
+                        <p class="card-subtitle">Site commercial responsive</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Création d'un site vitrine pour une entreprise fictive avec pages d'accueil, 
+                            services, à propos et contact. Design moderne, optimisé SEO et entièrement 
+                            responsive pour tous les appareils.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Bootstrap</span>
                             <span class="tech-tag">SEO</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="btn btn-primary">
                                 <i data-feather="external-link"></i>
-                                Site en ligne
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
+                                Voir le site
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- PROJET 4: HOMELAB SÉCURISÉ -->
-                <div class="project-card hover-lift" data-category="system">
+                <!-- PROJET 4: APPLICATION DE GESTION -->
+                <div class="project-card hover-lift" data-category="web">
                     <div class="project-header">
-                        <h3 class="card-title">🏠 Infrastructure Homelab</h3>
-                        <p class="card-subtitle">Lab de cybersécurité personnel</p>
+                        <h3 class="card-title"><i data-feather="database"></i> Application de Gestion d'Étudiants</h3>
+                        <p class="card-subtitle">CRUD avec base de données</p>
                     </div>
                     <div class="project-content">
                         <p>
-                            Infrastructure complète avec virtualisation, monitoring, sauvegarde automatisée 
-                            et environnements d'apprentissage sécurisés. Gestion via Infrastructure as Code 
-                            et conteneurisation.
+                            Application web complète de gestion d'étudiants avec système CRUD 
+                            (Create, Read, Update, Delete). Interface dynamique, authentification 
+                            utilisateur et gestion de base de données MySQL.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Proxmox</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Ansible</span>
-                            <span class="tech-tag">Grafana</span>
-                            <span class="tech-tag">pfSense</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Démonstration
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 5: CONFIGURATION RÉSEAU -->
+                <div class="project-card hover-lift" data-category="system">
+                    <div class="project-header">
+                        <h3 class="card-title"><i data-feather="wifi"></i> Configuration Réseau</h3>
+                        <p class="card-subtitle">Projet de TP réseaux</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Configuration d'un petit réseau d'entreprise avec Packet Tracer. 
+                            Mise en place de VLANs, routage inter-VLAN, et configuration basique 
+                            de sécurité. Découverte des concepts réseaux.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Packet Tracer</span>
+                            <span class="tech-tag">VLAN</span>
+                            <span class="tech-tag">Routage</span>
+                            <span class="tech-tag">Switch</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="external-link"></i>
+                                Schéma réseau
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 6: INSTALLATION SERVEUR -->
+                <div class="project-card hover-lift" data-category="system">
+                    <div class="project-header">
+                        <h3 class="card-title"><i data-feather="monitor"></i> Serveur Web Linux</h3>
+                        <p class="card-subtitle">Administration système</p>
+                    </div>
+                    <div class="project-content">
+                        <p>
+                            Installation et configuration d'un serveur web sous Ubuntu Server. 
+                            Apache, MySQL, PHP (LAMP), configuration basique de sécurité et 
+                            déploiement d'un site simple. Découverte de Linux.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Ubuntu Server</span>
+                            <span class="tech-tag">Apache</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PHP</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="btn btn-primary">
                                 <i data-feather="external-link"></i>
                                 Documentation
                             </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Configuration
-                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- PROJET 5: PLATEFORME E-LEARNING -->
-                <div class="project-card hover-lift" data-category="web">
-                    <div class="project-header">
-                        <h3 class="card-title">📚 Plateforme de Formation</h3>
-                        <p class="card-subtitle">E-learning cybersécurité</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Plateforme complète de formation en cybersécurité avec système de quiz interactifs, 
-                            laboratoires virtuels intégrés et suivi personnalisé des progrès. Architecture 
-                            scalable et moderne.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Démonstration
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 6: API SÉCURISÉE -->
-                <div class="project-card hover-lift" data-category="web">
-                    <div class="project-header">
-                        <h3 class="card-title">🔐 API REST Sécurisée</h3>
-                        <p class="card-subtitle">Architecture backend robuste</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            API RESTful haute sécurité avec authentification JWT, rate limiting avancé, 
-                            chiffrement bout en bout et logging d'audit complet. Documentation interactive 
-                            et tests automatisés.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">OAuth2</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Documentation API
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 7: MONITORING SÉCURISÉ -->
+                <!-- PROJET 7: AUDIT SÉCURITÉ BASIQUE -->
                 <div class="project-card hover-lift" data-category="cybersecurity">
                     <div class="project-header">
-                        <h3 class="card-title">📊 Système de Monitoring</h3>
-                        <p class="card-subtitle">SIEM léger pour PME</p>
+                        <h3 class="card-title"><i data-feather="search"></i> Audit Sécurité Basique</h3>
+                        <p class="card-subtitle">Sensibilisation cybersécurité</p>
                     </div>
                     <div class="project-content">
                         <p>
-                            Solution SIEM adaptée aux PME avec collecte de logs centralisée, corrélation 
-                            d'événements intelligente, alertes en temps réel et tableaux de bord 
-                            personnalisables pour le SOC.
+                            Réalisation d'un audit de sécurité basique avec des outils gratuits. 
+                            Scan de ports, vérification des mots de passe et recommandations 
+                            de sécurité. Initiation à la cybersécurité.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Elasticsearch</span>
-                            <span class="tech-tag">Logstash</span>
-                            <span class="tech-tag">Kibana</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Nmap</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Documentation</span>
+                            <span class="tech-tag">Rapport</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="btn btn-primary">
                                 <i data-feather="external-link"></i>
-                                Démonstration
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 8: GESTIONNAIRE DE MOTS DE PASSE -->
-                <div class="project-card hover-lift" data-category="cybersecurity">
-                    <div class="project-header">
-                        <h3 class="card-title">🔑 Gestionnaire de Mots de Passe</h3>
-                        <p class="card-subtitle">Sécurité personnelle renforcée</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Application sécurisée de gestion de mots de passe avec chiffrement AES-256, 
-                            authentification multi-facteurs, audit de sécurité des mots de passe et 
-                            synchronisation chiffrée multi-appareils.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AES-256</span>
-                            <span class="tech-tag">SQLCipher</span>
-                            <span class="tech-tag">TOTP</span>
-                            <span class="tech-tag">Cryptography</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Démonstration
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Code source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PROJET 9: SERVEUR WEB DURCI -->
-                <div class="project-card hover-lift" data-category="system">
-                    <div class="project-header">
-                        <h3 class="card-title">🛡️ Serveur Web Durci</h3>
-                        <p class="card-subtitle">Infrastructure sécurisée</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Configuration complète d'un serveur web haute sécurité avec durcissement système, 
-                            WAF intégré, monitoring en temps réel, sauvegarde automatique et déploiement 
-                            automatisé via CI/CD.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">Nginx</span>
-                            <span class="tech-tag">ModSecurity</span>
-                            <span class="tech-tag">Let's Encrypt</span>
-                            <span class="tech-tag">Fail2ban</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-primary">
-                                <i data-feather="external-link"></i>
-                                Documentation
-                            </a>
-                            <a href="#" class="btn btn-secondary">
-                                <i data-feather="github"></i>
-                                Scripts
+                                Rapport
                             </a>
                         </div>
                     </div>
@@ -412,20 +343,20 @@
                 <h2>Mes Projets en Chiffres</h2>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number">25000+</span>
+                        <span class="stat-number">4000+</span>
                         <span class="stat-label">Lignes de Code</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">12+</span>
+                        <span class="stat-number">10+</span>
                         <span class="stat-label">Technologies</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">9</span>
-                        <span class="stat-label">Projets Actifs</span>
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Projets Réalisés</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label">Passion</span>
+                        <span class="stat-label">Motivation</span>
                     </div>
                 </div>
             </div>
@@ -463,97 +394,358 @@
                 <a href="Contact.html" class="footer-link">Contact</a>
             </div>
             <p class="footer-copyright">
-                © 2024 Julien PINOT - Étudiant BTS SIO & Développeur
+                © 2025 Julien PINOT - Étudiant BTS SIO & Développeur
             </p>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Project filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('btn-primary');
-                    btn.classList.add('btn-outline');
-                    btn.classList.remove('active');
-                });
-                
-                // Add active class to clicked button
-                button.classList.add('btn-primary');
-                button.classList.remove('btn-outline');
-                button.classList.add('active');
-
-                const filter = button.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeIn 0.5s ease-out';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        // Fonction de filtrage directe et simple
+        function filterProjects(filter, buttonClicked) {
+            console.log('🎯 Filter function called:', filter);
+            
+            // Reset all buttons
+            const allButtons = document.querySelectorAll('.filter-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('btn-primary', 'active');
+                btn.classList.add('btn-outline');
             });
-        });
-
-        // Animate stats when in view
-        const observerOptions = {
-            threshold: 0.7
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    if (!statNumber.dataset.animated) {
-                        const text = statNumber.textContent;
-                        const number = parseInt(text.replace(/[^\d]/g, ''));
-                        let currentNumber = 0;
-                        const increment = number / 30;
-
-                        const timer = setInterval(() => {
-                            currentNumber += increment;
-                            if (currentNumber >= number) {
-                                statNumber.textContent = text;
-                                clearInterval(timer);
-                            } else {
-                                if (text.includes('+')) {
-                                    statNumber.textContent = Math.floor(currentNumber) + '+';
-                                } else if (text.includes('%')) {
-                                    statNumber.textContent = Math.floor(currentNumber) + '%';
-                                } else {
-                                    statNumber.textContent = Math.floor(currentNumber);
-                                }
-                            }
-                        }, 50);
-                        
-                        statNumber.dataset.animated = 'true';
-                    }
+            
+            // Activate clicked button
+            buttonClicked.classList.remove('btn-outline');
+            buttonClicked.classList.add('btn-primary', 'active');
+            
+            // Filter cards
+            const cards = document.querySelectorAll('.project-card');
+            console.log('Total cards found:', cards.length);
+            
+            let visibleCount = 0;
+            cards.forEach((card, index) => {
+                const category = card.getAttribute('data-category');
+                console.log(`Card ${index + 1}: category="${category}", filter="${filter}"`);
+                
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                    card.style.visibility = 'visible';
+                    visibleCount++;
+                    console.log(`✅ Showing card ${index + 1} (${category})`);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                    card.style.visibility = 'hidden';
+                    console.log(`❌ Hiding card ${index + 1} (${category})`);
                 }
             });
-        }, observerOptions);
+            
+            console.log(`📊 Showing ${visibleCount} out of ${cards.length} cards`);
+        }
 
-        document.querySelectorAll('.stat-item').forEach(stat => {
-            observer.observe(stat);
+        // Code d'initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather icons
+            feather.replace();
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Update copyright year automatically
+            const currentYear = new Date().getFullYear();
+            document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
+
+            console.log('✅ Page loaded, filter system ready!');
+            
+            // Test au chargement
+            const buttons = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.project-card');
+            console.log('Buttons found:', buttons.length);
+            console.log('Cards found:', cards.length);
         });
-
-        // Initialize Feather icons
-        feather.replace();
     </script>
+
+    <style>
+        /* Styles spécifiques pour la page Projets */
+        
+        /* Classes utilitaires manquantes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .d-flex {
+            display: flex;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .gap-md {
+            gap: 1rem;
+        }
+        
+        .gap-lg {
+            gap: 2rem;
+        }
+        
+        .mb-xl {
+            margin-bottom: 3rem;
+        }
+        
+        .section {
+            padding: 4rem 2rem;
+        }
+        
+        .section--bg-secondary {
+            background-color: #f8fafc;
+        }
+        
+        .section--bg-tertiary {
+            background-color: #f1f5f9;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .intro-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Styles des boutons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background-color: transparent;
+        }
+        
+        .btn-primary {
+            background: #3b82f6 !important;
+            color: white !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        .btn-primary:hover {
+            background: #2563eb !important;
+            border-color: #2563eb !important;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #6b7280 !important;
+            color: white !important;
+            border-color: #6b7280 !important;
+        }
+        
+        .btn-secondary:hover {
+            background: #4b5563 !important;
+            border-color: #4b5563 !important;
+        }
+        
+        .btn-outline {
+            background: transparent !important;
+            border: 2px solid #3b82f6 !important;
+            color: #3b82f6 !important;
+        }
+        
+        .btn-outline:hover {
+            background: #3b82f6 !important;
+            color: white !important;
+        }
+        
+        .filter-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: 8px !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+        }
+        
+        .filter-btn.active {
+            background: #3b82f6 !important;
+            color: white !important;
+            border-color: #3b82f6 !important;
+        }
+        
+        /* Styles des cards projets */
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .project-header h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-header h3 i {
+            color: var(--primary-blue);
+        }
+
+        .card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-links .btn {
+            flex: 1;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .d-flex.justify-center.gap-md {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .filter-btn {
+                flex: 1;
+                min-width: 0;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 
 </html>
