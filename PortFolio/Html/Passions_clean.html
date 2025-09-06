@@ -250,10 +250,8 @@
             <div class="grid grid-3">
                 <div class="card text-center hover-scale dream-card">
                     <div class="dream-image-container">
-                        <img src="../Images/bmw.jpg" alt="BMW M3 CS - Excellence sportive allemande" class="dream-car-image" />
-                        <div class="dream-overlay">
-                            <h3 class="dream-car-title">BMW M3 CS</h3>
-                            <p class="dream-car-subtitle">Excellence Allemande</p>
+                        <div class="dream-placeholder" style="background: linear-gradient(135deg, #0f3460, #1e5799);">
+                            <span class="dream-car-name">BMW M3 CS</span>
                         </div>
                     </div>
                     <div class="card-content">
@@ -270,10 +268,8 @@
 
                 <div class="card text-center hover-scale dream-card">
                     <div class="dream-image-container">
-                        <img src="../Images/turboS.jpg" alt="Porsche 911 Turbo S - Légende de Stuttgart" class="dream-car-image" />
-                        <div class="dream-overlay">
-                            <h3 class="dream-car-title">Porsche 911 Turbo S</h3>
-                            <p class="dream-car-subtitle">Légende de Stuttgart</p>
+                        <div class="dream-placeholder" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">
+                            <span class="dream-car-name">Porsche 911 Turbo S</span>
                         </div>
                     </div>
                     <div class="card-content">
@@ -290,10 +286,8 @@
 
                 <div class="card text-center hover-scale dream-card">
                     <div class="dream-image-container">
-                        <img src="../Images/merco.jpg" alt="Mercedes AMG GT R - Bête de circuit d'Affalterbach" class="dream-car-image" />
-                        <div class="dream-overlay">
-                            <h3 class="dream-car-title">Mercedes AMG GT R</h3>
-                            <p class="dream-car-subtitle">Puissance d'Affalterbach</p>
+                        <div class="dream-placeholder" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+                            <span class="dream-car-name">Mercedes AMG GT R</span>
                         </div>
                     </div>
                     <div class="card-content">
@@ -316,8 +310,7 @@
             <div class="grid grid-2">
                 <div class="card hover-lift destination-card">
                     <div class="destination-dream-container">
-                        <img src="../Images/miami.jpg" alt="Miami Beach - Art Déco & Supercars sous le soleil" class="destination-dream-image" />
-                        <div class="destination-dream-overlay">
+                        <div class="destination-placeholder miami-bg">
                             <div class="destination-info">
                                 <h3>🏖️ Miami Beach</h3>
                                 <p>Art Déco & Supercars sous le soleil</p>
@@ -338,8 +331,7 @@
 
                 <div class="card hover-lift destination-card">
                     <div class="destination-dream-container">
-                        <img src="../Images/nurburgring.jpg" alt="Circuit du Nürburgring - L'Enfer Vert légendaire" class="destination-dream-image" />
-                        <div class="destination-dream-overlay">
+                        <div class="destination-placeholder nurburgring-bg">
                             <div class="destination-info">
                                 <h3>🏁 Circuit du Nürburgring</h3>
                                 <p>L'Enfer Vert légendaire</p>
@@ -623,51 +615,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .dream-car-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-normal);
-        }
-
-        .dream-image-container:hover .dream-car-image {
-            transform: scale(1.05);
-        }
-
-        .dream-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(30, 41, 59, 0.95));
-            padding: var(--spacing-lg);
-            color: var(--text-white);
-            backdrop-filter: blur(8px) saturate(1.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transition: opacity var(--transition-normal);
-        }
-
-        .dream-image-container:hover .dream-overlay {
-            opacity: 1;
-        }
-
-        .dream-car-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0;
-            color: var(--white);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-        }
-
-        .dream-car-subtitle {
-            font-size: 0.85rem;
-            margin: 0.25rem 0 0 0;
-            color: var(--gray-200);
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-            font-weight: 500;
-        }
-
         .dream-placeholder {
             width: 100%;
             height: 100%;
@@ -742,29 +689,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .destination-dream-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform var(--transition-normal);
-        }
-
-        .destination-dream-container:hover .destination-dream-image {
-            transform: scale(1.05);
-        }
-
-        .destination-dream-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(30, 41, 59, 0.95));
-            padding: var(--spacing-xl);
-            color: var(--text-white);
-            backdrop-filter: blur(8px) saturate(1.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         .destination-placeholder {
             width: 100%;
             height: 100%;
@@ -774,7 +698,7 @@
             color: white;
         }
 
-        /* Backgrounds spécifiques - gardés comme fallback */
+        /* Backgrounds spécifiques */
         .miami-bg {
             background: linear-gradient(135deg, #ff6b35, #f7931e, #ffbe0b);
         }
