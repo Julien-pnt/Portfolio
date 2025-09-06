@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SÉCURITÉ RENFORCÉE -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; frame-src 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Rapport de Stage - GigaMedia | Julien PINOT</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../Js/security.js"></script>
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/png">
+    
+    <style>
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        
+        .report-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--accent-emerald);
+        }
+        
+        .report-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .report-subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+        
+        .report-info {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .report-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .toc {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .toc h2 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin: 0.5rem 0;
+            padding-left: 1rem;
+        }
+        
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+        }
+        
+        .section h1 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-emerald);
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .section h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        
+        .section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .section li {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-emerald);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+        
+        @media print {
+            .back-button, .print-button {
+                display: none;
+            }
+            
+            .report-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 1rem;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .report-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+            
+            .back-button, .print-button {
+                position: static;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back-button">
+        <a href="Experiences.html" class="btn btn-secondary">
+            <i data-feather="arrow-left"></i>
+            Retour aux expériences
+        </a>
+    </div>
+    
+    <div class="print-button">
+        <button onclick="window.print()" class="btn btn-primary">
+            <i data-feather="printer"></i>
+            Imprimer
+        </button>
+    </div>
+
+    <main>
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="report-title">RAPPORT DE STAGE</h1>
+                <h2 class="report-subtitle">Technicien Informatique</h2>
+                
+                <div class="report-info">
+                    <h3>PINOT Julien</h3>
+                    <p><strong>Période :</strong> 26 mai 2025 au 27 juin 2025</p>
+                    <p><strong>Tuteur de stage :</strong> Monsieur PLAZA</p>
+                    <p><strong>Superviseur académique :</strong> Monsieur Ramseyer</p>
+                    <p><strong>Établissement :</strong> Lycée Louis Pergaud - 91-93 Bd Léon Blum, 25000 Besançon</p>
+                    <p><strong>Entreprise d'accueil :</strong> Giga Media – 4, Rue Claude Monnet, 70000 Vesoul</p>
+                </div>
+            </div>
+
+            <div class="toc">
+                <h2>SOMMAIRE</h2>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#presentation">I. Présentation de l'entreprise</a>
+                        <ul style="margin-left: 1rem;">
+                            <li><a href="#identite">1. Identité</a></li>
+                            <li><a href="#organisation">2. Organisation</a></li>
+                            <li><a href="#service-technique">3. Le service technique</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#ressources">II. Les ressources informatiques de l'entreprise</a></li>
+                    <li><a href="#mission">III. Ma mission principale</a>
+                        <ul style="margin-left: 1rem;">
+                            <li><a href="#contexte">1. Contexte</a></li>
+                            <li><a href="#participants">2. Participants</a></li>
+                            <li><a href="#deroulement">3. Déroulement</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#realisation">IV. Réalisation du projet</a>
+                        <ul style="margin-left: 1rem;">
+                            <li><a href="#realise">1. Ce que j'ai réalisé</a></li>
+                            <li><a href="#outils">2. Outils utilisés</a></li>
+                            <li><a href="#competences">3. Compétences mises en œuvre</a></li>
+                            <li><a href="#methodologie">4. Méthodologie</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#etude">V. Étude du service rendu</a>
+                        <ul style="margin-left: 1rem;">
+                            <li><a href="#resultats">1. Résultats</a></li>
+                            <li><a href="#difficultes">2. Difficultés rencontrées</a></li>
+                            <li><a href="#suivi">3. Suivi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#competences-veille">VI. Compétences et veille technologique</a>
+                        <ul style="margin-left: 1rem;">
+                            <li><a href="#appris">1. Ce que j'ai appris</a></li>
+                            <li><a href="#formation">2. Formation personnelle</a></li>
+                            <li><a href="#veille">3. Veille</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </div>
+
+            <section id="introduction" class="section">
+                <h1>Introduction</h1>
+                <p>
+                    Dans le cadre de ma première année de BTS Services Informatiques aux Organisations (option SISR – Solutions d'Infrastructure, Systèmes et Réseaux), j'ai eu l'opportunité d'effectuer un stage de cinq semaines au sein de l'entreprise GIGA Média, située à Vesoul.
+                </p>
+                <p>
+                    Ce rapport a pour but de partager mon expérience : présenter l'entreprise, expliquer les missions qui m'ont été confiées, et montrer les compétences que j'ai pu développer au fil de cette immersion professionnelle.
+                </p>
+            </section>
+
+            <section id="presentation" class="section">
+                <h1>I. Présentation de l'entreprise</h1>
+                
+                <h2 id="identite">1. Identité</h2>
+                <ul>
+                    <li><strong>Nom :</strong> GIGA Média</li>
+                    <li><strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)</li>
+                    <li><strong>Activités principales :</strong> Vente de matériel informatique, installation et gestion de réseaux, cybersécurité, maintenance, formation et solutions adaptées notamment aux professionnels de santé et aux collectivités.</li>
+                </ul>
+
+                <h2 id="organisation">2. Organisation</h2>
+                <p>L'entreprise est indépendante et se structure autour de trois pôles principaux :</p>
+                <ul>
+                    <li><strong>La direction et le commercial :</strong> assurés par le président, M. Sylvain Breney, accompagné de collaborateurs.</li>
+                    <li><strong>Le service administratif :</strong> géré par Emmanuelle Hansen (comptabilité et secrétariat).</li>
+                    <li><strong>Le service technique :</strong> dirigé par Philippe Plaza, avec une équipe composée de techniciens expérimentés et d'alternants.</li>
+                </ul>
+
+                <h2 id="service-technique">3. Le service technique</h2>
+                <p>C'est dans ce service que j'ai été intégré. Ses missions sont variées :</p>
+                <ul>
+                    <li>Installation et configuration de systèmes informatiques,</li>
+                    <li>Maintenance et assistance aux clients,</li>
+                    <li>Sécurisation des infrastructures,</li>
+                    <li>Accompagnement et formation des utilisateurs.</li>
+                </ul>
+                <p>Cela m'a permis de travailler dans un environnement technique riche, aux côtés de professionnels compétents et disponibles.</p>
+            </section>
+
+            <section id="ressources" class="section">
+                <h1>II. Les ressources informatiques de l'entreprise</h1>
+                <p>Le parc informatique de GIGA Média repose sur des équipements modernes et adaptés :</p>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>Postes de travail :</strong> PC HP/Lenovo (Windows 11 Pro, 16 Go RAM, SSD ≥ 500 Go).</li>
+                        <li><strong>Virtualisation :</strong> VMware Workstation, ESXi, Hyper-V.</li>
+                        <li><strong>Télémaintenance :</strong> TeamViewer, AnyDesk, RDP.</li>
+                        <li><strong>Logiciels métiers :</strong> WaveSoft, EBP, Visiodent, Hellodoc.</li>
+                        <li><strong>Sécurité :</strong> GData, Bitdefender GravityZone.</li>
+                        <li><strong>Serveurs/NAS :</strong> Dell PowerEdge, Synology DSM.</li>
+                        <li><strong>Administration :</strong> PowerShell, cmd.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="mission" class="section">
+                <h1>III. Ma mission principale</h1>
+                
+                <h2 id="contexte">1. Contexte</h2>
+                <div class="highlight-box">
+                    <p><strong>Projet :</strong> Installation et configuration d'un serveur Windows chez un client professionnel.</p>
+                    <p>L'objectif était clair : mettre en place un serveur Windows afin de centraliser la gestion des utilisateurs, sécuriser les accès et automatiser les sauvegardes.</p>
+                </div>
+
+                <h2 id="participants">2. Participants</h2>
+                <ul>
+                    <li><strong>Interne :</strong> Philippe Plaza (responsable technique), Kévin Payen (technicien), et moi-même en tant que stagiaire.</li>
+                    <li><strong>Externe :</strong> le dirigeant de l'entreprise cliente et ses cinq utilisateurs.</li>
+                </ul>
+
+                <h2 id="deroulement">3. Déroulement</h2>
+                <p>Le projet s'est déroulé sur trois jours (13 au 15 juin 2025) :</p>
+                <ol>
+                    <li>Préparation du serveur (installation de l'OS, mises à jour, rôles).</li>
+                    <li>Configuration AD/DNS/DHCP et GPO.</li>
+                    <li>Mise en service sur site + formation des utilisateurs.</li>
+                </ol>
+            </section>
+
+            <section id="realisation" class="section">
+                <h1>IV. Réalisation du projet</h1>
+                
+                <h2 id="realise">1. Ce que j'ai réalisé</h2>
+                <ul>
+                    <li><strong>Installation de Windows Server 2019 :</strong> effectuée en autonomie.</li>
+                    <li><strong>Configuration AD/DNS/DHCP :</strong> réalisée avec l'accompagnement de mon tuteur.</li>
+                    <li><strong>Comptes utilisateurs & GPO :</strong> mise en place supervisée mais autonome.</li>
+                    <li><strong>Déploiement chez le client :</strong> gestion d'un incident DNS et d'un problème d'horloge.</li>
+                    <li><strong>Documentation & formation :</strong> rédaction d'un guide et animation d'une session d'1h auprès des utilisateurs.</li>
+                </ul>
+
+                <h2 id="outils">2. Outils utilisés</h2>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>Matériel :</strong> serveur Dell PowerEdge, switch Cisco L2, onduleur Eaton, pare-feu Fortinet.</li>
+                        <li><strong>Logiciels :</strong> Windows Server 2019, Active Directory, Veeam Backup, Outlook, antivirus administré.</li>
+                    </ul>
+                </div>
+
+                <h2 id="competences">3. Compétences mises en œuvre</h2>
+                <ul>
+                    <li>Administration de services réseaux.</li>
+                    <li>Sécurisation d'infrastructures.</li>
+                    <li>Analyse des besoins clients.</li>
+                    <li>Rédaction de documentation technique.</li>
+                    <li>Formation et accompagnement utilisateurs.</li>
+                </ul>
+
+                <h2 id="methodologie">4. Méthodologie</h2>
+                <p>J'ai travaillé selon un cycle en V simplifié (analyse + préparation + déploiement + tests).</p>
+                <p>La gestion du projet s'est appuyée sur Excel (suivi budgétaire) et Outlook (communication).</p>
+            </section>
+
+            <section id="etude" class="section">
+                <h1>V. Étude du service rendu</h1>
+                
+                <h2 id="resultats">1. Résultats</h2>
+                <div class="highlight-box">
+                    <ul>
+                        <li>Gestion centralisée des utilisateurs (AD).</li>
+                        <li>Politique de sauvegarde fiable (Veeam + NAS).</li>
+                        <li>Sécurisation renforcée (antivirus administré, GPO restrictives).</li>
+                        <li>Utilisateurs satisfaits et gain de productivité.</li>
+                    </ul>
+                </div>
+
+                <h2 id="difficultes">2. Difficultés rencontrées</h2>
+                <ul>
+                    <li><strong>DNS instable :</strong> corrigé via reconfiguration.</li>
+                    <li><strong>Synchronisation d'horloge (NTP) :</strong> ajout d'un script au login.</li>
+                </ul>
+
+                <h2 id="suivi">3. Suivi</h2>
+                <ul>
+                    <li>Support des utilisateurs assuré via AnyDesk.</li>
+                    <li>Maintenance couverte par contrat (intervention sous 48h).</li>
+                    <li>Documentation technique centralisée sur NAS.</li>
+                </ul>
+            </section>
+
+            <section id="competences-veille" class="section">
+                <h1>VI. Compétences et veille technologique</h1>
+                
+                <h2 id="appris">1. Ce que j'ai appris</h2>
+                <ul>
+                    <li>Déploiement de Windows Server et Active Directory.</li>
+                    <li>Écriture de scripts PowerShell.</li>
+                    <li>Paramétrage réseau et sécurité.</li>
+                    <li>Gestion de projets techniques.</li>
+                </ul>
+
+                <h2 id="formation">2. Formation personnelle</h2>
+                <ul>
+                    <li><strong>Autoformation :</strong> Microsoft Learn, YouTube, OpenClassrooms.</li>
+                    <li><strong>Pratique :</strong> tests et simulations sous VMware.</li>
+                </ul>
+
+                <h2 id="veille">3. Veille</h2>
+                <ul>
+                    <li>Active Directory (bonnes pratiques Microsoft).</li>
+                    <li>Sauvegarde 3-2-1.</li>
+                    <li>Sécurité des postes clients (antivirus administrés).</li>
+                </ul>
+            </section>
+
+            <section id="conclusion" class="section">
+                <h1>Conclusion</h1>
+                <p>
+                    Ce stage a été une expérience particulièrement enrichissante. J'ai pu découvrir le quotidien d'un technicien informatique en entreprise et prendre part à un projet concret de déploiement serveur.
+                </p>
+                <p>
+                    J'ai aimé travailler en équipe, résoudre des problèmes techniques, mais aussi être en contact avec les clients et les former. Ces différents aspects confirment mon orientation vers les réseaux et la cybersécurité.
+                </p>
+                <p>
+                    Cette première expérience professionnelle représente une étape importante dans mon parcours et me rapproche de mon objectif à long terme : devenir pentester.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+        
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
