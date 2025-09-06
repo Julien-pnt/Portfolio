@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Passions | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -12,14 +13,14 @@
 </head>
 
 <body>
-    <header class="header" id="header">
+    <header class="header animate-fade-in-down" id="header">
         <div class="header__logo">
             <h1><strong>JULIEN PINOT</strong></h1>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="Index.html" class="navbar__link">
+                    <a href="Index.html" class="navbar__link ripple-effect">
                         <i data-feather="home" aria-hidden="true"></i>
                         <span>Accueil</span>
                     </a>
@@ -78,11 +79,11 @@
 
     <main>
         <!-- HERO SECTION PASSIONS -->
-        <section class="hero-section">
+        <section class="hero-section hero-parallax">
             <div class="hero-content">
-                <h1 class="hero-title">Mes Passions</h1>
-                <h2 class="hero-subtitle">Automobile & Voyages</h2>
-                <p class="hero-description">
+                <h1 class="hero-title typing-effect animate-fade-in-up">Mes Passions</h1>
+                <h2 class="hero-subtitle animate-fade-in-up delay-200">Automobile & Voyages</h2>
+                <p class="hero-description animate-fade-in-up delay-400">
                     Découvrez mes deux grandes passions : l'univers automobile avec ses innovations technologiques 
                     et l'art du voyage qui ouvre l'esprit sur le monde.
                 </p>
@@ -91,10 +92,10 @@
 
         <!-- SECTION PASSION AUTOMOBILE -->
         <section class="section">
-            <h2 class="text-center mb-xl">🏁 Passion Automobile</h2>
-            <div class="grid grid-2">
-                <div class="card hover-lift">
-                    <div class="car-image-container">
+            <h2 class="text-center mb-xl observe-fade typing-effect">🏁 Passion Automobile</h2>
+            <div class="grid grid-2 cards-cascade">
+                <div class="card hover-lift morph-hover tilt-3d observe-slide-left">
+                    <div class="car-image-container shine-effect">
                         <img src="../Images/BMW.png" alt="BMW - Excellence allemande" class="car-image" />
                         <div class="car-overlay">
                             <h3 class="car-title">BMW</h3>
@@ -463,6 +464,9 @@
             document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
         });
     </script>
+
+    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
+    <script src="../Js/animations.js"></script>
 
     <style>
         /* ==================== STYLES SPÉCIFIQUES PASSIONS ==================== */

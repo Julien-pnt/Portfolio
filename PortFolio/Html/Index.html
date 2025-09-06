@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Julien PINOT - Étudiant BTS SIO & Développeur | Portfolio Professionnel</title>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -12,38 +13,38 @@
 </head>
 
 <body>
-    <header class="header" id="header">
+    <header class="header animate-fade-in-down" id="header">
         <div class="header__logo">
             <h1><strong>JULIEN PINOT</strong></h1>
         </div>
         <nav class="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="#" class="navbar__link active">
+                    <a href="#" class="navbar__link active ripple-effect">
                         <i data-feather="home" aria-hidden="true"></i>
                         <span>Accueil</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="CV.html" class="navbar__link">
+                    <a href="CV.html" class="navbar__link ripple-effect">
                         <i data-feather="user" aria-hidden="true"></i>
                         <span>CV</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Compétences.html" class="navbar__link">
+                    <a href="Compétences.html" class="navbar__link ripple-effect">
                         <i data-feather="check-circle" aria-hidden="true"></i>
                         <span>Compétences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Projets.html" class="navbar__link">
+                    <a href="Projets.html" class="navbar__link ripple-effect">
                         <i data-feather="folder" aria-hidden="true"></i>
                         <span>Projets</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Certifications.html" class="navbar__link">
+                    <a href="Certifications.html" class="navbar__link ripple-effect">
                         <i data-feather="book" aria-hidden="true"></i>
                         <span>Certifications</span>
                     </a>
@@ -77,95 +78,212 @@
     </header>
 
     <main>
-        <!-- HERO SECTION PROFESSIONNELLE -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">Julien PINOT</h1>
-                <h2 class="hero-subtitle">Étudiant BTS SIO & Futur Pentester</h2>
-                <p class="hero-description">
-                    Étudiant BTS SIO spécialisé en cybersécurité, passionné par la protection des systèmes informatiques 
-                    et l'analyse de vulnérabilités. Mon objectif : devenir un expert en tests d'intrusion pour sécuriser 
-                    les infrastructures d'entreprise.
+        <!-- HERO SECTION AMÉLIORÉE MAIS COHÉRENTE -->
+        <section class="hero-section hero-parallax" style="position: relative; min-height: 90vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+            
+            <div class="hero-content" style="position: relative; z-index: 2; text-align: center; max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+                <!-- Photo de profil avec style cohérent -->
+                <div class="profile-image-container animate-fade-in-up" style="margin-bottom: 2rem; position: relative; display: inline-block;">
+                    <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto; position: relative; box-shadow: var(--shadow-lg); border: 4px solid var(--primary-blue); transition: all 0.3s ease;">
+                        <img src="../Images/Moi.jpg" alt="Julien PINOT" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                
+                <h1 class="hero-title typing-effect animate-fade-in-up delay-200" style="font-size: 3.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem;">
+                    Julien PINOT
+                </h1>
+                
+                <h2 class="hero-subtitle animate-fade-in-up delay-400" style="font-size: 1.6rem; color: var(--primary-blue); margin-bottom: 1.5rem; font-weight: 600;">
+                    🛡️ Étudiant BTS SIO & Futur Pentester
+                </h2>
+                
+                <p class="hero-description animate-fade-in-up delay-600" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.7; color: var(--text-secondary);">
+                    Étudiant BTS SIO spécialisé en <strong style="color: var(--primary-blue);">cybersécurité</strong>, 
+                    passionné par la protection des systèmes informatiques et l'analyse de vulnérabilités. 
+                    Mon objectif : devenir un expert en <strong style="color: var(--accent-emerald);">tests d'intrusion</strong> 
+                    pour sécuriser les infrastructures d'entreprise.
                 </p>
 
-                <!-- BOUTONS D'ACTION PROFESSIONNELS -->
-                <div class="d-flex justify-center gap-lg mt-xl">
-                    <a href="CV.html" class="btn btn-primary">
+                <!-- BOUTONS D'ACTION COHÉRENTS -->
+                <div class="d-flex justify-center gap-lg mt-xl animate-fade-in-up delay-800" style="flex-wrap: wrap; gap: 1rem;">
+                    <a href="CV.html" class="btn btn-primary shine-effect ripple-effect morph-hover">
                         <i data-feather="download"></i>
                         Télécharger CV
                     </a>
-                    <a href="Projets.html" class="btn btn-secondary">
+                    <a href="Projets.html" class="btn btn-secondary shine-effect ripple-effect morph-hover">
                         <i data-feather="eye"></i>
                         Voir mes projets
                     </a>
-                    <a href="Contact.html" class="btn btn-outline">
+                    <a href="Contact.html" class="btn btn-outline shine-effect ripple-effect morph-hover">
                         <i data-feather="mail"></i>
                         Me contacter
                     </a>
                 </div>
             </div>
+            
+            <!-- Indicateur de scroll discret repositionné -->
+            <div class="scroll-indicator animate-fade-in-up delay-1000" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center; z-index: 3;">
+                <div style="width: 2px; height: 30px; background: var(--primary-blue); margin: 0 auto 10px; opacity: 0.6; animation: scrollPulse 2s infinite;"></div>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Découvrir mon profil</p>
+            </div>
         </section>
 
-        <!-- SECTION STATISTIQUES -->
-        <section class="section section--bg-secondary">
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <span class="stat-number">2+</span>
-                    <span class="stat-label">Années d'études</span>
+        <!-- SECTION STATISTIQUES REDESIGNÉE -->
+        <section class="section section--bg-secondary" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); position: relative; overflow: hidden;">
+            <!-- Élément décoratif subtil -->
+            <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -150px; left: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105, 0.06) 0%, transparent 70%); border-radius: 50%;"></div>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <div style="display: inline-flex; align-items: center; gap: 15px; background: var(--bg-card); padding: 1.5rem 3rem; border-radius: 50px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); margin-bottom: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📊</div>
+                        <h2 style="color: var(--text-primary); font-size: 2rem; font-weight: 700; margin: 0;">Mon Impact en Chiffres</h2>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Découvrez les chiffres clés qui illustrent mon parcours et mon engagement dans la cybersécurité</p>
                 </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Projets réalisés</span>
-                </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">5+</span>
-                    <span class="stat-label">Certifications</span>
-                </div>
-                <div class="stat-item fade-in">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Motivation</span>
+                
+                <div class="stats-grid cards-cascade" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));"></div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);">🎓</div>
+                        <span class="stat-number counter" data-target="2" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 0.5rem; line-height: 1;">0</span>
+                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Années d'études</span>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">BTS SIO SISR (1ère année)<br>+ Bac Général obtenu</p>
+                        <div style="width: 40px; height: 3px; background: var(--primary-blue); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    </div>
+                    
+                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--accent-emerald), #10b981);"></div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-emerald), #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);">💻</div>
+                        <span class="stat-number counter" data-target="7" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--accent-emerald); margin-bottom: 0.5rem; line-height: 1;">0</span>
+                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Projets réalisés</span>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Web, Système, Réseau<br>& Cybersécurité</p>
+                        <div style="width: 40px; height: 3px; background: var(--accent-emerald); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    </div>
+                    
+                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--accent-orange), #fb923c);"></div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-orange), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);">🏆</div>
+                        <span class="stat-number counter" data-target="3" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 0.5rem; line-height: 1;">0</span>
+                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Certifications</span>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">ANSSI, CNIL, PIX<br>+ TryHackMe en cours</p>
+                        <div style="width: 40px; height: 3px; background: var(--accent-orange); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    </div>
+                    
+                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-blue-light), #60a5fa);"></div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue-light), #60a5fa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);">🚀</div>
+                        <span class="stat-number counter" data-target="100" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--primary-blue-light); margin-bottom: 0.5rem; line-height: 1;">0</span>
+                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">% Motivation</span>
+                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Passion cybersécurité<br>& apprentissage continu</p>
+                        <div style="width: 40px; height: 3px; background: var(--primary-blue-light); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION PRÉSENTATION -->
-        <section class="section">
-            <div class="intro-section slide-in-left">
-                <h2>🛡️ Mon Profil en Cybersécurité</h2>
-                <p>
-                    Actuellement en BTS SIO option SISR, je me spécialise dans la <strong>cybersécurité</strong> 
-                    avec un objectif clair : devenir <strong>pentester professionnel</strong>. Mon approche combine 
-                    expertise technique, rigueur méthodologique et passion pour la protection des systèmes d'information.
-                </p>
+        <!-- SECTION PROFIL CYBERSÉCURITÉ REDESIGNÉE -->
+        <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(248, 250, 252, 0.8) 100%); position: relative; overflow: hidden;">
+            <!-- Éléments décoratifs subtils -->
+            <div style="position: absolute; top: 20%; right: -5%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, transparent 70%); border-radius: 50%; animation: floatSlow 12s ease-in-out infinite;"></div>
+            <div style="position: absolute; bottom: 10%; left: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%); border-radius: 50%; animation: floatSlow 15s ease-in-out infinite reverse;"></div>
+            
+            <div class="intro-section observe-slide-left" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+                <!-- Header de section élégant -->
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <div style="display: inline-flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.9); padding: 2rem 3rem; border-radius: 60px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); margin-bottom: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-emerald), #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);">🛡️</div>
+                        <h2 style="color: var(--text-primary); font-size: 2.3rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, var(--text-primary), var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Mon Profil en Cybersécurité</h2>
+                    </div>
+                    
+                    <div style="max-width: 850px; margin: 0 auto; background: rgba(255, 255, 255, 0.7); padding: 2.5rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);">
+                        <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); margin: 0; position: relative;">
+                            <span style="font-size: 3rem; color: var(--primary-blue); opacity: 0.2; position: absolute; top: -15px; left: -20px; font-family: serif;">"</span>
+                            Actuellement en <strong style="color: var(--primary-blue); background: rgba(37, 99, 235, 0.1); padding: 2px 8px; border-radius: 6px;">BTS SIO option SISR</strong>, je me spécialise dans la 
+                            <strong style="color: var(--accent-emerald); background: rgba(5, 150, 105, 0.1); padding: 2px 8px; border-radius: 6px;">cybersécurité</strong> avec un objectif clair : devenir 
+                            <strong style="color: var(--accent-orange); background: rgba(234, 88, 12, 0.1); padding: 2px 8px; border-radius: 6px;">pentester professionnel</strong>. Mon approche combine 
+                            expertise technique, rigueur méthodologique et passion pour la protection des systèmes d'information.
+                            <span style="font-size: 3rem; color: var(--primary-blue); opacity: 0.2; position: absolute; bottom: -25px; right: -20px; font-family: serif;">"</span>
+                        </p>
+                    </div>
+                </div>
                 
-                <div class="grid grid-2 mt-xl">
-                    <div class="card hover-lift">
-                        <div class="card-header">
-                            <h3 class="card-title">🔴 Sécurité Offensive</h3>
-                            <p class="card-subtitle">Red Team & Pentesting</p>
+                <!-- Cartes de compétences redesignées -->
+                <div class="grid grid-2 mt-xl cards-cascade" style="gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                    <!-- Sécurité Offensive -->
+                    <div class="card hover-lift morph-hover tilt-3d observe-zoom" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%); border-radius: 25px; padding: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(220, 38, 127, 0.2); backdrop-filter: blur(10px); position: relative;">
+                        <!-- Header coloré Rouge/Orange pour Offensive -->
+                        <div style="background: linear-gradient(135deg, #dc2626, #ea580c); padding: 2rem; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; opacity: 0.6;"></div>
+                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;"></div>
+                            <div style="position: relative; z-index: 2;">
+                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                                    <div style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🔴</div>
+                                    <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin: 0;">Sécurité Offensive</h3>
+                                </div>
+                                <p style="color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0; font-size: 1rem;">Red Team & Pentesting</p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;">✓ Tests d'intrusion (Web & Réseau)</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Analyse de vulnérabilités</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Social Engineering</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Exploitation de failles</li>
-                            </ul>
+                        
+                        <!-- Contenu -->
+                        <div style="padding: 2rem;">
+                            <div style="display: grid; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">⚡</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Tests d'intrusion (Web & Réseau)</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🔍</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Analyse de vulnérabilités</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🎭</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Social Engineering</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">💥</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Exploitation de failles</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="card hover-lift">
-                        <div class="card-header">
-                            <h3 class="card-title">🔵 Sécurité Défensive</h3>
-                            <p class="card-subtitle">Blue Team & SOC</p>
+                    <!-- Sécurité Défensive -->
+                    <div class="card hover-lift morph-hover tilt-3d observe-zoom" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%); border-radius: 25px; padding: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); position: relative;">
+                        <!-- Header coloré -->
+                        <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); padding: 2rem; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; opacity: 0.6;"></div>
+                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;"></div>
+                            <div style="position: relative; z-index: 2;">
+                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
+                                    <div style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🔵</div>
+                                    <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin: 0;">Sécurité Défensive</h3>
+                                </div>
+                                <p style="color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0; font-size: 1rem;">Blue Team & SOC</p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 0.5rem;">✓ Monitoring et détection</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Analyse forensique</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Durcissement systèmes</li>
-                                <li style="margin-bottom: 0.5rem;">✓ Gestion des incidents</li>
-                            </ul>
+                        
+                        <!-- Contenu -->
+                        <div style="padding: 2rem;">
+                            <div style="display: grid; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">📊</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Monitoring et détection</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🔬</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Analyse forensique</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🛡️</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Durcissement systèmes</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🚨</div>
+                                    <span style="color: var(--text-primary); font-weight: 600;">Gestion des incidents</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -336,24 +454,20 @@
                 if (entry.isIntersecting) {
                     const statNumber = entry.target.querySelector('.stat-number');
                     if (!statNumber.dataset.animated) {
-                        const finalText = statNumber.textContent;
-                        const hasPlus = finalText.includes('+');
-                        const hasPercent = finalText.includes('%');
-                        const number = parseInt(finalText.replace(/[^\d]/g, ''));
+                        const target = parseInt(statNumber.dataset.target || statNumber.textContent.replace(/[^\d]/g, ''));
+                        const hasPercent = statNumber.dataset.target === '100';
                         
                         let currentNumber = 0;
-                        const increment = number / 30;
+                        const increment = target / 30;
 
                         const timer = setInterval(() => {
                             currentNumber += increment;
-                            if (currentNumber >= number) {
-                                statNumber.textContent = finalText;
+                            if (currentNumber >= target) {
+                                statNumber.textContent = hasPercent ? target + '%' : target;
                                 clearInterval(timer);
                             } else {
-                                let displayText = Math.floor(currentNumber).toString();
-                                if (hasPlus && currentNumber > 5) displayText += '+';
-                                if (hasPercent) displayText += '%';
-                                statNumber.textContent = displayText;
+                                const displayNumber = Math.floor(currentNumber);
+                                statNumber.textContent = hasPercent ? displayNumber + '%' : displayNumber;
                             }
                         }, 50);
                         
@@ -366,6 +480,50 @@
         document.querySelectorAll('.stat-item').forEach(stat => {
             observer.observe(stat);
         });
+
+        // Debug: Vérifier les éléments au chargement
+        console.log('Stats found:', document.querySelectorAll('.stat-item').length);
+        console.log('Counter elements:', document.querySelectorAll('.stat-number').length);
+        
+        // Animation forcée pour test immédiat (au cas où l'observer ne fonctionne pas)
+        setTimeout(() => {
+            document.querySelectorAll('.stat-number').forEach(statNumber => {
+                if (!statNumber.dataset.animated) {
+                    const target = parseInt(statNumber.dataset.target || '0');
+                    console.log('Animating:', target);
+                    
+                    let currentNumber = 0;
+                    const increment = target / 30;
+
+                    const timer = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= target) {
+                            statNumber.textContent = target === 100 ? target + '%' : target;
+                            clearInterval(timer);
+                        } else {
+                            const displayNumber = Math.floor(currentNumber);
+                            statNumber.textContent = target === 100 ? displayNumber + '%' : displayNumber;
+                        }
+                    }, 50);
+                    
+                    statNumber.dataset.animated = 'true';
+                }
+            });
+        }, 1000);
+
+        // Effet hover discret pour la photo de profil
+        const profileImage = document.querySelector('.profile-image-container > div');
+        if (profileImage) {
+            profileImage.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 20px 40px rgba(37, 99, 235, 0.2)';
+            });
+            
+            profileImage.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'var(--shadow-lg)';
+            });
+        }
 
         // Initialisation des icônes Feather
         feather.replace();
@@ -380,6 +538,39 @@
             document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
         });
     </script>
+    
+    <!-- CSS pour les animations cohérentes -->
+    <style>
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.6; transform: scaleY(1); }
+            50% { opacity: 1; transform: scaleY(1.2); }
+        }
+        
+        /* Hover effects subtils */
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem !important;
+            }
+            
+            .profile-image-container > div {
+                width: 150px !important;
+                height: 150px !important;
+            }
+        }
+    </style>
+    
+    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
+    <script src="../Js/animations.js"></script>
 </body>
 
 </html>

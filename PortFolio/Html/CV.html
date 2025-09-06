@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>CV | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header" id="header">
+    <header class="header animate-fade-in-down" id="header">
         <div class="header__logo">
             <h1><strong>JULIEN PINOT</strong></h1>
         </div>
@@ -434,7 +435,14 @@
             <div class="grid grid-3">
                 <div class="card text-center">
                     <div class="card-header">
-                        <h3 class="card-title">🇫🇷 Français</h3>
+                        <h3 class="card-title">
+                            <span style="display: inline-block; width: 24px; height: 16px; margin-right: 8px; vertical-align: middle; position: relative; border: 1px solid #ddd; border-radius: 2px;">
+                                <span style="position: absolute; top: 0; left: 0; width: 33.33%; height: 100%; background-color: #0055A4;"></span>
+                                <span style="position: absolute; top: 0; left: 33.33%; width: 33.33%; height: 100%; background-color: #FFFFFF;"></span>
+                                <span style="position: absolute; top: 0; right: 0; width: 33.33%; height: 100%; background-color: #EF4135;"></span>
+                            </span>
+                            Français
+                        </h3>
                         <p class="card-subtitle">Langue maternelle</p>
                     </div>
                     <div class="card-content">
@@ -445,7 +453,10 @@
                 
                 <div class="card text-center">
                     <div class="card-header">
-                        <h3 class="card-title">🇬🇧 Anglais</h3>
+                        <h3 class="card-title">
+                            <img src="../Images/english.jpg" alt="Drapeau anglais" style="width: 24px; height: 16px; border-radius: 2px; margin-right: 8px; vertical-align: middle; object-fit: cover; border: 1px solid #ddd;">
+                            Anglais
+                        </h3>
                         <p class="card-subtitle">Niveau intermédiaire</p>
                     </div>
                     <div class="card-content">
@@ -456,7 +467,14 @@
                 
                 <div class="card text-center">
                     <div class="card-header">
-                        <h3 class="card-title">🇪🇸 Espagnol</h3>
+                        <h3 class="card-title">
+                            <span style="display: inline-block; width: 24px; height: 16px; margin-right: 8px; vertical-align: middle; position: relative; border: 1px solid #ddd; border-radius: 2px; overflow: hidden;">
+                                <span style="position: absolute; top: 0; left: 0; width: 100%; height: 25%; background-color: #AA151B;"></span>
+                                <span style="position: absolute; top: 25%; left: 0; width: 100%; height: 50%; background-color: #F1BF00;"></span>
+                                <span style="position: absolute; bottom: 0; left: 0; width: 100%; height: 25%; background-color: #AA151B;"></span>
+                            </span>
+                            Espagnol
+                        </h3>
                         <p class="card-subtitle">Niveau débutant</p>
                     </div>
                     <div class="card-content">
@@ -577,6 +595,9 @@
             document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
         });
     </script>
+    
+    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
+    <script src="../Js/animations.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Veille Technologique | Julien PINOT - Étudiant</title>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header" id="header">
+    <header class="header animate-fade-in-down" id="header">
         <div class="header__logo">
             <h1><strong>JULIEN PINOT</strong></h1>
         </div>
@@ -804,6 +805,9 @@
             document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
         });
     </script>
+    
+    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
+    <script src="../Js/animations.js"></script>
 </body>
 
 </html>
