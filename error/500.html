@@ -5,95 +5,318 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SÉCURITÉ RENFORCÉE -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; object-src 'none'; frame-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; frame-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <title>500 - Erreur Serveur | Portfolio Julien PINOT</title>
+    <link rel="shortcut icon" href="../PortFolio/Images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    
     <style>
-        * {
+        /* Variables CSS identiques au portfolio */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-light: #3b82f6;
+            --primary-blue-dark: #1d4ed8;
+            --secondary-slate: #475569;
+            --accent-emerald: #059669;
+            --accent-orange: #ea580c;
+            --accent-red: #dc2626;
+            --accent-purple: #7c3aed;
+            
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-white: #ffffff;
+            
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --transition-normal: 0.3s ease;
+            --border-radius-xl: 16px;
+        }
+
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
-        
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-red) 50%, var(--gray-900) 100%);
+            color: var(--text-white);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
         .error-container {
             text-align: center;
             max-width: 600px;
             padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease-out;
         }
-        
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .error-code {
             font-size: 8rem;
             font-weight: bold;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-red));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
         }
-        
+
         .error-title {
             font-size: 2rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
         }
-        
+
         .error-message {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        
-        .security-info {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background: rgba(255,255,255,0.2);
+            background: var(--primary-blue);
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid var(--primary-blue);
             transition: all 0.3s ease;
+            margin: 0.5rem;
+            font-weight: 600;
         }
-        
+
         .btn:hover {
-            background: rgba(255,255,255,0.3);
+            background: var(--primary-blue-dark);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--text-primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .troubleshooting {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid var(--gray-100);
+        }
+
+        .troubleshooting h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .troubleshooting ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .troubleshooting li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .error-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="error-container">
-        <div class="error-code">500</div>
-        <h1 class="error-title">⚠️ Erreur Serveur</h1>
-        <p class="error-message">
-            Une erreur interne s'est produite. L'incident a été enregistré.
-        </p>
-        
-        <div class="security-info">
-            <h3>🔧 Maintenance Sécurisée</h3>
-            <p>Nos systèmes de sécurité surveillent constamment l'infrastructure.</p>
-            <p>L'équipe technique a été automatiquement notifiée.</p>
+        <div class="error-icon">
+            <i data-feather="server" style="color: white; width: 60px; height: 60px;"></i>
         </div>
         
-        <a href="../PortFolio/Html/Index.html" class="btn">
-            ← Retour à l'accueil
-        </a>
+        <div class="error-code">500</div>
+        
+        <h1 class="error-title">Erreur Serveur Interne</h1>
+        
+        <div class="status-indicator">
+            <div class="pulse-dot"></div>
+            <span>Diagnostic automatique en cours...</span>
+        </div>
+        
+        <p class="error-message">
+            Une erreur technique temporaire s'est produite sur le serveur. 
+            Nos systèmes de monitoring sont informés et travaillent à résoudre le problème.
+        </p>
+        
+        <div style="margin: 1.5rem 0;">
+            <a href="../PortFolio/Html/Index.html" class="btn">
+                <i data-feather="home" style="width: 18px; height: 18px;"></i>
+                Retour à l'accueil
+            </a>
+            <button onclick="location.reload()" class="btn btn-outline">
+                <i data-feather="refresh-cw" style="width: 18px; height: 18px;"></i>
+                Réessayer
+            </button>
+        </div>
+        
+        <div class="troubleshooting">
+            <h3>
+                <i data-feather="tool" style="width: 20px; height: 20px; color: var(--primary-blue);"></i>
+                Actions de dépannage recommandées
+            </h3>
+            <ul>
+                <li>
+                    <i data-feather="refresh-ccw" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                    Actualiser la page dans quelques instants
+                </li>
+                <li>
+                    <i data-feather="clock" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                    Patienter 2-3 minutes avant de réessayer
+                </li>
+                <li>
+                    <i data-feather="wifi-off" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                    Vérifier votre connexion internet
+                </li>
+                <li>
+                    <i data-feather="mail" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+                    Me contacter si le problème persiste
+                </li>
+            </ul>
+        </div>
     </div>
+    
+    <script>
+        feather.replace();
+        
+        // Auto-retry après 30 secondes
+        setTimeout(() => {
+            const status = document.querySelector('.status-indicator span');
+            if (status) {
+                status.textContent = 'Tentative de reconnexion automatique...';
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
+            }
+        }, 30000);
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 # 🎓 PORTFOLIO JULIEN PINOT - BTS SIO SISR
-## **Étudiant en Cybersécurité & Développeur Web**
+## **Étudiant en Cybersécurité **
 
 ---
 

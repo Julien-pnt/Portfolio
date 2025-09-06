@@ -1,170 +1,23 @@
-# =================================================================
-# CONFIGURATION SÉCURISÉE PORTFOLIO JULIEN PINOT
-# Expert Cybersécurité - Protection maximale
-# =================================================================
+# Configuration XAMPP Ultra-Simple - Portfolio Sécurisé
+DirectoryIndex index.html
 
-# =====================================
-# HEADERS DE SÉCURITÉ RENFORCÉS
-# =====================================
+# Protection des fichiers sensibles
+<Files "*.md">
+    Order Deny,Allow
+    Deny from all
+</Files>
 
-# Content Security Policy (CSP) - Protection XSS
-Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self';"
+<Files "*.ps1">
+    Order Deny,Allow
+    Deny from all
+</Files>
 
-# X-Frame-Options - Protection Clickjacking
-Header always set X-Frame-Options "DENY"
+<Files ".htaccess">
+    Order Deny,Allow
+    Deny from all
+</Files>
 
-# X-Content-Type-Options - Protection MIME Sniffing
-Header always set X-Content-Type-Options "nosniff"
-
-# X-XSS-Protection - Protection XSS Legacy
-Header always set X-XSS-Protection "1; mode=block"
-
-# Referrer Policy - Contrôle des informations de référencement
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-
-# Permissions Policy - Restriction des APIs
-Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
-
-# Strict Transport Security (HSTS) - Force HTTPS
-Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-
-# =====================================
-# PROTECTION CONTRE LES ATTAQUES
-# =====================================
-
-# Protection contre l'injection de code
-RewriteEngine On
-
-# Bloquer les tentatives d'injection SQL communes
-RewriteCond %{QUERY_STRING} (union|select|insert|delete|drop|create|update|alter) [NC]
-RewriteRule ^(.*)$ - [F,L]
-
-# Bloquer les tentatives XSS communes
-RewriteCond %{QUERY_STRING} (<script|<iframe|<object|<embed|javascript:|vbscript:|onload|onerror) [NC]
-RewriteRule ^(.*)$ - [F,L]
-
-# Bloquer les tentatives d'inclusion de fichiers
-RewriteCond %{QUERY_STRING} (\.\.\/|\.\.\\|\/etc\/|\\etc\\) [NC]
-RewriteRule ^(.*)$ - [F,L]
-
-# Bloquer les user agents malveillants
-RewriteCond %{HTTP_USER_AGENT} (nikto|sqlmap|nmap|w3af|dirbuster|gobuster) [NC]
-RewriteRule ^(.*)$ - [F,L]
-
-# Protection contre le directory traversal
-RewriteCond %{THE_REQUEST} \s.*(\.|%2e)(\.|%2e)(/|%2f|\\|%5c) [NC]
-RewriteRule ^(.*)$ - [F,L]
-
-# =====================================
-# RESTRICTION D'ACCÈS AUX FICHIERS
-# =====================================
-
-# Empêcher l'accès aux fichiers sensibles
-<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|backup|conf|config)$">
-    Require all denied
-</FilesMatch>
-
-# Empêcher l'accès aux fichiers cachés
-<FilesMatch "^\.">
-    Require all denied
-</FilesMatch>
-
-# Empêcher l'listing des répertoires
-Options -Indexes
-
-# Empêcher l'exécution de PHP dans les dossiers uploads
-<Directory "*/Images/*">
-    php_flag engine off
-</Directory>
-
-<Directory "*/Video/*">
-    php_flag engine off
-</Directory>
-
-<Directory "*/Certifications/*">
-    php_flag engine off
-</Directory>
-
-# =====================================
-# LIMITATION DES MÉTHODES HTTP
-# =====================================
-
-# Autoriser seulement GET, POST, HEAD
-<RequireAll>
-    Require method GET POST HEAD
-</RequireAll>
-
-# =====================================
-# PROTECTION CONTRE LE HOTLINKING
-# =====================================
-
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http(s)?://(.*\.)?pinot-portfolio\.local [NC]
-RewriteCond %{HTTP_REFERER} !^http(s)?://(.*\.)?localhost [NC]
-RewriteRule \.(jpg|jpeg|png|gif|pdf|mp4)$ - [F]
-
-# =====================================
-# CACHE SÉCURISÉ ET OPTIMISÉ
-# =====================================
-
-# Cache des ressources statiques
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType video/mp4 "access plus 1 month"
-    ExpiresByType text/html "access plus 1 hour"
-</IfModule>
-
-# Compression GZIP
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-</IfModule>
-
-# =====================================
-# LIMITATION DU TAUX DE REQUÊTES
-# =====================================
-
-<IfModule mod_evasive24.c>
-    DOSHashTableSize    2048
-    DOSPageCount        5
-    DOSSiteCount        50
-    DOSPageInterval     1
-    DOSSiteInterval     1
-    DOSBlockingPeriod   60
-</IfModule>
-
-# =====================================
-# LOGS DE SÉCURITÉ
-# =====================================
-
-# Log des tentatives d'attaque
-LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\" \"%{X-Forwarded-For}i\"" combined_security
-CustomLog logs/security.log combined_security env=suspicious
-
-# =====================================
-# REDIRECTIONS SÉCURISÉES
-# =====================================
-
-# Redirection vers HTTPS (à activer en production)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Page d'erreur personnalisée
-ErrorDocument 403 /error/403.html
-ErrorDocument 404 /error/404.html
-ErrorDocument 500 /error/500.html
+# Pages d'erreur personnalisées avec style du portfolio
+ErrorDocument 404 /SIO1_2024_PINOT/error/404.html
+ErrorDocument 403 /SIO1_2024_PINOT/error/403.html
+ErrorDocument 500 /SIO1_2024_PINOT/error/500.html

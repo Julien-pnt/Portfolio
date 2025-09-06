@@ -5,95 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SÉCURITÉ RENFORCÉE -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self'; object-src 'none'; frame-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; frame-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <title>403 - Accès Interdit | Portfolio Julien PINOT</title>
+    <link rel="shortcut icon" href="../PortFolio/Images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    
     <style>
-        * {
+        /* Variables CSS identiques au portfolio */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-light: #3b82f6;
+            --primary-blue-dark: #1d4ed8;
+            --secondary-slate: #475569;
+            --accent-emerald: #059669;
+            --accent-orange: #ea580c;
+            --accent-red: #dc2626;
+            
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-white: #ffffff;
+            
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --transition-normal: 0.3s ease;
+            --border-radius-xl: 16px;
+        }
+
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
-        
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, var(--primary-blue-dark) 50%, var(--gray-900) 100%);
+            color: var(--text-white);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
         .error-container {
             text-align: center;
             max-width: 600px;
             padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            color: var(--text-primary);
+            animation: fadeInUp 0.8s ease-out;
         }
-        
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 15px 40px rgba(234, 88, 12, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .error-code {
             font-size: 8rem;
             font-weight: bold;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
         }
-        
+
         .error-title {
             font-size: 2rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
         }
-        
+
         .error-message {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        
-        .security-info {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 24px;
-            background: rgba(255,255,255,0.2);
+            background: var(--primary-blue);
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid var(--primary-blue);
             transition: all 0.3s ease;
+            margin: 0.5rem;
+            font-weight: 600;
         }
-        
+
         .btn:hover {
-            background: rgba(255,255,255,0.3);
+            background: var(--primary-blue-dark);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .security-info {
+            background: rgba(5, 150, 105, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid rgba(5, 150, 105, 0.2);
+            color: var(--accent-emerald);
+        }
+
+        .security-info h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .security-info ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .security-info li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .error-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="error-container">
-        <div class="error-code">403</div>
-        <h1 class="error-title">🔒 Accès Interdit</h1>
-        <p class="error-message">
-            Votre tentative d'accès a été bloquée par notre système de sécurité.
-        </p>
-        
-        <div class="security-info">
-            <h3>🛡️ Protection Active</h3>
-            <p>Ce portfolio est protégé contre les tentatives d'intrusion et les attaques malveillantes.</p>
-            <p>Si vous pensez qu'il s'agit d'une erreur, veuillez contacter l'administrateur.</p>
+        <div class="error-icon">
+            <i data-feather="shield-off" style="color: white; width: 60px; height: 60px;"></i>
         </div>
         
+        <div class="error-code">403</div>
+        
+        <h1 class="error-title">Accès Interdit</h1>
+        
+        <p class="error-message">
+            Vous n'avez pas l'autorisation d'accéder à cette ressource. Cette restriction fait partie 
+            du système de sécurité du portfolio.
+        </p>
+        
         <a href="../PortFolio/Html/Index.html" class="btn">
-            ← Retour à l'accueil
+            <i data-feather="home" style="width: 18px; height: 18px;"></i>
+            Retour à l'accueil
         </a>
+        
+        <div class="security-info">
+            <h3>
+                <i data-feather="shield-check" style="width: 20px; height: 20px;"></i>
+                Mesures de Sécurité Actives
+            </h3>
+            <ul>
+                <li>
+                    <i data-feather="check" style="width: 16px; height: 16px;"></i>
+                    Protection des fichiers sensibles
+                </li>
+                <li>
+                    <i data-feather="check" style="width: 16px; height: 16px;"></i>
+                    Filtrage des accès non autorisés
+                </li>
+                <li>
+                    <i data-feather="check" style="width: 16px; height: 16px;"></i>
+                    Monitoring des tentatives d'intrusion
+                </li>
+                <li>
+                    <i data-feather="check" style="width: 16px; height: 16px;"></i>
+                    Chiffrement des communications
+                </li>
+            </ul>
+        </div>
     </div>
+    
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
