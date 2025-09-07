@@ -37,6 +37,145 @@
             border-bottom: 2px solid var(--accent-emerald);
         }
         
+        .logos-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .logo-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .logo-item img {
+            max-height: 80px;
+            max-width: 200px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-item h4 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .organigramme {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .organigramme h3 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .org-level {
+            margin-bottom: 2rem;
+        }
+        
+        .org-president {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .org-box {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .org-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .org-president .org-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+            color: white;
+            border-color: var(--primary-blue-dark);
+            display: inline-block;
+            min-width: 250px;
+        }
+        
+        .org-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .org-service {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-emerald);
+        }
+        
+        .org-service h4 {
+            color: var(--accent-emerald);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--accent-emerald);
+            padding-bottom: 0.5rem;
+        }
+        
+        .org-chef {
+            background: var(--accent-emerald);
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .org-employee {
+            background: white;
+            border: 1px solid var(--gray-300);
+            margin-bottom: 0.5rem;
+        }
+        
+        .org-employee.alternant {
+            background: var(--gray-50);
+            border-left: 3px solid var(--accent-orange);
+        }
+        
+        .org-employee.alternant::after {
+            content: " (Alternant)";
+            color: var(--accent-orange);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .org-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .org-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .org-role {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
         .report-title {
             font-size: 2.5rem;
             font-weight: 800;
@@ -185,6 +324,24 @@
                 position: static;
                 margin: 1rem 0;
             }
+            
+            .logos-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .org-services {
+                grid-template-columns: 1fr;
+            }
+            
+            .org-box {
+                margin: 0.25rem;
+                padding: 0.75rem;
+            }
+            
+            .org-president .org-box {
+                min-width: auto;
+            }
         }
     </style>
 </head>
@@ -207,16 +364,36 @@
     <main>
         <div class="report-container">
             <div class="report-header">
-                <h1 class="report-title">RAPPORT DE STAGE</h1>
-                <h2 class="report-subtitle">Technicien Informatique</h2>
+                <div class="logos-container">
+                    <div class="logo-item">
+                        <img src="../Images/logo-giga-media.png" alt="Logo GigaMedia" onerror="this.style.display='none'">
+                        <h4>GigaMedia</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Entreprise d'accueil</p>
+                    </div>
+                    <div class="logo-item">
+                        <h1 class="report-title">RAPPORT DE STAGE</h1>
+                        <h2 class="report-subtitle">Technicien Informatique</h2>
+                    </div>
+                    <div class="logo-item">
+                        <img src="../Images/logo-pergaud.jpg" alt="Logo Lycée Pergaud" onerror="this.style.display='none'">
+                        <h4>Lycée Louis Pergaud</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">Établissement de formation</p>
+                    </div>
+                </div>
                 
                 <div class="report-info">
                     <h3>PINOT Julien</h3>
-                    <p><strong>Période :</strong> 26 mai 2025 au 27 juin 2025</p>
-                    <p><strong>Tuteur de stage :</strong> Monsieur PLAZA</p>
-                    <p><strong>Superviseur académique :</strong> Monsieur Ramseyer</p>
-                    <p><strong>Établissement :</strong> Lycée Louis Pergaud - 91-93 Bd Léon Blum, 25000 Besançon</p>
-                    <p><strong>Entreprise d'accueil :</strong> Giga Media – 4, Rue Claude Monnet, 70000 Vesoul</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div>
+                            <p><strong>Période :</strong> 26 mai 2025 au 27 juin 2025</p>
+                            <p><strong>Tuteur de stage :</strong> Monsieur PLAZA</p>
+                            <p><strong>Superviseur académique :</strong> Monsieur Ramseyer</p>
+                        </div>
+                        <div>
+                            <p><strong>Établissement :</strong> Lycée Louis Pergaud<br>91-93 Bd Léon Blum, 25000 Besançon</p>
+                            <p><strong>Entreprise d'accueil :</strong> Giga Media<br>4, Rue Claude Monnet, 70000 Vesoul</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -286,12 +463,93 @@
                 </ul>
 
                 <h2 id="organisation">2. Organisation</h2>
-                <p>L'entreprise est indépendante et se structure autour de trois pôles principaux :</p>
-                <ul>
-                    <li><strong>La direction et le commercial :</strong> assurés par le président, M. Sylvain Breney, accompagné de collaborateurs.</li>
-                    <li><strong>Le service administratif :</strong> géré par Emmanuelle Hansen (comptabilité et secrétariat).</li>
-                    <li><strong>Le service technique :</strong> dirigé par Philippe Plaza, avec une équipe composée de techniciens expérimentés et d'alternants.</li>
-                </ul>
+                <p>L'entreprise est indépendante et se structure autour de trois pôles principaux dirigés par le président :</p>
+                
+                <div class="organigramme">
+                    <h3>🏢 Organigramme de GigaMedia</h3>
+                    
+                    <div class="org-president">
+                        <div class="org-box">
+                            <div class="org-name">Sylvain BRENEY</div>
+                            <div class="org-role">Président - Directeur Général</div>
+                        </div>
+                    </div>
+                    
+                    <div class="org-services">
+                        <div class="org-service">
+                            <h4>📋 Service Administratif</h4>
+                            <div class="org-box org-chef">
+                                <div class="org-name">Sylvain BRENEY</div>
+                                <div class="org-role">Responsable Administratif</div>
+                            </div>
+                            <div class="org-box org-employee">
+                                <div class="org-name">Emmanuelle HANSEN</div>
+                                <div class="org-role">Comptabilité - Secrétariat</div>
+                            </div>
+                        </div>
+                        
+                        <div class="org-service">
+                            <h4>🔧 Service Technique</h4>
+                            <div class="org-box org-chef">
+                                <div class="org-name">Philippe PLAZA</div>
+                                <div class="org-role">Responsable Technique</div>
+                            </div>
+                            <div style="margin-left: 1rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-secondary);">Atelier / Intervention sur site :</p>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Kévin PAYEN</div>
+                                    <div class="org-role">Technicien</div>
+                                </div>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Matthieu LARERE</div>
+                                    <div class="org-role">Technicien</div>
+                                </div>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Daniel DESBRANCHES</div>
+                                    <div class="org-role">Technicien</div>
+                                </div>
+                                <div class="org-box org-employee alternant">
+                                    <div class="org-name">Erwan MUSSOT</div>
+                                    <div class="org-role">Technicien</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="org-service">
+                            <h4>💼 Service Commercial</h4>
+                            <div class="org-box org-chef">
+                                <div class="org-name">Sylvain BRENEY</div>
+                                <div class="org-role">Responsable Commercial</div>
+                            </div>
+                            <div style="margin-left: 1rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-secondary);">Magasin / Extérieur :</p>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Jean-Christophe GARNIER</div>
+                                    <div class="org-role">Commercial</div>
+                                </div>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Philippe PLAZA</div>
+                                    <div class="org-role">Commercial Technique</div>
+                                </div>
+                                <div class="org-box org-employee">
+                                    <div class="org-name">Sylvain BRENEY</div>
+                                    <div class="org-role">Commercial Direction</div>
+                                </div>
+                                <div class="org-box org-employee alternant">
+                                    <div class="org-name">Alexis SARANDON</div>
+                                    <div class="org-role">Commercial</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1rem; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--accent-orange);">
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                            <i data-feather="info" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 0.5rem;"></i>
+                            <strong>Note :</strong> Philippe Plaza cumule les fonctions de responsable technique et commercial technique, témoignant de la polyvalence requise dans une structure de cette taille.
+                        </p>
+                    </div>
+                </div>
 
                 <h2 id="service-technique">3. Le service technique</h2>
                 <p>C'est dans ce service que j'ai été intégré. Ses missions sont variées :</p>
@@ -462,6 +720,9 @@
                 }
             });
         });
+        
+        // Initialiser les icônes Feather
+        feather.replace();
     </script>
 </body>
 
