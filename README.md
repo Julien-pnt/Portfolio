@@ -331,13 +331,6 @@ cd C:/xampp/htdocs/SIO1_2024_PINOT/
 - 25000 Besançon
 - 📞 03 81 41 08 41
 
-### **🏢 Stage - GigaMedia**
-- **Entreprise** : GigaMedia SAS
-- 4, Rue Claude Monnet
-- 70000 Vesoul
-- 📞 03 84 76 24 24
-- **Tuteur** : Philippe PLAZA
-
 ---
 
 ## 📄 **LICENCE & CRÉDITS**
