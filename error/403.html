@@ -10,9 +10,10 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Accès interdit - Cette ressource est protégée par les systèmes de sécurité du portfolio.">
     
     <title>403 - Accès Interdit | Portfolio Julien PINOT</title>
-    <link rel="shortcut icon" href="/SIO1_2024_PINOT/PortFolio/Images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="/PortFolio/Images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     
@@ -67,20 +68,71 @@
             overflow: hidden;
         }
 
+        /* Animated background particles */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        body::before {
+            top: -100px;
+            left: -100px;
+            background: radial-gradient(circle, var(--accent-orange), transparent);
+            animation-delay: -5s;
+        }
+
+        body::after {
+            bottom: -150px;
+            right: -150px;
+            background: radial-gradient(circle, var(--primary-blue), transparent);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
         .error-container {
             text-align: center;
-            max-width: 600px;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--border-radius-xl);
-            box-shadow: var(--shadow-xl);
+            max-width: 650px;
+            padding: 2rem 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             width: 90%;
+            max-height: 95vh;
+            overflow-y: auto;
             position: relative;
             z-index: 10;
             color: var(--text-primary);
-            animation: fadeInUp 0.8s ease-out;
+            animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--primary-blue), var(--accent-red));
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .error-container:hover::before {
+            opacity: 0.3;
         }
 
         @keyframes fadeInUp {
@@ -95,14 +147,14 @@
         }
 
         .error-icon {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
             box-shadow: 0 15px 40px rgba(234, 88, 12, 0.3);
             animation: pulse 2s infinite;
         }
@@ -113,9 +165,9 @@
         }
 
         .error-code {
-            font-size: 8rem;
+            font-size: 5rem;
             font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
             background-clip: text;
@@ -125,68 +177,130 @@
         }
 
         .error-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
             font-weight: 700;
             color: var(--text-primary);
         }
 
         .error-message {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
             color: var(--text-secondary);
             line-height: 1.6;
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 12px 24px;
             background: var(--primary-blue);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid var(--primary-blue);
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             margin: 0.5rem;
             font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn:hover {
             background: var(--primary-blue-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
         }
 
         .security-info {
-            background: rgba(5, 150, 105, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 1px solid rgba(5, 150, 105, 0.2);
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.08), rgba(5, 150, 105, 0.12));
+            padding: 1.5rem 1.25rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 0.5rem;
+            border: 2px solid rgba(5, 150, 105, 0.2);
             color: var(--accent-emerald);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .security-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(5, 150, 105, 0.05), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .security-info h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .security-info ul {
             list-style: none;
             text-align: left;
+            position: relative;
+            z-index: 1;
         }
 
         .security-info li {
-            padding: 0.25rem 0;
+            padding: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease;
+        }
+
+        .security-info li:hover {
+            transform: translateX(5px);
         }
 
         /* Responsive */
@@ -210,7 +324,7 @@
 <body>
     <div class="error-container">
         <div class="error-icon">
-            <i data-feather="shield-off" style="color: white; width: 60px; height: 60px;"></i>
+            <i data-feather="shield-off" style="color: white; width: 50px; height: 50px;"></i>
         </div>
         
         <div class="error-code">403</div>
@@ -222,9 +336,9 @@
             du système de sécurité du portfolio.
         </p>
         
-        <a href="/SIO1_2024_PINOT/PortFolio/Html/Index.html" class="btn">
-            <i data-feather="home" style="width: 18px; height: 18px;"></i>
-            Retour à l'accueil
+        <a href="/PortFolio/Html/Index.html" class="btn">
+            <i data-feather="home" style="width: 20px; height: 20px;"></i>
+            <span>Retour à l'accueil</span>
         </a>
         
         <div class="security-info">
@@ -255,6 +369,33 @@
     
     <script>
         feather.replace();
+
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.error-container');
+            const items = container.querySelectorAll('.security-info li');
+            
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 800 + (index * 100));
+            });
+
+            // Effet de particules au survol de l'icône
+            const icon = document.querySelector('.error-icon');
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
     </script>
 </body>
 </html>

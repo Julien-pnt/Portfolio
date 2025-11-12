@@ -428,6 +428,83 @@ Animations modernes et performantes pour un portfolio original
     }
 }
 
+/* ==================== ANIMATIONS AVANCÉES POUR ACCESSIBILITÉ ==================== */
+
+/* Animation de focus pour meilleure visibilité */
+@keyframes focusPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(37, 99, 235, 0);
+    }
+}
+
+*:focus-visible {
+    animation: focusPulse 1.5s ease-out;
+}
+
+/* Animation de chargement pour les boutons */
+@keyframes buttonLoad {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn.loading::after {
+    animation: buttonLoad 0.6s linear infinite;
+}
+
+/* Animation de succès pour formulaires */
+@keyframes successCheck {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+.form-success::after {
+    animation: successCheck 0.5s ease-out;
+}
+
+/* Animation d'erreur pour formulaires */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.form-error {
+    animation: shake 0.5s ease-out;
+}
+
+/* Animation de tooltip */
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-tooltip]:hover::after {
+    animation: tooltipFadeIn 0.2s ease-out;
+}
+
 /* ==================== UTILITIES POUR OBSERVERS ==================== */
 
 /* Classes pour l'intersection observer */
