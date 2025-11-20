@@ -521,9 +521,34 @@ main {
 }
 
 .grid-1 { grid-template-columns: 1fr; }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-.grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); }
+
+/* Images responsives */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Vidéos responsives */
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tableaux responsives */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.875rem;
+    }
+}
 
 /* ==================== STATISTIQUES ==================== */
 .stats-grid {
@@ -1033,47 +1058,105 @@ main {
 
 @media (max-width: 768px) {
     :root {
-        --nav-height: 64px;
+        --nav-height: auto;
+        --space-5: 2rem;
+        --space-6: 3rem;
     }
     
     .header {
-        padding: 0 var(--space-2);
+        padding: var(--space-2);
         flex-wrap: wrap;
         height: auto;
-        min-height: var(--nav-height);
+        min-height: 60px;
+    }
+    
+    .header__logo h1 {
+        font-size: 1.25rem;
+    }
+    
+    .navbar {
+        width: 100%;
+        margin-left: 0;
     }
     
     .navbar__menu {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-1);
-        justify-content: center;
         width: 100%;
-        margin-top: var(--space-1);
+        margin-top: var(--space-2);
+        padding: 0;
     }
     
     .navbar__link {
-        padding: var(--space-1);
-        font-size: 0.75rem;
-        min-width: 70px;
+        padding: var(--space-2);
+        font-size: 0.7rem;
+        text-align: center;
+        border-radius: var(--border-radius);
+    }
+    
+    .navbar__link svg {
+        width: 18px;
+        height: 18px;
+        margin-bottom: 4px;
+    }
+    
+    .navbar__link span {
+        display: block;
+        font-size: 0.7rem;
+    }
+    
+    main {
+        margin-top: 0;
     }
     
     .section {
-        padding: var(--space-5) var(--space-3);
+        padding: var(--space-4) var(--space-3);
+        margin-bottom: var(--space-4);
     }
     
     .hero-section {
-        padding: var(--space-5) var(--space-3);
+        padding: var(--space-5) var(--space-3) var(--space-4);
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+        line-height: 1.2;
+        margin-bottom: var(--space-3);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.25rem) !important;
+        margin-bottom: var(--space-3);
+    }
+    
+    .hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
     }
     
     .grid-2,
     .grid-3,
     .grid-4 {
         grid-template-columns: 1fr;
+        gap: var(--space-3);
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-3);
+    }
+    
+    .card {
+        padding: var(--space-4);
+    }
+    
+    .card-title {
+        font-size: 1.125rem;
+    }
+    
+    .card-content p {
+        font-size: 0.95rem;
     }
     
     .project-links,
@@ -1092,31 +1175,112 @@ main {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --space-4: 1.5rem;
+        --space-5: 2rem;
+    }
+    
     .header {
-        padding: 0 var(--space-1);
+        padding: var(--space-2) var(--space-2);
+    }
+    
+    .header__logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .navbar__menu {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
     }
     
     .navbar__link {
-        padding: var(--space-1);
-        min-width: 60px;
+        padding: 8px 4px;
+    }
+    
+    .navbar__link svg {
+        width: 16px;
+        height: 16px;
+        margin-bottom: 2px;
     }
     
     .navbar__link span {
         font-size: 0.625rem;
     }
     
+    .section {
+        padding: var(--space-3) var(--space-2);
+    }
+    
+    .hero-section {
+        padding: var(--space-4) var(--space-2) var(--space-3);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .hero-description {
+        font-size: 0.875rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-2);
     }
     
     .btn {
         padding: 12px 20px;
         font-size: 0.8125rem;
+        width: 100%;
+        justify-content: center;
     }
     
     .card,
     .project-card {
         padding: var(--space-3);
+    }
+    
+    .project-tech {
+        gap: var(--space-1);
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+    
+    .d-flex,
+    .project-links {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    .footer {
+        padding: var(--space-4) var(--space-2);
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        justify-content: center;
+    }
+    
+    .footer-link {
+        font-size: 0.875rem;
     }
 }
 
@@ -1281,6 +1445,131 @@ select:focus-visible,
 textarea:focus-visible {
     outline: 3px solid var(--primary-blue);
     outline-offset: 2px;
+}
+
+/* ==================== OPTIMISATIONS TOUCH ==================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Améliorer les zones de touch sur mobile */
+    .btn,
+    .navbar__link,
+    a,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Désactiver les effets hover sur touch */
+    .card:hover,
+    .btn:hover,
+    .navbar__link:hover {
+        transform: none;
+    }
+    
+    /* Activer les effets sur active/tap */
+    .card:active,
+    .btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ==================== ORIENTATION PAYSAGE MOBILE ==================== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        padding: var(--space-3) var(--space-3);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .section {
+        padding: var(--space-3) var(--space-3);
+    }
+}
+
+/* ==================== TRÈS PETITS ÉCRANS (320px) ==================== */
+@media (max-width: 360px) {
+    :root {
+        --space-2: 0.75rem;
+        --space-3: 1rem;
+        --space-4: 1.25rem;
+    }
+    
+    .header__logo h1 {
+        font-size: 1rem;
+    }
+    
+    .navbar__menu {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+    
+    .navbar__link {
+        padding: 6px 2px;
+        font-size: 0.65rem;
+    }
+    
+    .navbar__link svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .navbar__link span {
+        font-size: 0.6rem;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem !important;
+    }
+    
+    .card {
+        padding: var(--space-2);
+    }
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    h3 {
+        font-size: 1.125rem !important;
+    }
+}
+
+/* ==================== PERFORMANCE ET OPTIMISATIONS ==================== */
+/* Optimiser le rendu des animations sur mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+    }
+    
+    /* Améliorer le scrolling sur iOS */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Désactiver certaines transitions coûteuses sur mobile */
+    .card::before,
+    .project-card::before,
+    .stat-item::before {
+        display: none;
+    }
 }
 
 /* Améliorer la lisibilité pour high contrast */
