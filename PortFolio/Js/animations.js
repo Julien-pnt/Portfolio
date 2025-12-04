@@ -27,6 +27,7 @@ class PortfolioAnimations {
         this.setupCardAnimations();
         this.setupScrollAnimations();
         this.setupHoverEffects();
+        this.animateCounters();
     }
 
     // Création de particules flottantes
@@ -302,13 +303,14 @@ class PortfolioAnimations {
                             current = target;
                             clearInterval(timer);
                         }
-                        counter.textContent = Math.floor(current);
+                        const displayValue = Math.floor(current);
+                        counter.textContent = target === 100 ? displayValue + '%' : displayValue;
                     }, 16);
                     
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.7 });
+        }, { threshold: 0.3 });
         
         counters.forEach(counter => observer.observe(counter));
     }
@@ -334,7 +336,13 @@ class PortfolioAnimations {
 // Initialiser les animations
 const portfolioAnimations = new PortfolioAnimations();
 
+// Initialiser les icônes Feather si disponibles
+if (typeof feather !== 'undefined') {
+    feather.replace();
+}
+
 // Export pour utilisation dans d'autres scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = PortfolioAnimations;
 }
+

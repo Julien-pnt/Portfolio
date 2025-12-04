@@ -94,6 +94,34 @@ Animations modernes et performantes pour un portfolio original
     }
 }
 
+/* Animation de scroll pulse pour indicateur */
+@keyframes scrollPulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scaleY(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleY(1.2);
+    }
+}
+
+/* Animation de flottement lent pour éléments décoratifs */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-15px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-25px) translateX(0px);
+    }
+    75% {
+        transform: translateY(-15px) translateX(-10px);
+    }
+}
+
 /* Animation de typewriter */
 @keyframes typewriter {
     from {

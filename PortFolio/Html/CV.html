@@ -13,12 +13,28 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/header.css">
+    <link rel="stylesheet" href="../Css/cards.css">
+    <link rel="stylesheet" href="../Css/utilities.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
     <link rel="stylesheet" href="../Css/animations.css">
+    <link rel="stylesheet" href="../Css/dark-mode.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>CV | Julien PINOT - Étudiant</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="../Js/security.js"></script>
+    <title>CV | Julien PINOT - Étudiant BTS SIO & Futur Pentester</title>
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="../Js/enhanced-security.js" defer></script>
+    <script src="../Js/dark-mode.js" defer></script>
+    <script src="../Js/menu-burger.js" defer></script>
+    <script src="../Js/animations.js" defer></script>
     <link rel="shortcut icon" href="../Images/logo.png" type="image/png">
+    
+    <!-- Apply theme immediately if saved -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
 </head>
 
 <body>
@@ -580,42 +596,10 @@
                 <a href="Contact.html" class="footer-link">Contact</a>
             </div>
             <p class="footer-copyright">
-                © 2024 Julien PINOT - Étudiant BTS SIO & Débutant en Cybersécurité
+                © 2025 Julien PINOT - Étudiant BTS SIO & Futur Pentester
             </p>
         </div>
     </footer>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Initialize Feather icons
-        feather.replace();
-
-        // Update copyright year automatically
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentYear = new Date().getFullYear();
-            // Update any element with class 'current-year' or id 'current-year'
-            const yearElements = document.querySelectorAll('.current-year, #current-year');
-            yearElements.forEach(element => {
-                element.textContent = currentYear;
-            });
-            
-            // Also update any text containing old years
-            document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
-        });
-    </script>
-    
-    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
-    <script src="../Js/menu-burger.js"></script>
-    <script src="../Js/animations.js"></script>
 </body>
 
 </html>

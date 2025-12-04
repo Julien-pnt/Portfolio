@@ -5,20 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SÉCURITÉ RENFORCÉE -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; frame-src 'none';">
+    <!-- SEO OPTIMISÉ -->
+    <meta name="description" content="Julien PINOT - Étudiant BTS SIO SISR spécialisé en cybersécurité et futur pentester. Découvrez mes projets, compétences et certifications en sécurité informatique.">
+    <meta name="keywords" content="cybersécurité, pentester, BTS SIO, SISR, portfolio, sécurité informatique, tests d'intrusion, Julien PINOT">
+    <meta name="author" content="Julien PINOT">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://julienpinot.fr">
+    
+    <!-- OPEN GRAPH / SOCIAL MEDIA -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://julienpinot.fr">
+    <meta property="og:title" content="Julien PINOT - Portfolio Cybersécurité">
+    <meta property="og:description" content="Étudiant BTS SIO & Futur Pentester">
+    <meta property="og:image" content="https://julienpinot.fr/PortFolio/Images/Moi.jpg">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Julien PINOT - Portfolio Cybersécurité">
+    <meta name="twitter:description" content="Étudiant BTS SIO & Futur Pentester">
+    <meta name="twitter:image" content="https://julienpinot.fr/PortFolio/Images/Moi.jpg">
+    
+    <!-- SÉCURITÉ RENFORCÉE (CSP amélioré) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
+    <!-- STYLESHEETS -->
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/header.css">
+    <link rel="stylesheet" href="../Css/cards.css">
+    <link rel="stylesheet" href="../Css/utilities.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
     <link rel="stylesheet" href="../Css/animations.css">
+    <link rel="stylesheet" href="../Css/dark-mode.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Julien PINOT - Étudiant BTS SIO & Débutant en Cybersécurité | Portfolio Professionnel</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="../Js/security.js"></script>
+    
+    <!-- Apply theme immediately if saved -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
+    
+    <title>Julien PINOT - Étudiant BTS SIO & Futur Pentester | Portfolio Cybersécurité</title>
+    
+    <!-- PRECONNECT pour améliorer les performances -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="../Images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../Images/logo.png">
+    
+    <!-- SCRIPTS (defer pour améliorer les performances) -->
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="../Js/enhanced-security.js" defer></script>
+    <script src="../Js/dark-mode.js" defer></script>
+    <script src="../Js/menu-burger.js" defer></script>
+    <script src="../Js/animations.js" defer></script>
+    
+    <!-- STRUCTURED DATA (JSON-LD pour SEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Julien PINOT",
+        "jobTitle": "Étudiant BTS SIO SISR - Futur Pentester",
+        "description": "Étudiant spécialisé en cybersécurité et tests d'intrusion",
+        "url": "https://julienpinot.fr",
+        "image": "https://julienpinot.fr/PortFolio/Images/Moi.jpg",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "BTS SIO"
+        },
+        "knowsAbout": ["Cybersécurité", "Pentesting", "Sécurité des systèmes", "Réseaux", "Linux", "Windows Server"]
+    }
+    </script>
 </head>
 
 <body>
@@ -99,33 +168,33 @@
 
     <main id="main-content">
         <!-- HERO SECTION AMÉLIORÉE MAIS COHÉRENTE -->
-        <section class="hero-section hero-parallax" style="position: relative; min-height: 90vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+        <section class="hero-section hero-parallax hero-section--gradient">
             
-            <div class="hero-content" style="position: relative; z-index: 2; text-align: center; max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
+            <div class="hero-content hero-content--centered">
                 <!-- Photo de profil avec style cohérent -->
-                <div class="profile-image-container animate-fade-in-up" style="margin-bottom: 2rem; position: relative; display: inline-block;">
-                    <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto; position: relative; box-shadow: var(--shadow-lg); border: 4px solid var(--primary-blue); transition: all 0.3s ease;">
-                        <img src="../Images/Moi.jpg" alt="Julien PINOT" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="profile-image-wrapper animate-fade-in-up">
+                    <div class="profile-image-circle">
+                        <img src="../Images/Moi.jpg" alt="Photo de profil de Julien PINOT, étudiant en cybersécurité" loading="eager">
                     </div>
                 </div>
                 
-                <h1 class="hero-title typing-effect animate-fade-in-up delay-200" style="font-size: 3.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1rem;">
+                <h1 class="hero-title hero-title--large typing-effect animate-fade-in-up delay-200">
                     Julien PINOT
                 </h1>
                 
-                <h2 class="hero-subtitle animate-fade-in-up delay-400" style="font-size: 1.6rem; color: var(--primary-blue); margin-bottom: 1.5rem; font-weight: 600;">
+                <h2 class="hero-subtitle hero-subtitle--accent animate-fade-in-up delay-400">
                     🛡️ Étudiant BTS SIO & Futur Pentester
                 </h2>
                 
-                <p class="hero-description animate-fade-in-up delay-600" style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.7; color: var(--text-secondary);">
-                    Étudiant BTS SIO spécialisé en <strong style="color: var(--primary-blue);">cybersécurité</strong>, 
+                <p class="hero-description hero-description--long animate-fade-in-up delay-600">
+                    Étudiant BTS SIO spécialisé en <strong class="text-primary-blue">cybersécurité</strong>, 
                     passionné par la protection des systèmes informatiques et l'analyse de vulnérabilités. 
-                    Mon objectif : devenir un expert en <strong style="color: var(--accent-emerald);">tests d'intrusion</strong> 
+                    Mon objectif : devenir un expert en <strong class="text-accent-emerald">tests d'intrusion</strong> 
                     pour sécuriser les infrastructures d'entreprise.
                 </p>
 
                 <!-- BOUTONS D'ACTION COHÉRENTS -->
-                <div class="d-flex justify-center gap-lg mt-xl animate-fade-in-up delay-800" style="flex-wrap: wrap; gap: 1rem;">
+                <div class="hero-buttons d-flex justify-center gap-lg mt-xl animate-fade-in-up delay-800">
                     <a href="CV.html" class="btn btn-primary shine-effect ripple-effect morph-hover">
                         <i data-feather="download"></i>
                         Télécharger CV
@@ -142,166 +211,166 @@
             </div>
             
             <!-- Indicateur de scroll discret repositionné -->
-            <div class="scroll-indicator animate-fade-in-up delay-1000" style="position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; z-index: 3;">
-                <div style="width: 2px; height: 30px; background: var(--primary-blue); margin: 0 auto 10px; opacity: 0.6; animation: scrollPulse 2s infinite;"></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Découvrir mon profil</p>
+            <div class="scroll-indicator animate-fade-in-up delay-1000">
+                <div class="scroll-indicator-line"></div>
+                <p class="scroll-indicator-text">Découvrir mon profil</p>
             </div>
         </section>
 
         <!-- SECTION STATISTIQUES REDESIGNÉE -->
-        <section class="section section--bg-secondary" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); position: relative; overflow: hidden;">
+        <section class="section section--bg-gradient-stats">
             <!-- Élément décoratif subtil -->
-            <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -150px; left: -150px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105, 0.06) 0%, transparent 70%); border-radius: 50%;"></div>
+            <div class="decorative-circle decorative-circle--top-right"></div>
+            <div class="decorative-circle decorative-circle--bottom-left"></div>
             
-            <div class="container" style="position: relative; z-index: 2;">
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 15px; background: var(--bg-card); padding: 1.5rem 3rem; border-radius: 50px; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); margin-bottom: 1rem;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">📊</div>
-                        <h2 style="color: var(--text-primary); font-size: 2rem; font-weight: 700; margin: 0;">Mon Impact en Chiffres</h2>
+            <div class="container container--relative">
+                <div class="section-header-centered">
+                    <div class="section-badge">
+                        <div class="section-icon section-icon--blue">📊</div>
+                        <h2 class="section-title">Mon Impact en Chiffres</h2>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Découvrez les chiffres clés qui illustrent mon parcours et mon engagement dans la cybersécurité</p>
+                    <p class="section-description">Découvrez les chiffres clés qui illustrent mon parcours et mon engagement dans la cybersécurité</p>
                 </div>
                 
-                <div class="stats-grid cards-cascade" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
-                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));"></div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);">🎓</div>
-                        <span class="stat-number counter" data-target="2" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 0.5rem; line-height: 1;">0</span>
-                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Années d'études</span>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">BTS SIO SISR (1ère année)<br>+ Bac Général obtenu</p>
-                        <div style="width: 40px; height: 3px; background: var(--primary-blue); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                <div class="stats-grid cards-cascade">
+                    <div class="stat-card stat-card--blue observe-fade tilt-3d">
+                        <div class="stat-card-top-bar stat-card-top-bar--blue"></div>
+                        <div class="stat-icon stat-icon--blue">🎓</div>
+                        <span class="stat-value stat-value--blue counter" data-target="2">0</span>
+                        <span class="stat-label">Années d'études</span>
+                        <p class="stat-description">BTS SIO SISR (1ère année)<br>+ Bac Général obtenu</p>
+                        <div class="stat-divider stat-divider--blue"></div>
                     </div>
                     
-                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--accent-emerald), #10b981);"></div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-emerald), #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);">💻</div>
-                        <span class="stat-number counter" data-target="7" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--accent-emerald); margin-bottom: 0.5rem; line-height: 1;">0</span>
-                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Projets réalisés</span>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Web, Système, Réseau<br>& Cybersécurité</p>
-                        <div style="width: 40px; height: 3px; background: var(--accent-emerald); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    <div class="stat-card stat-card--green observe-fade tilt-3d">
+                        <div class="stat-card-top-bar stat-card-top-bar--green"></div>
+                        <div class="stat-icon stat-icon--green">💻</div>
+                        <span class="stat-value stat-value--green counter" data-target="7">0</span>
+                        <span class="stat-label">Projets réalisés</span>
+                        <p class="stat-description">Web, Système, Réseau<br>& Cybersécurité</p>
+                        <div class="stat-divider stat-divider--green"></div>
                     </div>
                     
-                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--accent-orange), #fb923c);"></div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-orange), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);">🏆</div>
-                        <span class="stat-number counter" data-target="3" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 0.5rem; line-height: 1;">0</span>
-                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Certifications</span>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">ANSSI, CNIL, PIX<br>+ TryHackMe en cours</p>
-                        <div style="width: 40px; height: 3px; background: var(--accent-orange); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    <div class="stat-card stat-card--orange observe-fade tilt-3d">
+                        <div class="stat-card-top-bar stat-card-top-bar--orange"></div>
+                        <div class="stat-icon stat-icon--orange">🏆</div>
+                        <span class="stat-value stat-value--orange counter" data-target="3">0</span>
+                        <span class="stat-label">Certifications</span>
+                        <p class="stat-description">ANSSI, CNIL, PIX<br>+ TryHackMe en cours</p>
+                        <div class="stat-divider stat-divider--orange"></div>
                     </div>
                     
-                    <div class="stat-item observe-fade tilt-3d" style="background: var(--bg-card); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); transition: all 0.4s ease; position: relative; overflow: hidden;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary-blue-light), #60a5fa);"></div>
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue-light), #60a5fa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 1.8rem; box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);">🚀</div>
-                        <span class="stat-number counter" data-target="100" style="display: block; font-size: 3.2rem; font-weight: 900; color: var(--primary-blue-light); margin-bottom: 0.5rem; line-height: 1;">0</span>
-                        <span class="stat-label" style="color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">% Motivation</span>
-                        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.4;">Passion cybersécurité<br>& apprentissage continu</p>
-                        <div style="width: 40px; height: 3px; background: var(--primary-blue-light); margin: 1rem auto 0; border-radius: 2px; opacity: 0.3;"></div>
+                    <div class="stat-card stat-card--light-blue observe-fade tilt-3d">
+                        <div class="stat-card-top-bar stat-card-top-bar--light-blue"></div>
+                        <div class="stat-icon stat-icon--light-blue">🚀</div>
+                        <span class="stat-value stat-value--light-blue counter" data-target="100">0</span>
+                        <span class="stat-label">% Motivation</span>
+                        <p class="stat-description">Passion cybersécurité<br>& apprentissage continu</p>
+                        <div class="stat-divider stat-divider--light-blue"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECTION PROFIL CYBERSÉCURITÉ REDESIGNÉE -->
-        <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(248, 250, 252, 0.8) 100%); position: relative; overflow: hidden;">
+        <section class="section section--bg-gradient-profile">
             <!-- Éléments décoratifs subtils -->
-            <div style="position: absolute; top: 20%; right: -5%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, transparent 70%); border-radius: 50%; animation: floatSlow 12s ease-in-out infinite;"></div>
-            <div style="position: absolute; bottom: 10%; left: -10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%); border-radius: 50%; animation: floatSlow 15s ease-in-out infinite reverse;"></div>
+            <div class="decorative-circle decorative-circle--floating-small decorative-circle--right"></div>
+            <div class="decorative-circle decorative-circle--floating-large decorative-circle--left"></div>
             
-            <div class="intro-section observe-slide-left" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div class="intro-section observe-slide-left container-relative-centered">
                 <!-- Header de section élégant -->
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.9); padding: 2rem 3rem; border-radius: 60px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-emerald), #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);">🛡️</div>
-                        <h2 style="color: var(--text-primary); font-size: 2.3rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, var(--text-primary), var(--text-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Mon Profil en Cybersécurité</h2>
+                <div class="section-header-centered">
+                    <div class="section-badge section-badge--large">
+                        <div class="section-icon section-icon--emerald section-icon--large">🛡️</div>
+                        <h2 class="section-title--gradient">Mon Profil en Cybersécurité</h2>
                     </div>
                     
-                    <div style="max-width: 850px; margin: 0 auto; background: rgba(255, 255, 255, 0.7); padding: 2.5rem; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);">
-                        <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-secondary); margin: 0; position: relative;">
-                            <span style="font-size: 3rem; color: var(--primary-blue); opacity: 0.2; position: absolute; top: -15px; left: -20px; font-family: serif;">"</span>
-                            Actuellement en <strong style="color: var(--primary-blue); background: rgba(37, 99, 235, 0.1); padding: 2px 8px; border-radius: 6px;">BTS SIO option SISR</strong>, je me spécialise dans la 
-                            <strong style="color: var(--accent-emerald); background: rgba(5, 150, 105, 0.1); padding: 2px 8px; border-radius: 6px;">cybersécurité</strong> avec un objectif clair : devenir 
-                            <strong style="color: var(--accent-orange); background: rgba(234, 88, 12, 0.1); padding: 2px 8px; border-radius: 6px;">pentester professionnel</strong>. Mon approche combine 
+                    <div class="profile-quote-container">
+                        <p class="profile-quote-text">
+                            <span class="quote-mark-left">"</span>
+                            Actuellement en <strong class="text-highlight-blue">BTS SIO option SISR</strong>, je me spécialise dans la 
+                            <strong class="text-highlight-emerald">cybersécurité</strong> avec un objectif clair : devenir 
+                            <strong class="text-highlight-orange">pentester professionnel</strong>. Mon approche combine 
                             expertise technique, rigueur méthodologique et passion pour la protection des systèmes d'information.
-                            <span style="font-size: 3rem; color: var(--primary-blue); opacity: 0.2; position: absolute; bottom: -25px; right: -20px; font-family: serif;">"</span>
+                            <span class="quote-mark-right">"</span>
                         </p>
                     </div>
                 </div>
                 
                 <!-- Cartes de compétences redesignées -->
-                <div class="grid grid-2 mt-xl cards-cascade" style="gap: 3rem; max-width: 1200px; margin: 0 auto;">
+                <div class="grid grid-2 mt-xl cards-cascade grid-gap-3">
                     <!-- Sécurité Offensive -->
-                    <div class="card hover-lift morph-hover tilt-3d observe-zoom" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%); border-radius: 25px; padding: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); border: 1px solid rgba(220, 38, 127, 0.2); backdrop-filter: blur(10px); position: relative;">
+                    <div class="skill-card skill-card--red hover-lift morph-hover tilt-3d observe-zoom">
                         <!-- Header coloré Rouge/Orange pour Offensive -->
-                        <div style="background: linear-gradient(135deg, #dc2626, #ea580c); padding: 2rem; position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; opacity: 0.6;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;"></div>
-                            <div style="position: relative; z-index: 2;">
-                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
-                                    <div style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🔴</div>
-                                    <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin: 0;">Sécurité Offensive</h3>
+                        <div class="skill-card-header--red">
+                            <div class="skill-card-decoration-circle-top"></div>
+                            <div class="skill-card-decoration-circle-bottom"></div>
+                            <div class="skill-card-title-wrapper">
+                                <div class="skill-card-title-row">
+                                    <div class="skill-card-icon">🔴</div>
+                                    <h3 class="skill-card-title">Sécurité Offensive</h3>
                                 </div>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0; font-size: 1rem;">Red Team & Pentesting</p>
+                                <p class="skill-card-subtitle">Red Team & Pentesting</p>
                             </div>
                         </div>
                         
                         <!-- Contenu -->
-                        <div style="padding: 2rem;">
-                            <div style="display: grid; gap: 1rem;">
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">⚡</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Tests d'intrusion (Web & Réseau)</span>
+                        <div class="skill-card-content">
+                            <div class="skill-card-list">
+                                <div class="skill-list-item--red">
+                                    <div class="skill-list-icon--red">⚡</div>
+                                    <span class="skill-list-text">Tests d'intrusion (Web & Réseau)</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🔍</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Analyse de vulnérabilités</span>
+                                <div class="skill-list-item--red">
+                                    <div class="skill-list-icon--red">🔍</div>
+                                    <span class="skill-list-text">Analyse de vulnérabilités</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🎭</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Social Engineering</span>
+                                <div class="skill-list-item--red">
+                                    <div class="skill-list-icon--red">🎭</div>
+                                    <span class="skill-list-text">Social Engineering</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(220, 38, 38, 0.08); border-radius: 15px; border-left: 4px solid #dc2626; transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">💥</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Exploitation de failles</span>
+                                <div class="skill-list-item--red">
+                                    <div class="skill-list-icon--red">💥</div>
+                                    <span class="skill-list-text">Exploitation de failles</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Sécurité Défensive -->
-                    <div class="card hover-lift morph-hover tilt-3d observe-zoom" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%); border-radius: 25px; padding: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(10px); position: relative;">
+                    <div class="skill-card skill-card--blue hover-lift morph-hover tilt-3d observe-zoom">
                         <!-- Header coloré -->
-                        <div style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); padding: 2rem; position: relative; overflow: hidden;">
-                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; opacity: 0.6;"></div>
-                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.08); border-radius: 50%;"></div>
-                            <div style="position: relative; z-index: 2;">
-                                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem;">
-                                    <div style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">🔵</div>
-                                    <h3 style="color: white; font-size: 1.6rem; font-weight: 700; margin: 0;">Sécurité Défensive</h3>
+                        <div class="skill-card-header--blue">
+                            <div class="skill-card-decoration-circle-top"></div>
+                            <div class="skill-card-decoration-circle-bottom"></div>
+                            <div class="skill-card-title-wrapper">
+                                <div class="skill-card-title-row">
+                                    <div class="skill-card-icon">🔵</div>
+                                    <h3 class="skill-card-title">Sécurité Défensive</h3>
                                 </div>
-                                <p style="color: rgba(255, 255, 255, 0.9); font-weight: 500; margin: 0; font-size: 1rem;">Blue Team & SOC</p>
+                                <p class="skill-card-subtitle">Blue Team & SOC</p>
                             </div>
                         </div>
                         
                         <!-- Contenu -->
-                        <div style="padding: 2rem;">
-                            <div style="display: grid; gap: 1rem;">
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">📊</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Monitoring et détection</span>
+                        <div class="skill-card-content">
+                            <div class="skill-card-list">
+                                <div class="skill-list-item--blue">
+                                    <div class="skill-list-icon--blue">📊</div>
+                                    <span class="skill-list-text">Monitoring et détection</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🔬</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Analyse forensique</span>
+                                <div class="skill-list-item--blue">
+                                    <div class="skill-list-icon--blue">🔬</div>
+                                    <span class="skill-list-text">Analyse forensique</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🛡️</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Durcissement systèmes</span>
+                                <div class="skill-list-item--blue">
+                                    <div class="skill-list-icon--blue">🛡️</div>
+                                    <span class="skill-list-text">Durcissement systèmes</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 15px; padding: 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 15px; border-left: 4px solid var(--primary-blue); transition: all 0.3s ease;">
-                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0;">🚨</div>
-                                    <span style="color: var(--text-primary); font-weight: 600;">Gestion des incidents</span>
+                                <div class="skill-list-item--blue">
+                                    <div class="skill-list-icon--blue">🚨</div>
+                                    <span class="skill-list-text">Gestion des incidents</span>
                                 </div>
                             </div>
                         </div>
@@ -448,140 +517,11 @@
                 <a href="Contact.html" class="footer-link">Contact</a>
             </div>
             <p class="footer-copyright">
-                © 2024 Julien PINOT - Étudiant BTS SIO & Débutant en Cybersécurité
+                © 2025 Julien PINOT - Étudiant BTS SIO & Futur Pentester
             </p>
         </div>
     </footer>
 
-    <script>
-        // Animation des statistiques
-        const observerOptions = {
-            threshold: 0.7
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    if (!statNumber.dataset.animated) {
-                        const target = parseInt(statNumber.dataset.target || statNumber.textContent.replace(/[^\d]/g, ''));
-                        const hasPercent = statNumber.dataset.target === '100';
-                        
-                        let currentNumber = 0;
-                        const increment = target / 30;
-
-                        const timer = setInterval(() => {
-                            currentNumber += increment;
-                            if (currentNumber >= target) {
-                                statNumber.textContent = hasPercent ? target + '%' : target;
-                                clearInterval(timer);
-                            } else {
-                                const displayNumber = Math.floor(currentNumber);
-                                statNumber.textContent = hasPercent ? displayNumber + '%' : displayNumber;
-                            }
-                        }, 50);
-                        
-                        statNumber.dataset.animated = 'true';
-                    }
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-item').forEach(stat => {
-            observer.observe(stat);
-        });
-
-        // Debug: Vérifier les éléments au chargement
-        console.log('Stats found:', document.querySelectorAll('.stat-item').length);
-        console.log('Counter elements:', document.querySelectorAll('.stat-number').length);
-        
-        // Animation forcée pour test immédiat (au cas où l'observer ne fonctionne pas)
-        setTimeout(() => {
-            document.querySelectorAll('.stat-number').forEach(statNumber => {
-                if (!statNumber.dataset.animated) {
-                    const target = parseInt(statNumber.dataset.target || '0');
-                    console.log('Animating:', target);
-                    
-                    let currentNumber = 0;
-                    const increment = target / 30;
-
-                    const timer = setInterval(() => {
-                        currentNumber += increment;
-                        if (currentNumber >= target) {
-                            statNumber.textContent = target === 100 ? target + '%' : target;
-                            clearInterval(timer);
-                        } else {
-                            const displayNumber = Math.floor(currentNumber);
-                            statNumber.textContent = target === 100 ? displayNumber + '%' : displayNumber;
-                        }
-                    }, 50);
-                    
-                    statNumber.dataset.animated = 'true';
-                }
-            });
-        }, 1000);
-
-        // Effet hover discret pour la photo de profil
-        const profileImage = document.querySelector('.profile-image-container > div');
-        if (profileImage) {
-            profileImage.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05)';
-                this.style.boxShadow = '0 20px 40px rgba(37, 99, 235, 0.2)';
-            });
-            
-            profileImage.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-                this.style.boxShadow = 'var(--shadow-lg)';
-            });
-        }
-
-        // Initialisation des icônes Feather
-        feather.replace();
-
-        // Update copyright year automatically
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentYear = new Date().getFullYear();
-            const yearElements = document.querySelectorAll('.current-year, #current-year');
-            yearElements.forEach(element => {
-                element.textContent = currentYear;
-            });
-            document.body.innerHTML = document.body.innerHTML.replace(/©\s*202[0-9]/g, `© ${currentYear}`);
-        });
-    </script>
-    
-    <!-- CSS pour les animations cohérentes -->
-    <style>
-        @keyframes scrollPulse {
-            0%, 100% { opacity: 0.6; transform: scaleY(1); }
-            50% { opacity: 1; transform: scaleY(1.2); }
-        }
-        
-        /* Hover effects subtils */
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem !important;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.3rem !important;
-            }
-            
-            .profile-image-container > div {
-                width: 150px !important;
-                height: 150px !important;
-            }
-        }
-    </style>
-    
-    <!-- SCRIPT D'ANIMATIONS AVANCÉES -->
-    <script src="../Js/menu-burger.js"></script>
-    <script src="../Js/animations.js"></script>
 </body>
 
 </html>

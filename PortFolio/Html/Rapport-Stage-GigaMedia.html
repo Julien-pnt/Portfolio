@@ -13,12 +13,28 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <link rel="stylesheet" href="../Css/global-style.css">
+    <link rel="stylesheet" href="../Css/header.css">
+    <link rel="stylesheet" href="../Css/cards.css">
+    <link rel="stylesheet" href="../Css/utilities.css">
+    <link rel="stylesheet" href="../Css/responsive.css">
     <link rel="stylesheet" href="../Css/animations.css">
+    <link rel="stylesheet" href="../Css/dark-mode.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Rapport de Stage - GigaMedia | Julien PINOT</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="../Js/security.js"></script>
+    <title>Rapport de Stage - GigaMedia | Julien PINOT - Étudiant BTS SIO & Futur Pentester</title>
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script src="../Js/enhanced-security.js" defer></script>
+    <script src="../Js/dark-mode.js" defer></script>
+    <script src="../Js/menu-burger.js" defer></script>
+    <script src="../Js/animations.js" defer></script>
     <link rel="shortcut icon" href="../Images/logo.png" type="image/png">
+    
+    <!-- Apply theme immediately if saved -->
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+    </script>
     
     <style>
         .report-container {
@@ -704,9 +720,6 @@
     </main>
 
     <script>
-        // Initialize Feather icons
-        feather.replace();
-        
         // Smooth scrolling for table of contents links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -720,9 +733,6 @@
                 }
             });
         });
-        
-        // Initialiser les icônes Feather
-        feather.replace();
     </script>
 </body>
 

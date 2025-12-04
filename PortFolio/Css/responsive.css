@@ -1,0 +1,346 @@
+/* 
+==========================================================================
+RESPONSIVE DESIGN - PORTFOLIO JULIEN PINOT
+Media queries et optimisations pour tous les formats d'écran
+==========================================================================
+*/
+
+/* ==================== BREAKPOINTS PRINCIPAUX ==================== */
+/* Desktop: > 1024px (styles par défaut) */
+/* Tablet: 768px - 1024px */
+/* Mobile: < 768px */
+/* Small Mobile: < 480px */
+
+/* ==================== TABLET (1024px et moins) ==================== */
+@media (max-width: 1024px) {
+    .container {
+        width: min(100% - 3rem, var(--container-max));
+    }
+    
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* ==================== MOBILE (768px et moins) ==================== */
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 60px;
+        --space-5: 2rem;
+        --space-6: 3rem;
+    }
+    
+    main {
+        margin-top: 60px;
+    }
+    
+    .section {
+        padding: var(--space-4) var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+    
+    .hero-section {
+        padding: var(--space-5) var(--space-3) var(--space-4);
+        min-height: 80vh !important;
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+        line-height: 1.2;
+        margin-bottom: var(--space-3);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.25rem) !important;
+        margin-bottom: var(--space-3);
+    }
+    
+    .hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+    }
+    
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    }
+    
+    h3 {
+        font-size: clamp(1.125rem, 4vw, 1.5rem) !important;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .d-flex {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    /* Optimisations performance mobile */
+    * {
+        -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+    }
+    
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ==================== SMALL MOBILE (480px et moins) ==================== */
+@media (max-width: 480px) {
+    :root {
+        --space-4: 1.5rem;
+        --space-5: 2rem;
+    }
+    
+    .section {
+        padding: var(--space-3) var(--space-2);
+    }
+    
+    .hero-section {
+        padding: var(--space-4) var(--space-2) var(--space-3);
+        min-height: 75vh !important;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .hero-description {
+        font-size: 0.875rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ==================== ORIENTATION PAYSAGE MOBILE ==================== */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        padding: var(--space-3) var(--space-3);
+        min-height: auto !important;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .section {
+        padding: var(--space-3) var(--space-3);
+    }
+}
+
+/* ==================== TRÈS PETITS ÉCRANS (360px et moins) ==================== */
+@media (max-width: 360px) {
+    :root {
+        --space-2: 0.75rem;
+        --space-3: 1rem;
+        --space-4: 1.25rem;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem !important;
+    }
+    
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    h3 {
+        font-size: 1.125rem !important;
+    }
+}
+
+/* ==================== LARGE DESKTOP (1440px et plus) ==================== */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .section {
+        padding: var(--space-7) var(--space-4);
+    }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+    .header,
+    .footer,
+    .navbar,
+    .burger-menu,
+    .btn,
+    .skip-link {
+        display: none !important;
+    }
+    
+    main {
+        margin-top: 0;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    * {
+        box-shadow: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ==================== ACCESSIBILITY: HIGH CONTRAST ==================== */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #1a1a1a;
+        --border-color: #000000;
+        --shadow-sm: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+    }
+    
+    .card,
+    .btn,
+    .project-card {
+        border: 2px solid #000000 !important;
+    }
+}
+
+/* ==================== ACCESSIBILITY: REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==================== DARK MODE SUPPORT (préparation) ==================== */
+@media (prefers-color-scheme: dark) {
+    /* Les variables dark mode seront définies ici */
+    /* Pour l'instant, on laisse le mode clair par défaut */
+    /* Le dark mode sera implémenté avec un toggle manuel */
+}
+
+/* ==================== OPTIMIZATIONS TOUCH DEVICES ==================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Améliorer les zones de touch sur mobile */
+    .btn,
+    .navbar__link,
+    a,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Désactiver les effets hover sur touch */
+    .card:hover,
+    .btn:hover,
+    .navbar__link:hover,
+    .stat-item:hover,
+    .project-card:hover {
+        transform: none;
+    }
+    
+    /* Activer les effets sur active/tap */
+    .card:active,
+    .btn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ==================== RESPONSIVE IMAGES ==================== */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==================== RESPONSIVE TABLES ==================== */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.875rem;
+    }
+    
+    th,
+    td {
+        padding: 0.5rem;
+    }
+}
+
+/* ==================== CONTAINER QUERIES (Modern browsers) ==================== */
+@supports (container-type: inline-size) {
+    .card-container {
+        container-type: inline-size;
+    }
+    
+    @container (max-width: 400px) {
+        .card {
+            padding: var(--space-3);
+        }
+        
+        .card-title {
+            font-size: 1rem;
+        }
+    }
+}

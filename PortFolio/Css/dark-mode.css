@@ -1,0 +1,387 @@
+/* 
+==========================================================================
+DARK MODE - PORTFOLIO JULIEN PINOT
+Theme sombre avec transition fluide
+==========================================================================
+*/
+
+/* ==================== DARK MODE VARIABLES ==================== */
+[data-theme="dark"] {
+    /* Couleurs principales inversées */
+    --primary-blue: #60a5fa;
+    --primary-blue-light: #93c5fd;
+    --primary-blue-dark: #3b82f6;
+    
+    /* Couleurs de fond sombres */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-dark: #000000;
+    --bg-card: #1e293b;
+    
+    /* Texte inversé */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-light: #64748b;
+    --text-white: #ffffff;
+    
+    /* Bordures et overlays */
+    --border-color: #334155;
+    --border-light: #475569;
+    --overlay-light: rgba(15, 23, 42, 0.95);
+    --overlay-dark: rgba(255, 255, 255, 0.05);
+    --overlay-blur: rgba(30, 41, 59, 0.7);
+    
+    /* Ombres adaptées au dark mode */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 10px 15px -5px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    --shadow-card-hover: 0 4px 6px rgba(96, 165, 250, 0.15), 0 20px 25px -5px rgba(96, 165, 250, 0.2);
+}
+
+/* ==================== DARK MODE HEADER ==================== */
+[data-theme="dark"] .header {
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .burger-line {
+    background-color: var(--primary-blue);
+}
+
+/* ==================== DARK MODE NAVIGATION ==================== */
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.98);
+}
+
+[data-theme="dark"] .navbar__link {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .navbar__link:hover,
+[data-theme="dark"] .navbar__link.active {
+    color: var(--primary-blue);
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .navbar__link:hover svg,
+[data-theme="dark"] .navbar__link.active svg {
+    stroke: var(--primary-blue);
+}
+
+/* Mobile menu en dark mode */
+@media (max-width: 768px) {
+    [data-theme="dark"] .navbar__link:hover,
+    [data-theme="dark"] .navbar__link.active {
+        background: var(--primary-blue);
+        color: white;
+    }
+    
+    [data-theme="dark"] .navbar__link:hover svg,
+    [data-theme="dark"] .navbar__link.active svg {
+        stroke: white;
+    }
+}
+
+/* ==================== DARK MODE TOGGLE BUTTON ==================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 8px 25px rgba(96, 165, 250, 0.4);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
+}
+
+/* Version mobile du toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 1rem;
+        right: 1rem;
+        width: 48px;
+        height: 48px;
+    }
+    
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ==================== DARK MODE CARDS & COMPONENTS ==================== */
+[data-theme="dark"] .card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .stat-item,
+[data-theme="dark"] .timeline-card,
+[data-theme="dark"] .intro-section {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .stat-item:hover {
+    border-color: var(--primary-blue);
+}
+
+/* Stat Cards */
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .stat-card--blue,
+[data-theme="dark"] .stat-card--green,
+[data-theme="dark"] .stat-card--orange,
+[data-theme="dark"] .stat-card--light-blue {
+    background: var(--bg-card) !important;
+}
+
+/* Skill Cards */
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .skill-card--red,
+[data-theme="dark"] .skill-card--blue {
+    background: var(--bg-card) !important;
+}
+
+[data-theme="dark"] .skill-card-content {
+    background: transparent !important;
+}
+
+[data-theme="dark"] .skill-list-item--red,
+[data-theme="dark"] .skill-list-item--blue {
+    background: rgba(96, 165, 250, 0.1) !important;
+}
+
+[data-theme="dark"] .skill-list-text {
+    color: var(--text-primary) !important;
+}
+
+/* Section Badges */
+[data-theme="dark"] .section-badge,
+[data-theme="dark"] .section-badge--large {
+    background: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Profile Quote Container */
+[data-theme="dark"] .profile-quote-container {
+    background: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .profile-quote-text {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-highlight-blue,
+[data-theme="dark"] .text-highlight-emerald,
+[data-theme="dark"] .text-highlight-orange {
+    color: var(--primary-blue) !important;
+    background: rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Skill Card Headers */
+[data-theme="dark"] .skill-card-header--red,
+[data-theme="dark"] .skill-card-header--blue {
+    background: rgba(96, 165, 250, 0.15) !important;
+}
+
+[data-theme="dark"] .skill-card-title,
+[data-theme="dark"] .skill-card-subtitle {
+    color: var(--text-primary) !important;
+}
+
+/* Stat Cards Text */
+[data-theme="dark"] .stat-label,
+[data-theme="dark"] .stat-description {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--primary-blue) !important;
+}
+
+/* Section backgrounds */
+[data-theme="dark"] .section--bg-gradient-profile {
+    background: var(--bg-primary) !important;
+}
+
+/* Hero section */
+[data-theme="dark"] .hero-section {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="dark"] .hero-title--large,
+[data-theme="dark"] .hero-subtitle--accent {
+    color: var(--text-primary) !important;
+}
+
+/* Stats section */
+[data-theme="dark"] .stats-grid {
+    background: transparent !important;
+}
+
+/* ==================== DARK MODE FORMS ==================== */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus,
+[data-theme="dark"] .form-group textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* ==================== DARK MODE BUTTONS ==================== */
+[data-theme="dark"] .btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+[data-theme="dark"] .btn-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* ==================== DARK MODE TIMELINE ==================== */
+[data-theme="dark"] .timeline::before {
+    background: var(--border-color);
+}
+
+[data-theme="dark"] .timeline-header {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .company-logo {
+    background: var(--bg-primary);
+    border-color: var(--border-color);
+}
+
+/* ==================== DARK MODE TECH TAGS ==================== */
+[data-theme="dark"] .tech-tag {
+    background: var(--bg-tertiary);
+    color: var(--primary-blue);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .tech-tag:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* ==================== DARK MODE SCROLLBAR ==================== */
+[data-theme="dark"]::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb {
+    background: var(--gray-600);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+/* ==================== DARK MODE SELECTION ==================== */
+[data-theme="dark"]::selection {
+    background: var(--primary-blue);
+    color: var(--bg-primary);
+}
+
+[data-theme="dark"]::-moz-selection {
+    background: var(--primary-blue);
+    color: var(--bg-primary);
+}
+
+/* ==================== DARK MODE IMAGES ==================== */
+[data-theme="dark"] img {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] img:hover {
+    opacity: 1;
+}
+
+/* ==================== SMOOTH TRANSITION ==================== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* Ne pas animer les transforms et autres propriétés */
+*:not(.theme-toggle) {
+    transition-property: background-color, border-color, color, fill, stroke !important;
+}
