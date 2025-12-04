@@ -360,6 +360,29 @@ Theme sombre avec transition fluide
     color: var(--bg-primary);
 }
 
+/* ==================== DARK MODE FILTER SECTION ==================== */
+[data-theme="dark"] .section--bg-secondary {
+    background-color: var(--bg-secondary) !important;
+}
+
+/* ==================== DARK MODE FILTER BUTTONS ==================== */
+[data-theme="dark"] .filter-btn {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .filter-btn:hover {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--primary-blue) !important;
+}
+
+[data-theme="dark"] .filter-btn.active {
+    background: var(--primary-blue) !important;
+    color: white !important;
+    border-color: var(--primary-blue) !important;
+}
+
 /* ==================== DARK MODE IMAGES ==================== */
 [data-theme="dark"] img {
     opacity: 0.9;

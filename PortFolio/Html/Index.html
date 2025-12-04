@@ -61,8 +61,8 @@
     <link rel="preconnect" href="https://unpkg.com">
     
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="../Images/logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="../Images/logo.png">
+    <link rel="shortcut icon" href="/PortFolio/Images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="/PortFolio/Images/logo.png">
     
     <!-- SCRIPTS (defer pour améliorer les performances) -->
     <script src="https://unpkg.com/feather-icons" defer></script>
@@ -70,6 +70,7 @@
     <script src="../Js/dark-mode.js" defer></script>
     <script src="../Js/menu-burger.js" defer></script>
     <script src="../Js/animations.js" defer></script>
+    <script src="../Js/router.js" defer></script>
     
     <!-- STRUCTURED DATA (JSON-LD pour SEO) -->
     <script type="application/ld+json">
@@ -109,55 +110,55 @@
         <nav class="navbar" id="navbar">
             <ul class="navbar__menu">
                 <li class="navbar__item">
-                    <a href="#" class="navbar__link active ripple-effect">
+                    <a href="/" class="navbar__link active ripple-effect">
                         <i data-feather="home" aria-hidden="true"></i>
                         <span>Accueil</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="CV.html" class="navbar__link ripple-effect">
+                    <a href="/cv" class="navbar__link ripple-effect">
                         <i data-feather="user" aria-hidden="true"></i>
                         <span>CV</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Compétences.html" class="navbar__link ripple-effect">
+                    <a href="/competences" class="navbar__link ripple-effect">
                         <i data-feather="check-circle" aria-hidden="true"></i>
                         <span>Compétences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Projets.html" class="navbar__link ripple-effect">
+                    <a href="/projets" class="navbar__link ripple-effect">
                         <i data-feather="folder" aria-hidden="true"></i>
                         <span>Projets</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Certifications.html" class="navbar__link ripple-effect">
+                    <a href="/certifications" class="navbar__link ripple-effect">
                         <i data-feather="book" aria-hidden="true"></i>
                         <span>Certifications</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Experiences.html" class="navbar__link">
+                    <a href="/experiences" class="navbar__link">
                         <i data-feather="archive" aria-hidden="true"></i>
                         <span>Expériences</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Veilles-techno.html" class="navbar__link">
+                    <a href="/veille" class="navbar__link">
                         <i data-feather="help-circle" aria-hidden="true"></i>
                         <span>Veilles</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Passions.html" class="navbar__link">
+                    <a href="/passions" class="navbar__link">
                         <i data-feather="heart" aria-hidden="true"></i>
                         <span>Passions</span>
                     </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="Contact.html" class="navbar__link">
+                    <a href="/contact" class="navbar__link">
                         <i data-feather="mail" aria-hidden="true"></i>
                         <span>Contact</span>
                     </a>
@@ -195,15 +196,15 @@
 
                 <!-- BOUTONS D'ACTION COHÉRENTS -->
                 <div class="hero-buttons d-flex justify-center gap-lg mt-xl animate-fade-in-up delay-800">
-                    <a href="CV.html" class="btn btn-primary shine-effect ripple-effect morph-hover">
+                    <a href="/cv" class="btn btn-primary shine-effect ripple-effect morph-hover">
                         <i data-feather="download"></i>
                         Télécharger CV
                     </a>
-                    <a href="Projets.html" class="btn btn-secondary shine-effect ripple-effect morph-hover">
+                    <a href="/projets" class="btn btn-secondary shine-effect ripple-effect morph-hover">
                         <i data-feather="eye"></i>
                         Voir mes projets
                     </a>
-                    <a href="Contact.html" class="btn btn-outline shine-effect ripple-effect morph-hover">
+                    <a href="/contact" class="btn btn-outline shine-effect ripple-effect morph-hover">
                         <i data-feather="mail"></i>
                         Me contacter
                     </a>
@@ -493,11 +494,11 @@
                     je suis disponible pour contribuer à vos projets avec passion et expertise.
                 </p>
                 <div class="d-flex justify-center gap-lg">
-                    <a href="Contact.html" class="btn btn-primary">
+                    <a href="/contact" class="btn btn-primary">
                         <i data-feather="mail"></i>
                         Collaborons ensemble
                     </a>
-                    <a href="Projets.html" class="btn btn-secondary">
+                    <a href="/projets" class="btn btn-secondary">
                         <i data-feather="folder"></i>
                         Découvrir mes projets
                     </a>
@@ -510,11 +511,11 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="CV.html" class="footer-link">CV</a>
+                <a href="/cv" class="footer-link">CV</a>
                 <a href="Compétences.html" class="footer-link">Compétences</a>
-                <a href="Projets.html" class="footer-link">Projets</a>
-                <a href="Certifications.html" class="footer-link">Certifications</a>
-                <a href="Contact.html" class="footer-link">Contact</a>
+                <a href="/projets" class="footer-link">Projets</a>
+                <a href="/certifications" class="footer-link">Certifications</a>
+                <a href="/contact" class="footer-link">Contact</a>
             </div>
             <p class="footer-copyright">
                 © 2025 Julien PINOT - Étudiant BTS SIO & Futur Pentester
