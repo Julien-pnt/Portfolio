@@ -307,10 +307,10 @@
                             <span class="tech-tag">Switch</span>
                         </div>
                         <div class="project-links">
-                            <a href="/" class="btn btn-primary">
+                            <button class="btn btn-primary" onclick="openImageModal('../Images/Cisco-schema.png')">
                                 <i data-feather="external-link"></i>
                                 Schéma réseau
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -433,7 +433,38 @@
         </div>
     </footer>
 
+    <!-- Modal pour l'image -->
+    <div id="imageModal" class="modal-overlay" onclick="closeImageModal()">
+        <div class="modal-content-image">
+            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="Schéma réseau">
+        </div>
+    </div>
+
     <script>
+        // Fonction pour ouvrir la modal avec l'image
+        function openImageModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fonction pour fermer la modal
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
         // Fonction de filtrage directe et simple
         function filterProjects(filter, buttonClicked) {
             console.log('🎯 Filter function called:', filter);
@@ -770,6 +801,76 @@
 
         [data-theme="dark"] .section--bg-tertiary {
             background-color: #334155 !important;
+        }
+
+        /* Styles pour la modal d'image */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content-image {
+            position: relative;
+            max-width: 95%;
+            max-height: 95%;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content-image img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10001;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close:hover {
+            color: #3b82f6;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content-image {
+                max-width: 98%;
+                max-height: 98%;
+            }
+
+            .modal-close {
+                top: -35px;
+                font-size: 35px;
+            }
         }
     </style>
 </body>
