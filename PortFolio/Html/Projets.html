@@ -307,7 +307,7 @@
                             <span class="tech-tag">Switch</span>
                         </div>
                         <div class="project-links">
-                            <button class="btn btn-primary" onclick="openImageModal('../Images/Cisco-schema.png')">
+                            <button class="btn btn-primary" onclick="openImageModal('../Images/Cisco-schema.png'); event.preventDefault();">
                                 <i data-feather="external-link"></i>
                                 Schéma réseau
                             </button>
@@ -434,9 +434,9 @@
     </footer>
 
     <!-- Modal pour l'image -->
-    <div id="imageModal" class="modal-overlay" onclick="closeImageModal()">
-        <div class="modal-content-image">
-            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+    <div id="imageModal" class="modal-overlay" onclick="closeImageModal(event)">
+        <div class="modal-content-image" onclick="event.stopPropagation();">
+            <span class="modal-close" onclick="closeImageModal(event)">&times;</span>
             <img id="modalImage" src="" alt="Schéma réseau">
         </div>
     </div>
@@ -444,18 +444,30 @@
     <script>
         // Fonction pour ouvrir la modal avec l'image
         function openImageModal(imageSrc) {
+            event.preventDefault();
+            event.stopPropagation();
+            
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             modalImg.src = imageSrc;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            
+            return false;
         }
 
         // Fonction pour fermer la modal
-        function closeImageModal() {
+        function closeImageModal(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            
+            return false;
         }
 
         // Fermer avec la touche Escape
