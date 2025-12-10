@@ -307,7 +307,7 @@
                             <span class="tech-tag">Switch</span>
                         </div>
                         <div class="project-links">
-                            <button class="btn btn-primary" onclick="openImageModal('../Images/Cisco-schema.png'); event.preventDefault();">
+                            <button class="btn btn-primary" onclick="openImageModal(event, '../Images/Cisco-schema.png');">
                                 <i data-feather="external-link"></i>
                                 Schéma réseau
                             </button>
@@ -443,7 +443,7 @@
 
     <script>
         // Fonction pour ouvrir la modal avec l'image
-        function openImageModal(imageSrc) {
+        function openImageModal(event, imageSrc) {
             event.preventDefault();
             event.stopPropagation();
             
