@@ -2,8 +2,11 @@
 ==========================================================================
 SYSTÈME DE SÉCURITÉ PORTFOLIO JULIEN PINOT
 Expert Cybersécurité - Protection avancée côté client
+Architecture modulaire avec CryptoService (Web Crypto API)
 ==========================================================================
 */
+
+import { cryptoService } from './modules/crypto-service.js';
 
 // ==================== CONSTANTES ====================
 const DEVTOOLS_THRESHOLD = 160;
@@ -186,79 +189,36 @@ class SecurityManager {
     }
 
     // =====================================
-    // CHIFFREMENT MODERNE (Web Crypto API)
+    // CHIFFREMENT MODERNE (Web Crypto API via CryptoService)
     // =====================================
     async hashData(data) {
-        // Utiliser SHA-256 pour hasher les données sensibles
-        const encoder = new TextEncoder();
-        const dataBuffer = encoder.encode(data);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.hashData(data);
     }
 
     async encryptData(data, key) {
-        // Chiffrement AES-GCM (standard moderne)
-        try {
-            const encoder = new TextEncoder();
-            const dataBuffer = encoder.encode(data);
-            
-            // Générer une clé de chiffrement si non fournie
-            const cryptoKey = key || await this.generateEncryptionKey();
-            
-            // IV (Initialization Vector) aléatoire
-            const iv = crypto.getRandomValues(new Uint8Array(12));
-            
-            // Chiffrer avec AES-GCM
-            const encryptedBuffer = await crypto.subtle.encrypt(
-                { name: 'AES-GCM', iv: iv },
-                cryptoKey,
-                dataBuffer
-            );
-            
-            // Retourner IV + données chiffrées (format Base64)
-            return {
-                iv: Array.from(iv).map(b => b.toString(16).padStart(2, '0')).join(''),
-                data: btoa(String.fromCharCode(...new Uint8Array(encryptedBuffer)))
-            };
-        } catch (error) {
-            console.error('Erreur de chiffrement:', error);
-            return null;
-        }
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.encryptData(data, key);
     }
 
     async generateEncryptionKey() {
-        // Générer une clé AES-GCM 256 bits
-        return await crypto.subtle.generateKey(
-            { name: 'AES-GCM', length: 256 },
-            true,
-            ['encrypt', 'decrypt']
-        );
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.generateEncryptionKey();
     }
 
     async decryptData(encryptedData, key, ivHex) {
-        // Déchiffrement AES-GCM
-        try {
-            // Reconstruire l'IV depuis hex
-            const iv = new Uint8Array(ivHex.match(/.{2}/g).map(byte => parseInt(byte, 16)));
-            
-            // Décoder Base64
-            const encryptedBuffer = Uint8Array.from(atob(encryptedData), c => c.charCodeAt(0));
-            
-            // Déchiffrer
-            const decryptedBuffer = await crypto.subtle.decrypt(
-                { name: 'AES-GCM', iv: iv },
-                key,
-                encryptedBuffer
-            );
-            
-            // Décoder en texte
-            const decoder = new TextDecoder();
-            return decoder.decode(decryptedBuffer);
-        } catch (error) {
-            console.error('Erreur de déchiffrement:', error);
-            return null;
-        }
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.decryptData(encryptedData, key, ivHex);
+    }
+
+    async hashPassword(password, salt = null, iterations = 100000) {
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.hashPassword(password, salt, iterations);
+    }
+
+    async verifyPassword(password, storedHash, salt, iterations = 100000) {
+        // Déléguer au CryptoService (architecture modulaire)
+        return await cryptoService.verifyPassword(password, storedHash, salt, iterations);
     }
 
     validateForm(form) {

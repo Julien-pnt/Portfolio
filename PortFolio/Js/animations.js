@@ -2,8 +2,11 @@
 ==========================================================================
 ANIMATIONS JAVASCRIPT PORTFOLIO JULIEN PINOT
 Gestion intelligente des animations avec Intersection Observer
+Architecture modulaire avec async/await
 ==========================================================================
 */
+
+import { wait, cascadeAnimation, animate } from './modules/promise-utils.js';
 
 // ==================== CONSTANTES ====================
 const PARTICLE_COUNT = 15;
@@ -111,35 +114,30 @@ class PortfolioAnimations {
     }
 
     // Effet de typing pour les titres
-    setupTypingEffect() {
+    async setupTypingEffect() {
         const typingElements = document.querySelectorAll('.typing-effect');
         
-        typingElements.forEach((element, index) => {
+        for (let index = 0; index < typingElements.length; index++) {
+            const element = typingElements[index];
             const text = element.textContent;
             element.textContent = '';
             element.style.borderRight = '2px solid var(--primary-blue)';
             
-            // Délai croissant pour chaque élément
-            setTimeout(() => {
-                this.typeText(element, text, TYPING_SPEED);
-            }, index * TYPING_ELEMENT_DELAY);
-        });
+            // Délai croissant pour chaque élément (async/await au lieu de setTimeout)
+            await wait(index * TYPING_ELEMENT_DELAY);
+            this.typeText(element, text, TYPING_SPEED);
+        }
     }
 
-    typeText(element, text, speed) {
-        let i = 0;
-        const timer = setInterval(() => {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-            } else {
-                clearInterval(timer);
-                // Faire clignoter le curseur quelques fois puis le supprimer
-                setTimeout(() => {
-                    element.style.borderRight = 'none';
-                }, TYPING_CURSOR_DURATION);
-            }
-        }, speed);
+    async typeText(element, text, speed) {
+        for (let i = 0; i < text.length; i++) {
+            element.textContent += text.charAt(i);
+            await wait(speed);
+        }
+        
+        // Faire clignoter le curseur quelques fois puis le supprimer (async/await)
+        await wait(TYPING_CURSOR_DURATION);
+        element.style.borderRight = 'none';
     }
 
     // Animation en cascade pour les cartes
@@ -150,18 +148,18 @@ class PortfolioAnimations {
             const cards = container.children;
             
             // Observer le conteneur
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
+            const observer = new IntersectionObserver(async (entries) => {
+                for (const entry of entries) {
                     if (entry.isIntersecting) {
-                        // Animer les cartes en cascade
-                        Array.from(cards).forEach((card, index) => {
-                            setTimeout(() => {
-                                card.classList.add('animate-fade-in-up');
-                            }, index * CASCADE_DELAY);
-                        });
+                        // Animer les cartes en cascade avec async/await
+                        await cascadeAnimation(
+                            cards,
+                            (card) => card.classList.add('animate-fade-in-up'),
+                            CASCADE_DELAY
+                        );
                         observer.unobserve(entry.target);
                     }
-                });
+                }
             }, { threshold: 0.2 });
             
             observer.observe(container);
@@ -260,9 +258,8 @@ class PortfolioAnimations {
                 
                 button.appendChild(ripple);
                 
-                setTimeout(() => {
-                    ripple.remove();
-                }, 600);
+                // Async/await au lieu de setTimeout
+                wait(600).then(() => ripple.remove());
             });
         });
 
@@ -286,20 +283,20 @@ class PortfolioAnimations {
     animateSkillBars() {
         const skillBars = document.querySelectorAll('.skill-progress');
         
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver(async (entries) => {
+            for (const entry of entries) {
                 if (entry.isIntersecting) {
                     const progressBar = entry.target;
                     const targetWidth = progressBar.dataset.progress || '0%';
                     
-                    setTimeout(() => {
-                        progressBar.style.width = targetWidth;
-                        progressBar.style.transition = `width ${SKILL_BAR_DURATION / 1000}s ease-out`;
-                    }, SKILL_BAR_ANIMATION_DELAY);
+                    // Async/await au lieu de setTimeout
+                    await wait(SKILL_BAR_ANIMATION_DELAY);
+                    progressBar.style.width = targetWidth;
+                    progressBar.style.transition = `width ${SKILL_BAR_DURATION / 1000}s ease-out`;
                     
                     observer.unobserve(entry.target);
                 }
-            });
+            }
         }, { threshold: 0.5 });
         
         skillBars.forEach(bar => observer.observe(bar));
