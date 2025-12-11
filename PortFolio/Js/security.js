@@ -185,18 +185,108 @@ class SecurityManager {
         return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
     }
 
+    // =====================================
+    // CHIFFREMENT MODERNE (Web Crypto API)
+    // =====================================
+    async hashData(data) {
+        // Utiliser SHA-256 pour hasher les données sensibles
+        const encoder = new TextEncoder();
+        const dataBuffer = encoder.encode(data);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+    }
+
+    async encryptData(data, key) {
+        // Chiffrement AES-GCM (standard moderne)
+        try {
+            const encoder = new TextEncoder();
+            const dataBuffer = encoder.encode(data);
+            
+            // Générer une clé de chiffrement si non fournie
+            const cryptoKey = key || await this.generateEncryptionKey();
+            
+            // IV (Initialization Vector) aléatoire
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            
+            // Chiffrer avec AES-GCM
+            const encryptedBuffer = await crypto.subtle.encrypt(
+                { name: 'AES-GCM', iv: iv },
+                cryptoKey,
+                dataBuffer
+            );
+            
+            // Retourner IV + données chiffrées (format Base64)
+            return {
+                iv: Array.from(iv).map(b => b.toString(16).padStart(2, '0')).join(''),
+                data: btoa(String.fromCharCode(...new Uint8Array(encryptedBuffer)))
+            };
+        } catch (error) {
+            console.error('Erreur de chiffrement:', error);
+            return null;
+        }
+    }
+
+    async generateEncryptionKey() {
+        // Générer une clé AES-GCM 256 bits
+        return await crypto.subtle.generateKey(
+            { name: 'AES-GCM', length: 256 },
+            true,
+            ['encrypt', 'decrypt']
+        );
+    }
+
+    async decryptData(encryptedData, key, ivHex) {
+        // Déchiffrement AES-GCM
+        try {
+            // Reconstruire l'IV depuis hex
+            const iv = new Uint8Array(ivHex.match(/.{2}/g).map(byte => parseInt(byte, 16)));
+            
+            // Décoder Base64
+            const encryptedBuffer = Uint8Array.from(atob(encryptedData), c => c.charCodeAt(0));
+            
+            // Déchiffrer
+            const decryptedBuffer = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: iv },
+                key,
+                encryptedBuffer
+            );
+            
+            // Décoder en texte
+            const decoder = new TextDecoder();
+            return decoder.decode(decryptedBuffer);
+        } catch (error) {
+            console.error('Erreur de déchiffrement:', error);
+            return null;
+        }
+    }
+
     validateForm(form) {
         const inputs = form.querySelectorAll('input, textarea');
         return Array.from(inputs).every(input => {
-            // Vérifications de base
-            if (input.value.includes('<script>') ||
-                input.value.includes('javascript:') ||
-                input.value.includes('onload=') ||
-                input.value.includes('onerror=')) {
-                return false;
-            }
-            return true;
+            return this.validateInput(input.value);
         });
+    }
+
+    validateInput(value) {
+        // Guard Clause: valeur vide est valide
+        if (!value || value.trim() === '') return true;
+
+        // Patterns dangereux (regex stricte)
+        const dangerousPatterns = [
+            /<script[\s\S]*?>/gi,           // Script tags
+            /javascript:/gi,                  // Protocol javascript
+            /on\w+\s*=/gi,                   // Event handlers (onclick, onload, etc.)
+            /<iframe[\s\S]*?>/gi,            // iframes
+            /eval\s*\(/gi,                   // eval calls
+            /<object[\s\S]*?>/gi,            // object tags
+            /<embed[\s\S]*?>/gi,             // embed tags
+            /vbscript:/gi,                    // vbscript protocol
+            /data:text\/html/gi               // data URI HTML
+        ];
+
+        // Vérifier chaque pattern
+        return !dangerousPatterns.some(pattern => pattern.test(value));
     }
 
     // =====================================

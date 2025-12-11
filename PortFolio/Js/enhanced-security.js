@@ -16,7 +16,6 @@ const MOUSE_MOVEMENTS_THRESHOLD = 10;
 const CLICKS_THRESHOLD = 3;
 const SCROLLS_THRESHOLD = 5;
 const BOT_CHECK_DELAY = 5000;
-const RATE_LIMIT_MAX_ATTEMPTS = 5;
 const RATE_LIMIT_WINDOW_MS = 60000;
 const RATE_LIMIT_WARNING_DURATION = 5000;
 const FETCH_RATE_LIMIT = 10;
@@ -270,6 +269,24 @@ class EnhancedSecurityManager {
     }
 
     showCaptchaChallenge(formElement) {
+        const { num1, num2, answer } = this.generateMathChallenge();
+        const overlay = this.createCaptchaOverlay();
+        const captchaBox = this.createCaptchaBox(num1, num2);
+        
+        overlay.appendChild(captchaBox);
+        document.body.appendChild(overlay);
+        
+        this.setupCaptchaHandlers(captchaBox, answer, overlay, formElement);
+    }
+
+    generateMathChallenge() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        const answer = num1 + num2;
+        return { num1, num2, answer };
+    }
+
+    createCaptchaOverlay() {
         const overlay = document.createElement('div');
         overlay.className = 'captcha-overlay';
         overlay.style.cssText = `
@@ -284,7 +301,10 @@ class EnhancedSecurityManager {
             align-items: center;
             justify-content: center;
         `;
-        
+        return overlay;
+    }
+
+    createCaptchaBox(num1, num2) {
         const captchaBox = document.createElement('div');
         captchaBox.style.cssText = `
             background: white;
@@ -295,12 +315,13 @@ class EnhancedSecurityManager {
             max-width: 400px;
         `;
         
-        // Simple challenge mathématique
-        const num1 = Math.floor(Math.random() * 10) + 1;
-        const num2 = Math.floor(Math.random() * 10) + 1;
-        const answer = num1 + num2;
+        const elements = this.createCaptchaElements(num1, num2);
+        elements.forEach(el => captchaBox.appendChild(el));
         
-        // Créer les éléments de manière sécurisée
+        return captchaBox;
+    }
+
+    createCaptchaElements(num1, num2) {
         const emoji = document.createElement('div');
         emoji.style.cssText = 'font-size: 2rem; margin-bottom: 1rem;';
         emoji.textContent = '🤔';
@@ -340,30 +361,20 @@ class EnhancedSecurityManager {
             width: 100%;
         `;
         
-        captchaBox.appendChild(emoji);
-        captchaBox.appendChild(title);
-        captchaBox.appendChild(question);
-        captchaBox.appendChild(input);
-        captchaBox.appendChild(submitBtn);
-        
-        overlay.appendChild(captchaBox);
-        document.body.appendChild(overlay);
-        
+        return [emoji, title, question, input, submitBtn];
+    }
+
+    setupCaptchaHandlers(captchaBox, answer, overlay, formElement) {
         const input = captchaBox.querySelector('#captcha-input');
         const submitBtn = captchaBox.querySelector('#captcha-submit');
         
         input.focus();
         
         const verify = () => {
-            if (parseInt(input.value) === answer) {
-                overlay.remove();
-                this.showSuccess('Vérification réussie !');
-                // Soumettre le formulaire réel ici
-                this.submitFormData(formElement);
+            if (this.verifyCaptchaAnswer(input, answer)) {
+                this.handleCaptchaSuccess(overlay, formElement);
             } else {
-                input.style.borderColor = '#dc2626';
-                input.value = '';
-                input.placeholder = 'Réponse incorrecte, réessayez';
+                this.handleCaptchaError(input);
             }
         };
         
@@ -371,6 +382,22 @@ class EnhancedSecurityManager {
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') verify();
         });
+    }
+
+    verifyCaptchaAnswer(input, answer) {
+        return parseInt(input.value) === answer;
+    }
+
+    handleCaptchaSuccess(overlay, formElement) {
+        overlay.remove();
+        this.showSuccess('Vérification réussie !');
+        this.submitFormData(formElement);
+    }
+
+    handleCaptchaError(input) {
+        input.style.borderColor = '#dc2626';
+        input.value = '';
+        input.placeholder = 'Réponse incorrecte, réessayez';
     }
 
     submitFormData(formElement) {
@@ -386,16 +413,9 @@ class EnhancedSecurityManager {
     // PROTECTION DE BASE
     // =====================================
     preventBasicAttacks() {
-        // Désactiver clic droit (optionnel, peut gêner l'UX)
-        // document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-        // Désactiver F12 et raccourcis dev (optionnel)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key))) {
-                // e.preventDefault(); // Commenté pour ne pas gêner les développeurs légitimes
-            }
-        });
+        // Protection contre les raccourcis développeur (optionnel)
+        // Note: Commenté pour ne pas gêner l'expérience développeur légitime
+        // Décommenter en production si nécessaire
     }
 
     validateIntegrity() {
@@ -444,7 +464,7 @@ class EnhancedSecurityManager {
         
         setTimeout(() => {
             notification.style.opacity = '0';
-            setTimeout(() => notification.remove(), THEME_TRANSITION_DURATION);
+            setTimeout(() => notification.remove(), 300);
         }, NOTIFICATION_DURATION);
     }
 

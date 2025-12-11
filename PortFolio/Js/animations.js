@@ -182,17 +182,21 @@ class PortfolioAnimations {
                 element.style.transform = `translateY(${rate}px)`;
             });
             
-            // Animation de la navbar au scroll
+            // Animation de la navbar au scroll (Guard Clause pour aplatir l'imbrication)
             const navbar = document.querySelector('.header');
-            if (navbar) {
-                if (scrolled > 100) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+            if (!navbar) {
+                isAnimating = false;
+                return;
             }
             
-            ticking = false;
+            // Logique simplifiée sans imbrication profonde
+            if (scrolled > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            isAnimating = false;
         };
 
         const requestScrollUpdate = () => {
