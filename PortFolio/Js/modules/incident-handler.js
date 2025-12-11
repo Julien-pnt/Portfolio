@@ -41,11 +41,6 @@ export class IncidentHandler {
             this.incidents.shift();
         }
 
-        // Log dans la console en développement
-        if (this.isDevelopment()) {
-            console.warn(`🚨 Security Incident [${type}]:`, description, context);
-        }
-
         // Notification visuelle pour incidents critiques
         if (this.isCritical(type)) {
             this.notifyCriticalIncident(incident);
@@ -88,10 +83,7 @@ export class IncidentHandler {
      */
     notifyCriticalIncident(incident) {
         // En production, cela pourrait envoyer à un endpoint de monitoring
-        console.error('%c⚠️ INCIDENT CRITIQUE DÉTECTÉ', 
-            'background: red; color: white; font-size: 16px; padding: 4px;',
-            incident
-        );
+        // Logging silencieux pour éviter l'exposition d'informations sensibles
     }
 
     /**
@@ -136,7 +128,6 @@ export class IncidentHandler {
      */
     clearIncidents() {
         this.incidents = [];
-        console.log('✅ Incidents de sécurité effacés');
     }
 
     /**

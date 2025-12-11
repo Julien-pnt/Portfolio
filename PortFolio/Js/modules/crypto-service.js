@@ -37,7 +37,6 @@ export class CryptoService {
                 .map(b => b.toString(16).padStart(2, '0'))
                 .join('');
         } catch (error) {
-            console.error('CryptoService: Erreur lors du hashing:', error);
             throw new Error('Échec du hashing des données');
         }
     }
@@ -57,7 +56,6 @@ export class CryptoService {
                 ['encrypt', 'decrypt']
             );
         } catch (error) {
-            console.error('CryptoService: Erreur lors de la génération de clé:', error);
             throw new Error('Échec de la génération de clé');
         }
     }
@@ -112,7 +110,6 @@ export class CryptoService {
                 iv: ivHex
             };
         } catch (error) {
-            console.error('CryptoService: Erreur lors du chiffrement:', error);
             throw new Error('Échec du chiffrement des données');
         }
     }
@@ -151,7 +148,6 @@ export class CryptoService {
             const decoder = new TextDecoder();
             return decoder.decode(decryptedBuffer);
         } catch (error) {
-            console.error('CryptoService: Erreur lors du déchiffrement:', error);
             throw new Error('Échec du déchiffrement des données');
         }
     }
@@ -223,7 +219,6 @@ export class CryptoService {
                 salt: saltHex
             };
         } catch (error) {
-            console.error('CryptoService: Erreur lors du hashage du mot de passe:', error);
             throw new Error('Échec du hashage du mot de passe');
         }
     }
@@ -241,7 +236,6 @@ export class CryptoService {
             const { hash } = await this.hashPassword(password, salt, iterations);
             return hash === storedHash;
         } catch (error) {
-            console.error('CryptoService: Erreur lors de la vérification du mot de passe:', error);
             return false;
         }
     }

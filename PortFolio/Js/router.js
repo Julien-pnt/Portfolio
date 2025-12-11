@@ -25,8 +25,6 @@ class Router {
     }
 
     init() {
-        console.log('Router initialized');
-        
         // Intercepter les clics sur les liens
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a');
@@ -34,16 +32,13 @@ class Router {
             if (link && this.isInternalLink(link)) {
                 e.preventDefault();
                 const href = link.getAttribute('href');
-                console.log('Link clicked:', href);
                 const path = this.getCleanPath(href);
-                console.log('Clean path:', path);
                 this.navigate(path);
             }
         });
 
         // Gérer le bouton retour du navigateur
         window.addEventListener('popstate', (e) => {
-            console.log('Popstate event:', e.state);
             const path = window.location.pathname;
             window.location.href = this.routes[path] || '/PortFolio/Html/Index.html';
         });
@@ -87,19 +82,14 @@ class Router {
     }
 
     navigate(path) {
-        console.log('Navigating to:', path);
-        
         if (this.routes[path]) {
             const targetFile = this.routes[path];
-            console.log('Target file:', targetFile);
             
             // Mettre à jour l'URL sans recharger
             window.history.pushState({ path }, '', path);
             
             // Rediriger vers le fichier HTML
             window.location.href = targetFile;
-        } else {
-            console.error('Route non trouvée:', path);
         }
     }
 

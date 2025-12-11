@@ -2,7 +2,7 @@
 ==========================================================================
 ANIMATIONS JAVASCRIPT PORTFOLIO JULIEN PINOT
 Gestion intelligente des animations avec Intersection Observer
-Architecture modulaire avec async/await
+Architecture modulaire optimisée pour les performances
 ==========================================================================
 */
 
@@ -23,15 +23,77 @@ const PARTICLE_SIZE_RANGE = 4;
 const PARTICLE_BASE_DURATION = 15;
 const PARTICLE_DURATION_RANGE = 10;
 const PARTICLE_MAX_DELAY = 20;
-const TYPING_SPEED = 50;
-const TYPING_ELEMENT_DELAY = 500;
-const TYPING_CURSOR_DURATION = 2000;
 const CASCADE_DELAY = 100;
 const SKILL_BAR_ANIMATION_DELAY = 200;
 const SKILL_BAR_DURATION = 2000;
 const COUNTER_ANIMATION_DURATION = 2000;
 const COUNTER_FPS = 60;
 const HARDWARE_CONCURRENCY_THRESHOLD = 4;
+
+// Constantes pour typing effect
+const DEFAULT_TYPING_SPEED = 50;
+const DEFAULT_ELEMENT_DELAY = 500;
+const CURSOR_DURATION = 2000;
+
+// ==================== TYPEWRITER EFFECT (optimisé RAF) ====================
+class TypewriterEffect {
+    constructor(options = {}) {
+        this.typingSpeed = options.typingSpeed || DEFAULT_TYPING_SPEED;
+        this.elementDelay = options.elementDelay || DEFAULT_ELEMENT_DELAY;
+        this.cursorDuration = options.cursorDuration || CURSOR_DURATION;
+    }
+
+    init() {
+        const elements = document.querySelectorAll('.typing-effect');
+        if (elements.length === 0) return;
+        this.processElementRecursive(Array.from(elements), 0);
+    }
+
+    processElementRecursive(elements, index) {
+        if (index >= elements.length) return;
+
+        const element = elements[index];
+        const text = element.textContent;
+        element.textContent = '';
+        element.style.borderRight = '2px solid var(--primary-blue)';
+
+        setTimeout(() => {
+            this.typeTextOptimized(element, text, () => {
+                setTimeout(() => {
+                    element.style.borderRight = 'none';
+                    this.processElementRecursive(elements, index + 1);
+                }, this.cursorDuration);
+            });
+        }, index * this.elementDelay);
+    }
+
+    typeTextOptimized(element, text, onComplete) {
+        let currentIndex = 0;
+        let lastTimestamp = 0;
+
+        const animate = (timestamp) => {
+            if (timestamp - lastTimestamp < this.typingSpeed) {
+                requestAnimationFrame(animate);
+                return;
+            }
+
+            lastTimestamp = timestamp;
+
+            if (currentIndex >= text.length) {
+                if (onComplete) onComplete();
+                return;
+            }
+
+            element.textContent += text.charAt(currentIndex);
+            currentIndex++;
+            requestAnimationFrame(animate);
+        };
+
+        requestAnimationFrame(animate);
+    }
+}
+
+const typewriterEffect = new TypewriterEffect();
 
 class PortfolioAnimations {
     constructor() {
@@ -51,7 +113,7 @@ class PortfolioAnimations {
         this.createParticles();
         this.setupIntersectionObserver();
         this.setupHeaderAnimation();
-        this.setupTypingEffect();
+        typewriterEffect.init();
         this.setupCardAnimations();
         this.setupScrollAnimations();
         this.setupHoverEffects();
@@ -119,33 +181,6 @@ class PortfolioAnimations {
         if (header) {
             header.classList.add('header-animate');
         }
-    }
-
-    // Effet de typing pour les titres
-    async setupTypingEffect() {
-        const typingElements = document.querySelectorAll('.typing-effect');
-        
-        for (let index = 0; index < typingElements.length; index++) {
-            const element = typingElements[index];
-            const text = element.textContent;
-            element.textContent = '';
-            element.style.borderRight = '2px solid var(--primary-blue)';
-            
-            // Délai croissant pour chaque élément (async/await au lieu de setTimeout)
-            await wait(index * TYPING_ELEMENT_DELAY);
-            this.typeText(element, text, TYPING_SPEED);
-        }
-    }
-
-    async typeText(element, text, speed) {
-        for (let i = 0; i < text.length; i++) {
-            element.textContent += text.charAt(i);
-            await wait(speed);
-        }
-        
-        // Faire clignoter le curseur quelques fois puis le supprimer (async/await)
-        await wait(TYPING_CURSOR_DURATION);
-        element.style.borderRight = 'none';
     }
 
     // Animation en cascade pour les cartes

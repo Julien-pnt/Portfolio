@@ -58,7 +58,6 @@ export class BotDetector {
         // Guard Clause - augmenter le score si pattern détecté
         if (botPatterns.some(pattern => ua.includes(pattern))) {
             this.botScore += BOT_SCORE_USER_AGENT;
-            console.warn('BotDetector: Pattern de bot détecté dans User Agent');
         }
     }
 
@@ -73,7 +72,6 @@ export class BotDetector {
 
         if (navigator.webdriver) {
             this.botScore += BOT_SCORE_WEBDRIVER;
-            console.warn('BotDetector: WebDriver détecté (automatisation)');
         }
     }
 
@@ -94,7 +92,6 @@ export class BotDetector {
         // Guard Clause - augmenter le score si signatures headless détectées
         if (!hasChrome || !hasPlugins || !hasMimeTypes) {
             this.botScore += BOT_SCORE_HEADLESS;
-            console.warn('BotDetector: Signatures de navigateur headless détectées');
         }
     }
 
@@ -174,17 +171,13 @@ export class BotDetector {
         // Guard Clause - vérifier l'absence totale d'interaction
         if (this.mouseMovements === 0 && this.clicks === 0 && this.scrolls === 0) {
             this.botScore += BOT_SCORE_NO_INTERACTION;
-            console.warn('BotDetector: Aucune interaction humaine détectée');
         }
         
         // Guard Clause - déclencher l'alerte si seuil atteint
         if (this.botScore >= BOT_SCORE_THRESHOLD) {
-            console.warn(`⚠️ Comportement de bot détecté (score: ${this.botScore})`);
             this.handleBotDetection();
             return;
         }
-
-        console.log(`✓ Utilisateur humain vérifié (score: ${this.botScore})`);
     }
 
     /**

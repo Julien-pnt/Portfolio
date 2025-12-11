@@ -23,8 +23,6 @@ class EnhancedSecurityManager {
     }
 
     init() {
-        console.log('%c🔒 Enhanced Security System Active', 'color: #00ff00; font-weight: bold;');
-        
         // Initialiser les modules de sécurité
         this.botDetector.init();
         this.rateLimiter.init();
@@ -76,7 +74,6 @@ class EnhancedSecurityManager {
             }
             
             if (this.botScore >= BOT_SCORE_THRESHOLD) {
-                console.warn('⚠️ Comportement de bot détecté (score:', this.botScore, ')');
                 this.handleBotDetection();
             }
         }, BOT_CHECK_DELAY);
@@ -111,10 +108,7 @@ class EnhancedSecurityManager {
     // =====================================
     secureFormWithCaptcha(formElement) {
         // Guard Clause - vérifier que le formulaire existe
-        if (!formElement) {
-            console.error('EnhancedSecurity: Formulaire invalide');
-            return;
-        }
+        if (!formElement) return;
 
         // Ajouter un honeypot (champ invisible pour piéger les bots)
         const honeypot = this.createHoneypot();
@@ -129,7 +123,6 @@ class EnhancedSecurityManager {
             
             // Guard Clause - vérifier le honeypot
             if (honeypot.value !== '') {
-                console.warn('🤖 Bot détecté via honeypot');
                 return false;
             }
             
@@ -184,7 +177,6 @@ class EnhancedSecurityManager {
         
         criticalScripts.forEach(script => {
             script.addEventListener('error', () => {
-                console.error('❌ Échec de validation d\'intégrité:', script.src);
                 this.handleSecurityIncident('Script integrity check failed: ' + script.src);
             });
         });
@@ -230,8 +222,6 @@ class EnhancedSecurityManager {
     }
 
     handleSecurityIncident(message) {
-        console.warn('🚨 SECURITY INCIDENT:', message);
-        
         const incident = {
             timestamp: new Date().toISOString(),
             message: message,

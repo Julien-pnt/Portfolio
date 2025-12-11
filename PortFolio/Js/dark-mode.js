@@ -28,7 +28,6 @@ class DarkModeToggle {
     }
 
     createToggleButton() {
-        console.log('Creating toggle button...');
         const button = document.createElement('button');
         button.className = 'theme-toggle';
         button.setAttribute('aria-label', 'Changer de thème');
@@ -42,17 +41,13 @@ class DarkModeToggle {
         button.appendChild(moonIcon);
         
         button.addEventListener('click', () => {
-            console.log('Toggle button clicked!');
             this.toggleTheme();
         });
         document.body.appendChild(button);
-        console.log('Toggle button added to body');
     }
 
     toggleTheme() {
-        console.log('toggleTheme called, current theme:', this.theme);
         this.theme = this.theme === 'light' ? 'dark' : 'light';
-        console.log('New theme:', this.theme);
         this.applyTheme(this.theme);
         localStorage.setItem('theme', this.theme);
         

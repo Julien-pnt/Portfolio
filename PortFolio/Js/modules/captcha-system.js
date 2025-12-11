@@ -239,7 +239,6 @@ export class CaptchaSystem {
      */
     submitFormData(formElement) {
         const formData = new FormData(formElement);
-        console.log('✅ Formulaire validé et prêt à être envoyé:', Object.fromEntries(formData));
         
         // En production, faire un fetch vers le backend
         // Utilisation de DOMUtils pour créer une notification sécurisée

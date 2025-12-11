@@ -200,10 +200,7 @@ export function isSafeUrl(url) {
  * @returns {HTMLElement|null}
  */
 export function createSafeLink(href, text, options = {}) {
-    if (!isSafeUrl(href)) {
-        console.warn('URL dangereuse détectée:', href);
-        return null;
-    }
+    if (!isSafeUrl(href)) return null;
     
     const link = createElement('a', {
         href,

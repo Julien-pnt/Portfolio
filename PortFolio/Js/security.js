@@ -23,7 +23,6 @@ class SecurityManager {
 
     init() {
         // Démarrage sécurisé
-        console.log('%c🔒 Système de sécurité activé', 'color: #00ff00; font-weight: bold;');
         this.detectDevTools();
         this.preventConsoleAccess();
         this.validatePageIntegrity();
@@ -43,10 +42,6 @@ class SecurityManager {
                 window.outerWidth - window.innerWidth > DEVTOOLS_THRESHOLD) {
                 if (!devtools.open) {
                     devtools.open = true;
-                    console.clear();
-                    console.log('%c⚠️ ATTENTION', 'color: red; font-size: 20px; font-weight: bold;');
-                    console.log('%c🔒 Ce portfolio est protégé par des mesures de sécurité avancées', 'color: orange; font-size: 14px;');
-                    console.log('%c📧 Contact: julien.pinot@student.com', 'color: blue; font-size: 12px;');
                 }
             } else {
                 devtools.open = false;
@@ -303,8 +298,6 @@ class SecurityManager {
     // GESTION DES INCIDENTS
     // =====================================
     handleSecurityIncident(message) {
-        console.warn('🚨 INCIDENT SÉCURITÉ:', message);
-        
         // Log l'incident (en production, envoyer à un serveur de logging)
         const incident = {
             timestamp: new Date().toISOString(),

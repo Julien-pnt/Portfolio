@@ -16,10 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.getElementById('navbar');
     const navbarLinks = document.querySelectorAll('.navbar__link');
     
-    if (!burgerMenu || !navbar) {
-        console.warn('Menu burger non trouvé sur cette page');
-        return;
-    }
+    if (!burgerMenu || !navbar) return;
     
     // Toggle menu mobile
     burgerMenu.addEventListener('click', function() {

@@ -40,10 +40,7 @@ export class RateLimiter {
      */
     checkRateLimit(identifier, maxAttempts = 5, windowMs = RATE_LIMIT_WINDOW_MS) {
         // Guard Clause - validation des paramètres
-        if (!identifier) {
-            console.error('RateLimiter: Identifiant requis');
-            return false;
-        }
+        if (!identifier) return false;
 
         const now = Date.now();
         const attempts = this.rateLimiter.get(identifier) || [];
