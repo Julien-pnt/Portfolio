@@ -5,6 +5,26 @@ Sécurité renforcée avec rate limiting, bot detection et captcha
 ==========================================================================
 */
 
+// ==================== CONSTANTES ====================
+const BOT_SCORE_USER_AGENT = 30;
+const BOT_SCORE_WEBDRIVER = 40;
+const BOT_SCORE_NO_INTERACTION = 20;
+const BOT_SCORE_HEADLESS = 15;
+const BOT_SCORE_THRESHOLD = 50;
+const BOT_SCORE_REDUCTION = 5;
+const MOUSE_MOVEMENTS_THRESHOLD = 10;
+const CLICKS_THRESHOLD = 3;
+const SCROLLS_THRESHOLD = 5;
+const BOT_CHECK_DELAY = 5000;
+const RATE_LIMIT_MAX_ATTEMPTS = 5;
+const RATE_LIMIT_WINDOW_MS = 60000;
+const RATE_LIMIT_WARNING_DURATION = 5000;
+const FETCH_RATE_LIMIT = 10;
+const FETCH_RATE_WINDOW = 10000;
+const FORM_MIN_FILL_TIME = 3000;
+const FORM_SUBMIT_LIMIT = 3;
+const NOTIFICATION_DURATION = 4000;
+
 class EnhancedSecurityManager {
     constructor() {
         this.rateLimiter = new Map();
@@ -28,12 +48,12 @@ class EnhancedSecurityManager {
         const ua = navigator.userAgent.toLowerCase();
         const botPatterns = ['bot', 'crawler', 'spider', 'scraper', 'curl', 'wget'];
         if (botPatterns.some(pattern => ua.includes(pattern))) {
-            this.botScore += 30;
+            this.botScore += BOT_SCORE_USER_AGENT;
         }
 
         // Vérification webdriver
         if (navigator.webdriver) {
-            this.botScore += 40;
+            this.botScore += BOT_SCORE_WEBDRIVER;
         }
 
         // Vérification du comportement de navigation
@@ -43,34 +63,34 @@ class EnhancedSecurityManager {
 
         document.addEventListener('mousemove', () => {
             mouseMovements++;
-            if (mouseMovements > 10) this.botScore = Math.max(0, this.botScore - 5);
+            if (mouseMovements > MOUSE_MOVEMENTS_THRESHOLD) this.botScore = Math.max(0, this.botScore - BOT_SCORE_REDUCTION);
         }, { once: false, passive: true });
 
         document.addEventListener('click', () => {
             clicks++;
-            if (clicks > 3) this.botScore = Math.max(0, this.botScore - 5);
+            if (clicks > CLICKS_THRESHOLD) this.botScore = Math.max(0, this.botScore - BOT_SCORE_REDUCTION);
         }, { once: false, passive: true });
 
         document.addEventListener('scroll', () => {
             scrolls++;
-            if (scrolls > 5) this.botScore = Math.max(0, this.botScore - 5);
+            if (scrolls > SCROLLS_THRESHOLD) this.botScore = Math.max(0, this.botScore - BOT_SCORE_REDUCTION);
         }, { once: false, passive: true });
 
         // Vérification après 5 secondes
         setTimeout(() => {
             if (mouseMovements === 0 && clicks === 0 && scrolls === 0) {
-                this.botScore += 20;
+                this.botScore += BOT_SCORE_NO_INTERACTION;
             }
             
-            if (this.botScore >= 50) {
+            if (this.botScore >= BOT_SCORE_THRESHOLD) {
                 console.warn('⚠️ Comportement de bot détecté (score:', this.botScore, ')');
                 this.handleBotDetection();
             }
-        }, 5000);
+        }, BOT_CHECK_DELAY);
 
         // Vérification des propriétés manquantes (headless browser)
         if (!window.chrome || !navigator.plugins.length) {
-            this.botScore += 15;
+            this.botScore += BOT_SCORE_HEADLESS;
         }
     }
 
@@ -141,30 +161,48 @@ class EnhancedSecurityManager {
             max-width: 400px;
         `;
         
-        warning.innerHTML = `
-            <div style="font-size: 3rem; margin-bottom: 1rem;">⏱️</div>
-            <h3 style="margin-bottom: 1rem; color: #dc2626;">Trop de tentatives</h3>
-            <p style="color: #64748b; margin-bottom: 1.5rem;">
-                Veuillez patienter ${waitTime} secondes avant de réessayer.
-            </p>
-            <button onclick="this.parentElement.remove()" style="
-                background: #2563eb;
-                color: white;
-                border: none;
-                padding: 0.75rem 2rem;
-                border-radius: 8px;
-                cursor: pointer;
-                font-weight: 600;
-            ">Compris</button>
+        // Créer les éléments de manière sécurisée
+        const emoji = document.createElement('div');
+        emoji.style.cssText = 'font-size: 3rem; margin-bottom: 1rem;';
+        emoji.textContent = '⏱️';
+        
+        const title = document.createElement('h3');
+        title.style.cssText = 'margin-bottom: 1rem; color: #dc2626;';
+        title.textContent = 'Trop de tentatives';
+        
+        const message = document.createElement('p');
+        message.style.cssText = 'color: #64748b; margin-bottom: 1.5rem;';
+        message.textContent = `Veuillez patienter ${waitTime} secondes avant de réessayer.`;
+        
+        const button = document.createElement('button');
+        button.style.cssText = `
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
         `;
+        button.textContent = 'Compris';
+        button.addEventListener('click', () => warning.remove());
+        
+        warning.appendChild(emoji);
+        warning.appendChild(title);
+        warning.appendChild(message);
+        warning.appendChild(button);
+        warning.appendChild(emoji);
+        warning.appendChild(title);
+        warning.appendChild(message);
+        warning.appendChild(button);
         
         document.body.appendChild(warning);
         
         setTimeout(() => {
             warning.style.transition = 'opacity 0.3s';
             warning.style.opacity = '0';
-            setTimeout(() => warning.remove(), 300);
-        }, 5000);
+            setTimeout(() => warning.remove(), THEME_TRANSITION_DURATION);
+        }, RATE_LIMIT_WARNING_DURATION);
     }
 
     patchFetch() {
@@ -175,7 +213,7 @@ class EnhancedSecurityManager {
             const url = args[0];
             
             // Vérifier rate limit pour cette URL
-            if (!self.checkRateLimit('fetch_' + url, 10, 10000)) {
+            if (!self.checkRateLimit('fetch_' + url, FETCH_RATE_LIMIT, FETCH_RATE_WINDOW)) {
                 return Promise.reject(new Error('Rate limit exceeded'));
             }
             
@@ -215,14 +253,14 @@ class EnhancedSecurityManager {
             
             // Vérifier le temps de remplissage (les bots sont trop rapides)
             const fillTime = Date.now() - parseInt(timestamp.value);
-            if (fillTime < 3000) {
+            if (fillTime < FORM_MIN_FILL_TIME) {
                 this.showWarning('Veuillez prendre votre temps pour remplir le formulaire');
                 return false;
             }
             
             // Vérifier rate limit
             const formId = formElement.id || 'form';
-            if (!this.checkRateLimit('form_' + formId, 3, 60000)) {
+            if (!this.checkRateLimit('form_' + formId, FORM_SUBMIT_LIMIT, RATE_LIMIT_WINDOW_MS)) {
                 return false;
             }
             
@@ -262,32 +300,51 @@ class EnhancedSecurityManager {
         const num2 = Math.floor(Math.random() * 10) + 1;
         const answer = num1 + num2;
         
-        captchaBox.innerHTML = `
-            <div style="font-size: 2rem; margin-bottom: 1rem;">🤔</div>
-            <h3 style="margin-bottom: 1rem;">Vérification humaine</h3>
-            <p style="color: #64748b; margin-bottom: 1.5rem;">
-                Combien font ${num1} + ${num2} ?
-            </p>
-            <input type="number" id="captcha-input" style="
-                width: 100%;
-                padding: 0.75rem;
-                border: 2px solid #e2e8f0;
-                border-radius: 8px;
-                font-size: 1.1rem;
-                text-align: center;
-                margin-bottom: 1rem;
-            ">
-            <button id="captcha-submit" style="
-                background: #2563eb;
-                color: white;
-                border: none;
-                padding: 0.75rem 2rem;
-                border-radius: 8px;
-                cursor: pointer;
-                font-weight: 600;
-                width: 100%;
-            ">Vérifier</button>
+        // Créer les éléments de manière sécurisée
+        const emoji = document.createElement('div');
+        emoji.style.cssText = 'font-size: 2rem; margin-bottom: 1rem;';
+        emoji.textContent = '🤔';
+        
+        const title = document.createElement('h3');
+        title.style.cssText = 'margin-bottom: 1rem;';
+        title.textContent = 'Vérification humaine';
+        
+        const question = document.createElement('p');
+        question.style.cssText = 'color: #64748b; margin-bottom: 1.5rem;';
+        question.textContent = `Combien font ${num1} + ${num2} ?`;
+        
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.id = 'captcha-input';
+        input.style.cssText = `
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1rem;
         `;
+        
+        const submitBtn = document.createElement('button');
+        submitBtn.id = 'captcha-submit';
+        submitBtn.textContent = 'Vérifier';
+        submitBtn.style.cssText = `
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        `;
+        
+        captchaBox.appendChild(emoji);
+        captchaBox.appendChild(title);
+        captchaBox.appendChild(question);
+        captchaBox.appendChild(input);
+        captchaBox.appendChild(submitBtn);
         
         overlay.appendChild(captchaBox);
         document.body.appendChild(overlay);
@@ -387,8 +444,8 @@ class EnhancedSecurityManager {
         
         setTimeout(() => {
             notification.style.opacity = '0';
-            setTimeout(() => notification.remove(), 300);
-        }, 4000);
+            setTimeout(() => notification.remove(), THEME_TRANSITION_DURATION);
+        }, NOTIFICATION_DURATION);
     }
 
     handleSecurityIncident(message) {

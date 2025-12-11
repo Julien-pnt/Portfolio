@@ -5,6 +5,13 @@ Expert Cybersécurité - Protection avancée côté client
 ==========================================================================
 */
 
+// ==================== CONSTANTES ====================
+const DEVTOOLS_THRESHOLD = 160;
+const DEVTOOLS_CHECK_INTERVAL = 500;
+const CSRF_TOKEN_LENGTH = 32;
+const SESSION_CHECK_INTERVAL = 30000;
+const MAX_SECURITY_INCIDENTS = 50;
+
 class SecurityManager {
     constructor() {
         this.init();
@@ -28,11 +35,9 @@ class SecurityManager {
             orientation: null
         };
 
-        const threshold = 160;
-
         setInterval(() => {
-            if (window.outerHeight - window.innerHeight > threshold || 
-                window.outerWidth - window.innerWidth > threshold) {
+            if (window.outerHeight - window.innerHeight > DEVTOOLS_THRESHOLD || 
+                window.outerWidth - window.innerWidth > DEVTOOLS_THRESHOLD) {
                 if (!devtools.open) {
                     devtools.open = true;
                     console.clear();
@@ -43,7 +48,7 @@ class SecurityManager {
             } else {
                 devtools.open = false;
             }
-        }, 500);
+        }, DEVTOOLS_CHECK_INTERVAL);
     }
 
     // =====================================
@@ -174,8 +179,10 @@ class SecurityManager {
     }
 
     generateCSRFToken() {
-        return Array.from(crypto.getRandomValues(new Uint8Array(32)), 
-            byte => byte.toString(16).padStart(2, '0')).join('');
+        // Utiliser Web Crypto API moderne (sécurisé)
+        const array = new Uint8Array(CSRF_TOKEN_LENGTH);
+        crypto.getRandomValues(array);
+        return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
     }
 
     validateForm(form) {
@@ -239,7 +246,7 @@ class SecurityManager {
                 stored.platform !== navigator.platform) {
                 this.handleSecurityIncident('Détournement de session détecté');
             }
-        }, 30000);
+        }, SESSION_CHECK_INTERVAL);
     }
 
     // =====================================
@@ -260,7 +267,7 @@ class SecurityManager {
         // Stocker localement pour analyse
         const incidents = JSON.parse(localStorage.getItem('security_incidents') || '[]');
         incidents.push(incident);
-        localStorage.setItem('security_incidents', JSON.stringify(incidents.slice(-50))); // Garder les 50 derniers
+        localStorage.setItem('security_incidents', JSON.stringify(incidents.slice(-MAX_SECURITY_INCIDENTS)));
 
         // Actions de mitigation
         this.mitigateIncident(message);

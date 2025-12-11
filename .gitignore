@@ -1,0 +1,113 @@
+# ==================== GITIGNORE PORTFOLIO JULIEN PINOT ====================
+
+# ===== Fichiers et dossiers système =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ===== IDE et Éditeurs =====
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# ===== Logs et Debug =====
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===== Dépendances =====
+node_modules/
+bower_components/
+jspm_packages/
+
+# ===== Cache et fichiers temporaires =====
+.cache/
+.temp/
+.tmp/
+*.tmp
+
+# ===== Build et distribution =====
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# ===== Environnement =====
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===== OS spécifiques =====
+# Windows
+*.lnk
+ehthumbs.db
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Linux
+.directory
+
+# ===== Fichiers de sauvegarde =====
+*.bak
+*.backup
+*~.nib
+*.old
+
+# ===== Médias volumineux (optionnel) =====
+# Décommenter si nécessaire
+# *.mp4
+# *.avi
+# *.mov
+# *.psd
+
+# ===== Fichiers sensibles =====
+# Clés privées et certificats
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Bases de données
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== Coverage et tests =====
+coverage/
+.nyc_output/
+*.lcov
+
+# ===== Documentation générée =====
+docs/_build/
+site/
+
+# ===== Autres =====
+.eslintcache
+.stylelintcache
+*.map.old

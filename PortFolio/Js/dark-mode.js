@@ -5,6 +5,9 @@ Gestion du thème sombre avec persistance localStorage
 ==========================================================================
 */
 
+// ==================== CONSTANTES ====================
+const THEME_TRANSITION_DURATION = 300;
+
 class DarkModeToggle {
     constructor() {
         this.theme = localStorage.getItem('theme') || 'light';
@@ -31,22 +34,12 @@ class DarkModeToggle {
         button.setAttribute('aria-label', 'Changer de thème');
         button.setAttribute('title', 'Changer de thème');
         
-        button.innerHTML = `
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        `;
+        // Créer l'icône du soleil avec createElement (sécurisé)
+        const sunIcon = this.createSVGIcon('sun');
+        const moonIcon = this.createSVGIcon('moon');
+        
+        button.appendChild(sunIcon);
+        button.appendChild(moonIcon);
         
         button.addEventListener('click', () => {
             console.log('Toggle button clicked!');
@@ -68,7 +61,7 @@ class DarkModeToggle {
         button.style.transform = 'scale(0.9) rotate(180deg)';
         setTimeout(() => {
             button.style.transform = '';
-        }, 300);
+        }, THEME_TRANSITION_DURATION);
     }
 
     applyTheme(theme) {
@@ -79,6 +72,49 @@ class DarkModeToggle {
         if (metaThemeColor) {
             metaThemeColor.setAttribute('content', theme === 'dark' ? '#0f172a' : '#ffffff');
         }
+    }
+
+    createSVGIcon(type) {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '2');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+        
+        if (type === 'sun') {
+            svg.setAttribute('class', 'sun-icon');
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', '12');
+            circle.setAttribute('cy', '12');
+            circle.setAttribute('r', '5');
+            svg.appendChild(circle);
+            
+            const lines = [
+                [12, 1, 12, 3], [12, 21, 12, 23], [4.22, 4.22, 5.64, 5.64],
+                [18.36, 18.36, 19.78, 19.78], [1, 12, 3, 12], [21, 12, 23, 12],
+                [4.22, 19.78, 5.64, 18.36], [18.36, 5.64, 19.78, 4.22]
+            ];
+            
+            lines.forEach(([x1, y1, x2, y2]) => {
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x1);
+                line.setAttribute('y1', y1);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+                svg.appendChild(line);
+            });
+        } else if (type === 'moon') {
+            svg.setAttribute('class', 'moon-icon');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z');
+            svg.appendChild(path);
+        }
+        
+        return svg;
     }
 
     detectSystemPreference() {

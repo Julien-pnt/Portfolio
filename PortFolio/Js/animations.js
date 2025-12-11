@@ -5,6 +5,23 @@ Gestion intelligente des animations avec Intersection Observer
 ==========================================================================
 */
 
+// ==================== CONSTANTES ====================
+const PARTICLE_COUNT = 15;
+const PARTICLE_MIN_SIZE = 2;
+const PARTICLE_SIZE_RANGE = 4;
+const PARTICLE_BASE_DURATION = 15;
+const PARTICLE_DURATION_RANGE = 10;
+const PARTICLE_MAX_DELAY = 20;
+const TYPING_SPEED = 50;
+const TYPING_ELEMENT_DELAY = 500;
+const TYPING_CURSOR_DURATION = 2000;
+const CASCADE_DELAY = 100;
+const SKILL_BAR_ANIMATION_DELAY = 200;
+const SKILL_BAR_DURATION = 2000;
+const COUNTER_ANIMATION_DURATION = 2000;
+const COUNTER_FPS = 60;
+const HARDWARE_CONCURRENCY_THRESHOLD = 4;
+
 class PortfolioAnimations {
     constructor() {
         this.init();
@@ -36,13 +53,13 @@ class PortfolioAnimations {
         particlesContainer.className = 'floating-particles';
         document.body.appendChild(particlesContainer);
 
-        // Créer 15 particules avec des tailles et vitesses différentes
-        for (let i = 0; i < 15; i++) {
+        // Créer des particules avec des tailles et vitesses différentes
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             
-            // Taille aléatoire entre 2 et 6px
-            const size = Math.random() * 4 + 2;
+            // Taille aléatoire
+            const size = Math.random() * PARTICLE_SIZE_RANGE + PARTICLE_MIN_SIZE;
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             
@@ -50,10 +67,10 @@ class PortfolioAnimations {
             particle.style.left = `${Math.random() * 100}%`;
             
             // Délai d'animation aléatoire
-            particle.style.animationDelay = `${Math.random() * 20}s`;
+            particle.style.animationDelay = `${Math.random() * PARTICLE_MAX_DELAY}s`;
             
             // Durée d'animation variable
-            particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+            particle.style.animationDuration = `${PARTICLE_BASE_DURATION + Math.random() * PARTICLE_DURATION_RANGE}s`;
             
             particlesContainer.appendChild(particle);
         }
@@ -104,8 +121,8 @@ class PortfolioAnimations {
             
             // Délai croissant pour chaque élément
             setTimeout(() => {
-                this.typeText(element, text, 50);
-            }, index * 500);
+                this.typeText(element, text, TYPING_SPEED);
+            }, index * TYPING_ELEMENT_DELAY);
         });
     }
 
@@ -120,7 +137,7 @@ class PortfolioAnimations {
                 // Faire clignoter le curseur quelques fois puis le supprimer
                 setTimeout(() => {
                     element.style.borderRight = 'none';
-                }, 2000);
+                }, TYPING_CURSOR_DURATION);
             }
         }, speed);
     }
@@ -140,7 +157,7 @@ class PortfolioAnimations {
                         Array.from(cards).forEach((card, index) => {
                             setTimeout(() => {
                                 card.classList.add('animate-fade-in-up');
-                            }, index * 100);
+                            }, index * CASCADE_DELAY);
                         });
                         observer.unobserve(entry.target);
                     }
@@ -153,7 +170,7 @@ class PortfolioAnimations {
 
     // Animations liées au scroll
     setupScrollAnimations() {
-        let ticking = false;
+        let isAnimating = false;
         
         const updateScrollAnimations = () => {
             const scrolled = window.pageYOffset;
@@ -179,9 +196,9 @@ class PortfolioAnimations {
         };
 
         const requestScrollUpdate = () => {
-            if (!ticking) {
+            if (!isAnimating) {
                 requestAnimationFrame(updateScrollAnimations);
-                ticking = true;
+                isAnimating = true;
             }
         };
 
@@ -273,8 +290,8 @@ class PortfolioAnimations {
                     
                     setTimeout(() => {
                         progressBar.style.width = targetWidth;
-                        progressBar.style.transition = 'width 2s ease-out';
-                    }, 200);
+                        progressBar.style.transition = `width ${SKILL_BAR_DURATION / 1000}s ease-out`;
+                    }, SKILL_BAR_ANIMATION_DELAY);
                     
                     observer.unobserve(entry.target);
                 }
@@ -293,8 +310,8 @@ class PortfolioAnimations {
                 if (entry.isIntersecting) {
                     const counter = entry.target;
                     const target = parseInt(counter.dataset.target);
-                    const duration = 2000; // 2 secondes
-                    const step = target / (duration / 16); // 60fps
+                    const duration = COUNTER_ANIMATION_DURATION;
+                    const step = target / (duration / (1000 / COUNTER_FPS));
                     
                     let current = 0;
                     const timer = setInterval(() => {
@@ -318,7 +335,7 @@ class PortfolioAnimations {
     // Gestionnaire global pour les effets de performance
     optimizeAnimations() {
         // Réduire les animations sur les appareils moins performants
-        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < HARDWARE_CONCURRENCY_THRESHOLD) {
             document.body.classList.add('reduced-animations');
         }
         
@@ -333,8 +350,8 @@ class PortfolioAnimations {
     }
 }
 
-// Initialiser les animations
-const portfolioAnimations = new PortfolioAnimations();
+// Initialiser les animations (variable utilisée pour l'initialisation)
+new PortfolioAnimations();
 
 // Initialiser les icônes Feather si disponibles
 if (typeof feather !== 'undefined') {

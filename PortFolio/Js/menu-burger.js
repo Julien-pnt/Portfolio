@@ -5,6 +5,10 @@ Gestion du menu hamburger responsive
 ==========================================================================
 */
 
+// ==================== CONSTANTES ====================
+const MOBILE_BREAKPOINT = 768;
+const SCROLL_THRESHOLD = 50;
+
 // Attendre que le DOM soit chargé
 document.addEventListener('DOMContentLoaded', function() {
     // ==================== MENU BURGER MOBILE ====================
@@ -50,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Fermer le menu en cliquant en dehors (sur mobile)
     document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= MOBILE_BREAKPOINT) {
             if (!navbar.contains(e.target) && !burgerMenu.contains(e.target) && navbar.classList.contains('active')) {
                 burgerMenu.classList.remove('active');
                 navbar.classList.remove('active');
@@ -62,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Fermer le menu si on redimensionne la fenêtre en mode desktop
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > MOBILE_BREAKPOINT) {
             burgerMenu.classList.remove('active');
             navbar.classList.remove('active');
             document.body.classList.remove('menu-open');
@@ -75,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
     if (header) {
-        if (window.scrollY > 50) {
+        if (window.scrollY > SCROLL_THRESHOLD) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
