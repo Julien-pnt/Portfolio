@@ -6,7 +6,15 @@ Architecture modulaire avec async/await
 ==========================================================================
 */
 
-import { wait, cascadeAnimation, animate } from './modules/promise-utils.js';
+// ==================== UTILITY FUNCTIONS ====================
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const cascadeAnimation = async (elements, callback, delay = 100) => {
+    for (let i = 0; i < elements.length; i++) {
+        await wait(delay);
+        callback(elements[i], i);
+    }
+};
 
 // ==================== CONSTANTES ====================
 const PARTICLE_COUNT = 15;
