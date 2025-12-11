@@ -5,6 +5,8 @@ Système de captcha modulaire avec vérification mathématique
 ==========================================================================
 */
 
+import { createNotification } from './dom-utils.js';
+
 // Constantes
 const NOTIFICATION_DURATION = 4000;
 const THEME_TRANSITION_DURATION = 300;
@@ -240,53 +242,11 @@ export class CaptchaSystem {
         console.log('✅ Formulaire validé et prêt à être envoyé:', Object.fromEntries(formData));
         
         // En production, faire un fetch vers le backend
-        this.showSuccess('Message envoyé avec succès !');
+        // Utilisation de DOMUtils pour créer une notification sécurisée
+        createNotification('Message envoyé avec succès !', 'success', NOTIFICATION_DURATION);
         
         // Réinitialiser le formulaire après soumission
         formElement.reset();
-    }
-
-    /**
-     * Affiche une notification de succès
-     * @param {string} message - Message à afficher
-     */
-    showSuccess(message) {
-        this.showNotification(message, '#10b981', '✅');
-    }
-
-    /**
-     * Affiche une notification
-     * @param {string} message - Message
-     * @param {string} color - Couleur de fond
-     * @param {string} icon - Icône
-     */
-    showNotification(message, color, icon) {
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${color};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 10001;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            animation: slideInRight 0.3s ease;
-        `;
-        
-        notification.innerHTML = `<span>${icon}</span><span>${message}</span>`;
-        document.body.appendChild(notification);
-        
-        setTimeout(() => {
-            notification.style.opacity = '0';
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), THEME_TRANSITION_DURATION);
-        }, NOTIFICATION_DURATION);
     }
 }
 

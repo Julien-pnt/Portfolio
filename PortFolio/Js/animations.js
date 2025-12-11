@@ -325,12 +325,17 @@ class PortfolioAnimations {
                     let current = 0;
                     const timer = setInterval(() => {
                         current += step;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
+                        
+                        // REFACTORING: Guard Clause pour simplifier la logique
+                        if (current < target) {
+                            const displayValue = Math.floor(current);
+                            counter.textContent = target === 100 ? displayValue + '%' : displayValue;
+                            return;
                         }
-                        const displayValue = Math.floor(current);
-                        counter.textContent = target === 100 ? displayValue + '%' : displayValue;
+                        
+                        // Cas final: atteindre exactement la cible
+                        counter.textContent = target === 100 ? target + '%' : target;
+                        clearInterval(timer);
                     }, 16);
                     
                     observer.unobserve(entry.target);
